@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FamlyBudget — Le finanze di famiglia, sotto controllo</title>
+  <title id="page-title">FamlyBudget — Family finances, finally under control</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -69,14 +69,9 @@
       font-size: 15px; font-weight: 600; cursor: pointer;
       transition: all 0.2s; border: none;
     }
-    .btn-primary {
-      background: var(--blue-dark); color: #fff;
-    }
+    .btn-primary { background: var(--blue-dark); color: #fff; }
     .btn-primary:hover { background: #1e40af; transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-    .btn-secondary {
-      background: transparent; color: var(--blue-dark);
-      border: 2px solid var(--blue-dark);
-    }
+    .btn-secondary { background: transparent; color: var(--blue-dark); border: 2px solid var(--blue-dark); }
     .btn-secondary:hover { background: var(--blue-light); }
     .btn-lg { padding: 16px 36px; font-size: 16px; border-radius: 12px; }
 
@@ -88,45 +83,41 @@
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s, box-shadow 0.3s;
     }
-    .navbar.scrolled {
-      border-color: var(--border);
-      box-shadow: 0 2px 16px rgba(30,58,138,0.06);
-    }
+    .navbar.scrolled { border-color: var(--border); box-shadow: 0 2px 16px rgba(30,58,138,0.06); }
     .navbar .container {
       display: flex; align-items: center; justify-content: space-between;
       height: 100px;
     }
-    .navbar-logo {
-      display: flex; align-items: center;
-    }
-    /* Wrapper che taglia eventuale badge nell'angolo basso-destra.
-       Immagine: 1380×752px. Wordmark finisce a ~79.8%, badge a ~83.8%.
-       Wrapper=88px, immagine=108px → mostra l'81.5% → wordmark ✓, badge ✗ */
+    .navbar-logo { display: flex; align-items: center; }
     .logo-img-wrap {
-      height: 88px;
-      overflow: hidden;
-      display: inline-flex;
-      align-items: flex-start;
+      height: 88px; overflow: hidden;
+      display: inline-flex; align-items: flex-start;
     }
-    .logo-img {
-      height: 108px;
-      width: auto;
-      display: block;
-    }
-    /* Footer wordmark su sfondo scuro */
-    .footer-wordmark {
-      font-size: 22px; font-weight: 800; letter-spacing: -0.3px;
-    }
-    .navbar-links {
-      display: flex; align-items: center; gap: 32px;
-      list-style: none;
-    }
-    .navbar-links a {
-      font-size: 14px; font-weight: 500; color: var(--text-muted);
-      transition: color 0.2s;
-    }
+    .logo-img { height: 108px; width: auto; display: block; }
+    .footer-wordmark { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; }
+    .navbar-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .navbar-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
     .navbar-links a:hover { color: var(--blue-dark); }
     .navbar-cta { display: flex; align-items: center; gap: 12px; }
+
+    /* ── Language Switcher ────────────────────────────────────── */
+    .lang-switcher {
+      display: flex; align-items: center;
+      background: var(--neutral);
+      border-radius: 8px; padding: 3px; gap: 2px;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 12px; font-weight: 700;
+      color: var(--text-muted);
+      padding: 5px 10px; border-radius: 6px;
+      transition: all 0.15s; letter-spacing: 0.5px;
+    }
+    .lang-btn.active {
+      background: #fff; color: var(--blue-dark);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .lang-btn:hover:not(.active) { color: var(--text); }
 
     /* ── Hero ─────────────────────────────────────────────────── */
     .hero {
@@ -135,17 +126,12 @@
       position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute; top: -120px; right: -120px;
+      content: ''; position: absolute; top: -120px; right: -120px;
       width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
       border-radius: 50%;
     }
-    .hero .container {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .hero-content {}
+    .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--blue-mid); color: var(--blue-dark);
@@ -153,26 +139,17 @@
       border-radius: 99px; margin-bottom: 24px; letter-spacing: 0.5px;
       text-transform: uppercase;
     }
-    .hero h1 {
-      font-size: clamp(34px, 4.5vw, 52px);
-      font-weight: 800; line-height: 1.15; color: var(--text);
-      margin-bottom: 22px;
-    }
+    .hero h1 { font-size: clamp(34px, 4.5vw, 52px); font-weight: 800; line-height: 1.15; color: var(--text); margin-bottom: 22px; }
     .hero h1 span { color: var(--blue-dark); }
-    .hero-sub {
-      font-size: 18px; color: var(--text-muted); margin-bottom: 40px;
-      max-width: 480px; line-height: 1.7;
-    }
+    .hero-sub { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; max-width: 480px; line-height: 1.7; }
     .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    /* Google Play Badge */
     .gplay-badge {
       display: inline-flex; align-items: center; gap: 12px;
       background: #0F172A; color: #fff;
       padding: 10px 20px; border-radius: 10px;
       font-size: 14px; font-weight: 600;
-      transition: all 0.2s; cursor: pointer;
-      border: 2px solid transparent;
+      transition: all 0.2s; cursor: pointer; border: 2px solid transparent;
     }
     .gplay-badge:hover { background: #1e293b; transform: translateY(-1px); box-shadow: var(--shadow-lg); }
     .gplay-badge .badge-icon { font-size: 26px; }
@@ -180,246 +157,104 @@
     .gplay-badge .badge-sub { font-size: 10px; font-weight: 400; opacity: 0.7; }
     .gplay-badge .badge-store { font-size: 15px; font-weight: 700; }
 
-    .hero-stats {
-      display: flex; gap: 32px; margin-top: 48px;
-      padding-top: 32px; border-top: 1px solid var(--border);
-    }
+    .hero-stats { display: flex; gap: 32px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .stat { display: flex; flex-direction: column; }
     .stat-num { font-size: 24px; font-weight: 800; color: var(--blue-dark); }
     .stat-label { font-size: 13px; color: var(--text-muted); }
 
     /* ── Phone Mockup ─────────────────────────────────────────── */
     .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
-
-    .phone {
-      width: 260px; height: 520px;
-      background: #fff;
-      border-radius: 44px;
-      border: 10px solid #1E3A8A;
-      box-shadow: 0 32px 80px rgba(30,58,138,0.25), 0 4px 16px rgba(0,0,0,0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    .phone-notch {
-      width: 90px; height: 24px;
-      background: #1E3A8A;
-      border-radius: 0 0 16px 16px;
-      margin: 0 auto;
-    }
-    .phone-screen {
-      padding: 12px 14px;
-    }
-    .phone-header {
-      background: var(--blue-dark);
-      margin: -12px -14px 12px;
-      padding: 10px 16px 14px;
-      color: #fff;
-    }
-    .phone-header-top {
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 11px; opacity: 0.8; margin-bottom: 8px;
-    }
+    .phone { width: 260px; height: 520px; background: #fff; border-radius: 44px; border: 10px solid #1E3A8A; box-shadow: 0 32px 80px rgba(30,58,138,0.25), 0 4px 16px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+    .phone-notch { width: 90px; height: 24px; background: #1E3A8A; border-radius: 0 0 16px 16px; margin: 0 auto; }
+    .phone-screen { padding: 12px 14px; }
+    .phone-header { background: var(--blue-dark); margin: -12px -14px 12px; padding: 10px 16px 14px; color: #fff; }
+    .phone-header-top { display: flex; justify-content: space-between; align-items: center; font-size: 11px; opacity: 0.8; margin-bottom: 8px; }
     .phone-greeting { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
     .phone-balance-label { font-size: 10px; opacity: 0.7; }
     .phone-balance { font-size: 24px; font-weight: 800; margin: 4px 0; }
-
-    .phone-cards-row {
-      display: flex; gap: 8px; margin-bottom: 12px;
-    }
-    .phone-card {
-      flex: 1; background: #F8FAFC; border-radius: 10px;
-      padding: 8px 10px; border: 1px solid var(--border);
-    }
+    .phone-cards-row { display: flex; gap: 8px; margin-bottom: 12px; }
+    .phone-card { flex: 1; background: #F8FAFC; border-radius: 10px; padding: 8px 10px; border: 1px solid var(--border); }
     .phone-card-label { font-size: 8px; color: var(--text-muted); margin-bottom: 3px; }
     .phone-card-value { font-size: 12px; font-weight: 700; }
     .phone-card-value.income { color: #16a34a; }
     .phone-card-value.expense { color: #dc2626; }
-
     .phone-section-title { font-size: 10px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .phone-tx {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 6px 0; border-bottom: 1px solid #F1F5F9;
-    }
+    .phone-tx { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #F1F5F9; }
     .phone-tx:last-child { border-bottom: none; }
     .phone-tx-left { display: flex; align-items: center; gap: 8px; }
-    .phone-tx-icon {
-      width: 26px; height: 26px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; font-size: 12px;
-    }
+    .phone-tx-icon { width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
     .phone-tx-name { font-size: 10px; font-weight: 600; color: var(--text); }
     .phone-tx-cat { font-size: 8px; color: var(--text-muted); }
     .phone-tx-amount { font-size: 10px; font-weight: 700; }
     .phone-tx-amount.neg { color: #dc2626; }
     .phone-tx-amount.pos { color: #16a34a; }
-
-    .phone-chart {
-      background: var(--blue-light); border-radius: 10px;
-      padding: 10px; margin-top: 10px;
-    }
+    .phone-chart { background: var(--blue-light); border-radius: 10px; padding: 10px; margin-top: 10px; }
     .phone-chart-label { font-size: 9px; color: var(--text-muted); margin-bottom: 8px; }
     .phone-bars { display: flex; gap: 6px; align-items: flex-end; height: 48px; }
     .phone-bar-group { display: flex; gap: 2px; align-items: flex-end; }
-    .phone-bar {
-      width: 8px; border-radius: 3px 3px 0 0;
-    }
+    .phone-bar { width: 8px; border-radius: 3px 3px 0 0; }
     .bar-income { background: #16a34a; }
     .bar-expense { background: #dc2626; }
-
-    /* Floating card behind phone */
-    .phone-float-card {
-      position: absolute;
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-    }
-    .phone-float-1 {
-      top: 60px; right: -20px;
-      font-size: 12px;
-    }
+    .phone-float-card { position: absolute; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 12px 16px; border: 1px solid var(--border); }
+    .phone-float-1 { top: 60px; right: -20px; font-size: 12px; }
     .phone-float-1 .fc-label { font-size: 10px; color: var(--text-muted); }
     .phone-float-1 .fc-val { font-size: 18px; font-weight: 800; color: #16a34a; }
-
-    .phone-float-2 {
-      bottom: 80px; left: -30px;
-      font-size: 12px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .phone-float-2-icon {
-      width: 36px; height: 36px; background: var(--blue-mid);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
-    }
+    .phone-float-2 { bottom: 80px; left: -30px; font-size: 12px; display: flex; align-items: center; gap: 10px; }
+    .phone-float-2-icon { width: 36px; height: 36px; background: var(--blue-mid); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .phone-float-2-text .fc-label { font-size: 10px; color: var(--text-muted); }
     .phone-float-2-text .fc-val { font-size: 13px; font-weight: 700; color: var(--text); }
 
     /* ── Features ─────────────────────────────────────────────── */
-    .features-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    }
-    .feature-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      transition: all 0.2s;
-      display: flex; gap: 24px; align-items: flex-start;
-    }
-    .feature-card:hover {
-      border-color: var(--blue);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-3px);
-    }
-    .feature-icon {
-      width: 52px; height: 52px; flex-shrink: 0;
-      background: var(--blue-light); border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .feature-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; transition: all 0.2s; display: flex; gap: 24px; align-items: flex-start; }
+    .feature-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .feature-icon { width: 52px; height: 52px; flex-shrink: 0; background: var(--blue-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
     .feature-body { flex: 1; }
-    .feature-card h3 {
-      font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text);
-    }
+    .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
     .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
     .feature-bullets { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-    .feature-bullets li {
-      font-size: 13px; color: var(--text-muted);
-      display: flex; align-items: center; gap: 7px;
-    }
-    .feature-bullets li::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--blue); flex-shrink: 0;
-    }
+    .feature-bullets li { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 7px; }
+    .feature-bullets li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
 
     /* ── Screenshots ──────────────────────────────────────────── */
-    .screenshots-row {
-      display: flex; gap: 40px; justify-content: center; align-items: flex-end;
-    }
+    .screenshots-row { display: flex; gap: 40px; justify-content: center; align-items: flex-end; }
     .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .screenshot-item .caption {
-      font-size: 13px; font-weight: 600; color: var(--text-muted);
-      text-align: center;
-    }
-
-    .phone-sm {
-      width: 200px; height: 400px;
-      background: #fff;
-      border-radius: 36px;
-      border: 8px solid #1E3A8A;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+    .screenshot-item .caption { font-size: 13px; font-weight: 600; color: var(--text-muted); text-align: center; }
+    .phone-sm { width: 200px; height: 400px; background: #fff; border-radius: 36px; border: 8px solid #1E3A8A; box-shadow: var(--shadow-lg); overflow: hidden; transition: transform 0.3s; }
     .phone-sm:hover { transform: translateY(-8px); }
-    .phone-sm.featured {
-      width: 220px; height: 440px;
-      border-color: #3B82F6;
-      box-shadow: 0 20px 60px rgba(59,130,246,0.3);
-    }
-    .phone-sm-notch {
-      width: 70px; height: 18px;
-      background: #1E3A8A;
-      border-radius: 0 0 12px 12px;
-      margin: 0 auto;
-    }
+    .phone-sm.featured { width: 220px; height: 440px; border-color: #3B82F6; box-shadow: 0 20px 60px rgba(59,130,246,0.3); }
+    .phone-sm-notch { width: 70px; height: 18px; background: #1E3A8A; border-radius: 0 0 12px 12px; margin: 0 auto; }
     .phone-sm.featured .phone-sm-notch { background: #3B82F6; }
     .phone-sm-body { padding: 10px; }
-
-    /* Screen 1: Dashboard */
-    .ss-header {
-      background: var(--blue-dark); color: #fff;
-      margin: -10px -10px 10px; padding: 10px 12px 16px;
-      border-radius: 0 0 12px 12px;
-    }
+    .ss-header { background: var(--blue-dark); color: #fff; margin: -10px -10px 10px; padding: 10px 12px 16px; border-radius: 0 0 12px 12px; }
     .ss-header h4 { font-size: 11px; font-weight: 700; }
     .ss-header .ss-balance { font-size: 20px; font-weight: 800; margin-top: 4px; }
-
     .ss-row { display: flex; gap: 6px; margin-bottom: 8px; }
-    .ss-pill {
-      flex: 1; background: var(--neutral); border-radius: 8px;
-      padding: 6px 8px; text-align: center;
-    }
+    .ss-pill { flex: 1; background: var(--neutral); border-radius: 8px; padding: 6px 8px; text-align: center; }
     .ss-pill .p-label { font-size: 7px; color: var(--text-muted); }
     .ss-pill .p-val { font-size: 11px; font-weight: 700; }
-
-    .ss-mini-bar-wrap {
-      background: var(--neutral); border-radius: 8px; padding: 8px; margin-bottom: 8px;
-    }
+    .ss-mini-bar-wrap { background: var(--neutral); border-radius: 8px; padding: 8px; margin-bottom: 8px; }
     .ss-mini-bar-title { font-size: 8px; color: var(--text-muted); margin-bottom: 6px; }
     .ss-mini-bars { display: flex; gap: 4px; align-items: flex-end; height: 36px; }
     .ss-mb { width: 10px; border-radius: 2px 2px 0 0; }
     .ss-mb.i { background: #16a34a; } .ss-mb.e { background: #dc2626; }
-
-    .ss-tx-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 5px 0; border-bottom: 1px solid #F1F5F9;
-    }
+    .ss-tx-item { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #F1F5F9; }
     .ss-tx-item:last-child { border-bottom: none; }
     .ss-tx-icon2 { width: 20px; height: 20px; border-radius: 6px; font-size: 10px; display: flex; align-items: center; justify-content: center; }
-    .ss-tx-name2 { font-size: 9px; font-weight: 600; margin-left: 6px; }
+    .ss-tx-name2 { font-size: 9px; font-weight: 600; }
     .ss-tx-amt { font-size: 9px; font-weight: 700; }
-
-    /* Screen 2: Transazioni */
     .ss2-header { background: #1E3A8A; color: #fff; margin: -10px -10px 10px; padding: 10px 12px; }
     .ss2-header h4 { font-size: 11px; font-weight: 700; }
     .ss2-filter { display: flex; gap: 4px; margin-bottom: 8px; }
-    .ss2-chip {
-      font-size: 8px; padding: 3px 8px; border-radius: 99px; background: var(--neutral);
-      color: var(--text-muted); font-weight: 500;
-    }
+    .ss2-chip { font-size: 8px; padding: 3px 8px; border-radius: 99px; background: var(--neutral); color: var(--text-muted); font-weight: 500; }
     .ss2-chip.active { background: var(--blue-dark); color: #fff; }
     .ss2-group-label { font-size: 8px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
-    .ss2-tx {
-      display: flex; align-items: center; padding: 5px 0; gap: 6px;
-      border-bottom: 1px solid #F1F5F9;
-    }
+    .ss2-tx { display: flex; align-items: center; padding: 5px 0; gap: 6px; border-bottom: 1px solid #F1F5F9; }
     .ss2-tx-icon { width: 22px; height: 22px; border-radius: 7px; font-size: 11px; display: flex; align-items: center; justify-content: center; }
     .ss2-tx-info { flex: 1; }
     .ss2-tx-name { font-size: 9px; font-weight: 600; }
     .ss2-tx-meta { font-size: 7px; color: var(--text-muted); }
     .ss2-tx-amt { font-size: 9px; font-weight: 700; }
-
-    /* Screen 3: Report */
     .ss3-header { background: #3B82F6; color: #fff; margin: -10px -10px 10px; padding: 10px 12px; }
     .ss3-header h4 { font-size: 11px; font-weight: 700; }
     .ss3-period { display: flex; gap: 3px; margin-bottom: 8px; }
@@ -435,92 +270,47 @@
     .ss3-bar-grp { display: flex; flex-direction: column; align-items: center; gap: 2px; }
     .ss3-bar-grp .bars { display: flex; gap: 2px; align-items: flex-end; }
     .ss3-b { width: 7px; border-radius: 2px 2px 0 0; }
-    .ss3-b.i { background: #16a34a; }
-    .ss3-b.e { background: #dc2626; }
+    .ss3-b.i { background: #16a34a; } .ss3-b.e { background: #dc2626; }
     .ss3-month { font-size: 6px; color: var(--text-muted); }
 
     /* ── Pricing ──────────────────────────────────────────────── */
     .pricing-grid { display: flex; gap: 22px; justify-content: center; align-items: stretch; }
-    .pricing-card {
-      background: #fff; border: 2px solid var(--border);
-      border-radius: var(--radius-lg); padding: 36px 28px;
-      flex: 1; max-width: 360px;
-      position: relative;
-      display: flex; flex-direction: column;
-    }
-    .pricing-card.featured {
-      border-color: var(--blue); box-shadow: var(--shadow-lg);
-    }
-    .most-popular {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: var(--blue); color: #fff;
-      font-size: 12px; font-weight: 700; padding: 4px 16px;
-      border-radius: 99px; white-space: nowrap;
-    }
+    .pricing-card { background: #fff; border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 36px 28px; flex: 1; max-width: 360px; position: relative; display: flex; flex-direction: column; }
+    .pricing-card.featured { border-color: var(--blue); box-shadow: var(--shadow-lg); }
+    .most-popular { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 99px; white-space: nowrap; }
     .pricing-name { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
-    .pricing-price {
-      font-size: 48px; font-weight: 800; color: var(--text); line-height: 1;
-      margin-bottom: 6px;
-    }
+    .pricing-price { font-size: 48px; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 6px; }
     .pricing-price span { font-size: 18px; font-weight: 500; color: var(--text-muted); }
     .pricing-yearly { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
     .pricing-yearly strong { color: #16a34a; }
     .pricing-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
     .pricing-features { list-style: none; margin-bottom: 32px; flex: 1; }
-    .pricing-features li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; padding: 7px 0; color: var(--text);
-    }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; padding: 7px 0; color: var(--text); }
     .pricing-features li .check { color: #16a34a; flex-shrink: 0; font-size: 16px; margin-top: 1px; }
     .pricing-features li .cross { color: #94A3B8; flex-shrink: 0; font-size: 16px; margin-top: 1px; }
     .pricing-features li.muted { color: var(--text-muted); }
 
     /* ── CTA Banner ───────────────────────────────────────────── */
-    .cta-banner {
-      background: var(--blue-dark);
-      color: #fff; text-align: center;
-      padding: 80px 24px;
-    }
-    .cta-banner h2 {
-      font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px;
-    }
+    .cta-banner { background: var(--blue-dark); color: #fff; text-align: center; padding: 80px 24px; }
+    .cta-banner h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
     .cta-banner p { font-size: 18px; opacity: 0.8; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
     .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-white {
-      background: #fff; color: var(--blue-dark); font-weight: 700;
-    }
+    .btn-white { background: #fff; color: var(--blue-dark); font-weight: 700; }
     .btn-white:hover { background: #EFF6FF; transform: translateY(-1px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
-    .btn-ghost {
-      background: transparent; color: #fff;
-      border: 2px solid rgba(255,255,255,0.4);
-    }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
     .btn-ghost:hover { background: rgba(255,255,255,0.1); }
 
     /* ── Footer ───────────────────────────────────────────────── */
-    footer {
-      background: #0F172A; color: #94A3B8;
-      padding: 56px 0 32px;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer-brand { }
+    footer { background: #0F172A; color: #94A3B8; padding: 56px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand .navbar-logo { margin-bottom: 0; }
     .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
-
     .footer-col h4 { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 12px; }
     .footer-col a { font-size: 14px; color: #94A3B8; transition: color 0.2s; }
     .footer-col a:hover { color: #fff; }
-
-    .footer-bottom {
-      border-top: 1px solid #1E293B;
-      padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 13px;
-    }
+    .footer-bottom { border-top: 1px solid #1E293B; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
     .footer-bottom-links { display: flex; gap: 24px; }
     .footer-bottom-links a { color: #94A3B8; transition: color 0.2s; }
     .footer-bottom-links a:hover { color: #fff; }
@@ -530,7 +320,6 @@
       .features-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 768px) {
       .hero .container { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
@@ -556,13 +345,17 @@
         </div>
       </a>
       <ul class="navbar-links">
-        <li><a href="#features">Funzionalità</a></li>
-        <li><a href="#screenshots">Schermate</a></li>
-        <li><a href="#pricing">Prezzi</a></li>
+        <li><a href="#features" data-i18n="nav_features">Features</a></li>
+        <li><a href="#screenshots" data-i18n="nav_screenshots">Screenshots</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
       </ul>
       <div class="navbar-cta">
-        <a href="#pricing" class="btn btn-secondary" style="padding:10px 20px;font-size:14px;">Prezzi</a>
-        <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Scarica Gratis</a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+        <a href="#pricing" class="btn btn-secondary" style="padding:10px 20px;font-size:14px;" data-i18n="nav_pricing_btn">Pricing</a>
+        <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px;" data-i18n="nav_download">Download Free</a>
       </div>
     </div>
   </nav>
@@ -571,104 +364,95 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-eyebrow">✦ Novità 2026</div>
-        <h1>Le finanze di famiglia,<br /><span>finalmente sotto controllo</span></h1>
-        <p class="hero-sub">
-          Traccia entrate e uscite, gestisci budget condivisi, visualizza grafici chiari
-          e sincronizza tutto il nucleo familiare in tempo reale.
-        </p>
+        <div class="hero-eyebrow" data-i18n="hero_eyebrow">✦ New 2026</div>
+        <h1 data-i18n-html="hero_h1">Family finances,<br /><span>finally under control</span></h1>
+        <p class="hero-sub" data-i18n="hero_sub">Track income and expenses, manage shared budgets, visualize clear charts and sync your entire household in real time.</p>
         <div class="hero-buttons">
           <a href="#download" class="gplay-badge" id="download">
             <span class="badge-icon">▶</span>
             <span class="badge-text">
-              <span class="badge-sub">Scarica su</span>
-              <span class="badge-store">Google Play</span>
+              <span class="badge-sub" data-i18n="hero_badge_sub">Get it on</span>
+              <span class="badge-store" data-i18n="hero_badge_store">Google Play</span>
             </span>
           </a>
-          <a href="#features" class="btn btn-secondary btn-lg">Scopri le funzionalità</a>
+          <a href="#features" class="btn btn-secondary btn-lg" data-i18n="hero_explore">Explore features</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Gratuito per iniziare</span>
+            <span class="stat-num" data-i18n="stat1_num">100%</span>
+            <span class="stat-label" data-i18n="stat1_label">Free to start</span>
           </div>
           <div class="stat">
-            <span class="stat-num">5 lingue</span>
-            <span class="stat-label">IT · EN · ES · FR · HE</span>
+            <span class="stat-num" data-i18n="stat2_num">5 languages</span>
+            <span class="stat-label" data-i18n="stat2_label">IT · EN · ES · FR · HE</span>
           </div>
           <div class="stat">
-            <span class="stat-num">Offline</span>
-            <span class="stat-label">Funziona senza rete</span>
+            <span class="stat-num" data-i18n="stat3_num">Offline</span>
+            <span class="stat-label" data-i18n="stat3_label">Works without internet</span>
           </div>
         </div>
       </div>
 
       <div class="hero-visual">
-        <!-- Floating card 1 -->
         <div class="phone-float-card phone-float-1">
-          <div class="fc-label">Risparmio mensile</div>
+          <div class="fc-label" data-i18n="phone_float1_label">Monthly savings</div>
           <div class="fc-val">+ €340</div>
         </div>
-
-        <!-- Main phone -->
         <div class="phone">
           <div class="phone-notch"></div>
           <div class="phone-screen">
             <div class="phone-header">
               <div class="phone-header-top">
                 <span>FamlyBudget</span>
-                <span>Aprile 2026</span>
+                <span data-i18n="phone_month">April 2026</span>
               </div>
-              <div class="phone-greeting">Ciao, Fabrizio 👋</div>
-              <div class="phone-balance-label">Saldo totale conti</div>
-              <div class="phone-balance">€ 8.420,50</div>
+              <div class="phone-greeting" data-i18n="phone_greeting">Hello, Fabrizio 👋</div>
+              <div class="phone-balance-label" data-i18n="phone_balance_label">Total account balance</div>
+              <div class="phone-balance">€ 8,420.50</div>
             </div>
-
             <div class="phone-cards-row">
               <div class="phone-card">
-                <div class="phone-card-label">Entrate</div>
-                <div class="phone-card-value income">+€3.200</div>
+                <div class="phone-card-label" data-i18n="phone_income">Income</div>
+                <div class="phone-card-value income">+€3,200</div>
               </div>
               <div class="phone-card">
-                <div class="phone-card-label">Uscite</div>
-                <div class="phone-card-value expense">−€1.847</div>
+                <div class="phone-card-label" data-i18n="phone_expenses">Expenses</div>
+                <div class="phone-card-value expense">−€1,847</div>
               </div>
             </div>
-
-            <div class="phone-section-title">Ultime transazioni</div>
+            <div class="phone-section-title" data-i18n="phone_latest_tx">Latest transactions</div>
             <div class="phone-tx">
               <div class="phone-tx-left">
                 <div class="phone-tx-icon" style="background:#FEF3C7;">🛒</div>
                 <div>
-                  <div class="phone-tx-name">Supermercato</div>
-                  <div class="phone-tx-cat">Spesa</div>
+                  <div class="phone-tx-name" data-i18n="phone_tx1_name">Grocery</div>
+                  <div class="phone-tx-cat" data-i18n="phone_tx1_cat">Food</div>
                 </div>
               </div>
-              <div class="phone-tx-amount neg">−€94,30</div>
+              <div class="phone-tx-amount neg">−€94.30</div>
             </div>
             <div class="phone-tx">
               <div class="phone-tx-left">
                 <div class="phone-tx-icon" style="background:#DCFCE7;">💼</div>
                 <div>
-                  <div class="phone-tx-name">Stipendio</div>
-                  <div class="phone-tx-cat">Entrata</div>
+                  <div class="phone-tx-name" data-i18n="phone_tx2_name">Salary</div>
+                  <div class="phone-tx-cat" data-i18n="phone_tx2_cat">Income</div>
                 </div>
               </div>
-              <div class="phone-tx-amount pos">+€2.400</div>
+              <div class="phone-tx-amount pos">+€2,400</div>
             </div>
             <div class="phone-tx">
               <div class="phone-tx-left">
                 <div class="phone-tx-icon" style="background:#EDE9FE;">🏠</div>
                 <div>
-                  <div class="phone-tx-name">Affitto</div>
-                  <div class="phone-tx-cat">Casa</div>
+                  <div class="phone-tx-name" data-i18n="phone_tx3_name">Rent</div>
+                  <div class="phone-tx-cat" data-i18n="phone_tx3_cat">Home</div>
                 </div>
               </div>
               <div class="phone-tx-amount neg">−€750</div>
             </div>
-
             <div class="phone-chart">
-              <div class="phone-chart-label">Andamento 6 mesi</div>
+              <div class="phone-chart-label" data-i18n="phone_chart_label">6-month trend</div>
               <div class="phone-bars">
                 <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:28px;"></div><div class="phone-bar bar-expense" style="height:22px;"></div></div>
                 <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:32px;"></div><div class="phone-bar bar-expense" style="height:18px;"></div></div>
@@ -680,13 +464,11 @@
             </div>
           </div>
         </div>
-
-        <!-- Floating card 2 -->
         <div class="phone-float-card phone-float-2">
           <div class="phone-float-2-icon">🎯</div>
           <div class="phone-float-2-text">
-            <div class="fc-label">Obiettivo vacanze</div>
-            <div class="fc-val">€ 1.200 / €3.000</div>
+            <div class="fc-label" data-i18n="phone_float2_label">Vacation goal</div>
+            <div class="fc-val">€ 1,200 / €3,000</div>
           </div>
         </div>
       </div>
@@ -697,21 +479,21 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-header">
-        <div class="badge">✦ Funzionalità</div>
-        <h2>Tutto quello che serve per gestire il budget di famiglia</h2>
-        <p>Uno strumento completo ma semplice, pensato per la vita reale di tutti i giorni.</p>
+        <div class="badge" data-i18n="feat_badge">✦ Features</div>
+        <h2 data-i18n="feat_h2">Everything you need to manage the family budget</h2>
+        <p data-i18n="feat_p">A complete yet simple tool, designed for real everyday life.</p>
       </div>
       <div class="features-grid">
 
         <div class="feature-card">
           <div class="feature-icon">📊</div>
           <div class="feature-body">
-            <h3>Grafici e Report</h3>
-            <p>Analizza entrate e uscite con grafici mensili interattivi e scopri esattamente dove vanno i tuoi soldi.</p>
+            <h3 data-i18n="feat1_h3">Charts &amp; Reports</h3>
+            <p data-i18n="feat1_p">Analyze income and expenses with interactive monthly charts and discover exactly where your money goes.</p>
             <ul class="feature-bullets">
-              <li>Grafici a barre mensili con filtri per conto e categoria</li>
-              <li>Proiezione del saldo nei prossimi 90 giorni</li>
-              <li>Esportazione dati in CSV e PDF (Premium)</li>
+              <li data-i18n="feat1_b1">Monthly bar charts with account and category filters</li>
+              <li data-i18n="feat1_b2">90-day balance projection</li>
+              <li data-i18n="feat1_b3">CSV and PDF data export (Premium)</li>
             </ul>
           </div>
         </div>
@@ -719,12 +501,12 @@
         <div class="feature-card">
           <div class="feature-icon">☁️</div>
           <div class="feature-body">
-            <h3>Sync Cloud Real-time</h3>
-            <p>I dati si sincronizzano istantaneamente su tutti i dispositivi del nucleo familiare. Sempre aggiornati, ovunque tu sia.</p>
+            <h3 data-i18n="feat2_h3">Real-time Cloud Sync</h3>
+            <p data-i18n="feat2_p">Data syncs instantly across all household devices. Always up to date, wherever you are.</p>
             <ul class="feature-bullets">
-              <li>Aggiornamenti in tempo reale senza ricaricare</li>
-              <li>Disponibile nel piano Premium Cloud</li>
-              <li>Modalità offline: l'app funziona anche senza rete</li>
+              <li data-i18n="feat2_b1">Real-time updates without reloading</li>
+              <li data-i18n="feat2_b2">Available in the Premium Cloud plan</li>
+              <li data-i18n="feat2_b3">Offline mode: the app works without internet</li>
             </ul>
           </div>
         </div>
@@ -732,12 +514,12 @@
         <div class="feature-card">
           <div class="feature-icon">👨‍👩‍👧</div>
           <div class="feature-body">
-            <h3>Multi-utente Famiglia</h3>
-            <p>Invita i membri della famiglia e gestite il budget insieme, ognuno dal proprio smartphone.</p>
+            <h3 data-i18n="feat3_h3">Family Multi-user</h3>
+            <p data-i18n="feat3_p">Invite family members and manage the budget together, each from their own smartphone.</p>
             <ul class="feature-bullets">
-              <li>Fino a 10 membri nel piano Premium Cloud</li>
-              <li>Ogni membro aggiunge spese in tempo reale</li>
-              <li>Visione condivisa di conti e transazioni</li>
+              <li data-i18n="feat3_b1">Up to 10 members in Premium Cloud plan</li>
+              <li data-i18n="feat3_b2">Each member adds expenses in real time</li>
+              <li data-i18n="feat3_b3">Shared view of accounts and transactions</li>
             </ul>
           </div>
         </div>
@@ -745,12 +527,12 @@
         <div class="feature-card">
           <div class="feature-icon">💳</div>
           <div class="feature-body">
-            <h3>Conti e Carte di Credito</h3>
-            <p>Tieni traccia di tutti i tuoi strumenti finanziari in un unico posto, con saldi sempre aggiornati.</p>
+            <h3 data-i18n="feat4_h3">Accounts &amp; Credit Cards</h3>
+            <p data-i18n="feat4_p">Keep track of all your financial tools in one place, with always up-to-date balances.</p>
             <ul class="feature-bullets">
-              <li>Conti correnti, contanti, conti risparmio</li>
-              <li>Carte di credito con data estratto e addebito</li>
-              <li>Saldo rettificabile con data di apertura</li>
+              <li data-i18n="feat4_b1">Current accounts, cash, savings accounts</li>
+              <li data-i18n="feat4_b2">Credit cards with statement and billing dates</li>
+              <li data-i18n="feat4_b3">Balance adjustable with opening date</li>
             </ul>
           </div>
         </div>
@@ -758,12 +540,12 @@
         <div class="feature-card">
           <div class="feature-icon">🎯</div>
           <div class="feature-body">
-            <h3>Obiettivi di Risparmio</h3>
-            <p>Definisci traguardi finanziari e monitora i progressi nel tempo, contribuzione dopo contribuzione.</p>
+            <h3 data-i18n="feat5_h3">Savings Goals</h3>
+            <p data-i18n="feat5_p">Set financial milestones and monitor progress over time, contribution by contribution.</p>
             <ul class="feature-bullets">
-              <li>Vacanze, acquisti, fondi di emergenza</li>
-              <li>Contribuzioni manuali con storico</li>
-              <li>Barra di avanzamento visiva con % completamento</li>
+              <li data-i18n="feat5_b1">Holidays, purchases, emergency funds</li>
+              <li data-i18n="feat5_b2">Manual contributions with history</li>
+              <li data-i18n="feat5_b3">Visual progress bar with completion %</li>
             </ul>
           </div>
         </div>
@@ -771,12 +553,12 @@
         <div class="feature-card">
           <div class="feature-icon">🔁</div>
           <div class="feature-body">
-            <h3>Transazioni Ricorrenti</h3>
-            <p>Abbonamenti, stipendi e affitti si generano automaticamente. Mai più una spesa dimenticata.</p>
+            <h3 data-i18n="feat6_h3">Recurring Transactions</h3>
+            <p data-i18n="feat6_p">Subscriptions, salaries and rent generate automatically. Never miss an expense again.</p>
             <ul class="feature-bullets">
-              <li>Generazione automatica a scadenza</li>
-              <li>Supporto rate con piani di rateizzazione</li>
-              <li>Fino a 4 ricorrenti nel piano Free, illimitate nel Premium</li>
+              <li data-i18n="feat6_b1">Automatic generation at due date</li>
+              <li data-i18n="feat6_b2">Installment support with payment plans</li>
+              <li data-i18n="feat6_b3">Up to 4 recurring in Free plan, unlimited in Premium</li>
             </ul>
           </div>
         </div>
@@ -784,12 +566,12 @@
         <div class="feature-card">
           <div class="feature-icon">🏦</div>
           <div class="feature-body">
-            <h3>Budget Mensili</h3>
-            <p>Imposta un budget per ogni categoria e monitora in tempo reale quanto hai già speso rispetto al limite.</p>
+            <h3 data-i18n="feat7_h3">Monthly Budgets</h3>
+            <p data-i18n="feat7_p">Set a budget for each category and monitor in real time how much you have already spent against the limit.</p>
             <ul class="feature-bullets">
-              <li>Budget per categoria con avvisi di superamento</li>
-              <li>Confronto speso vs pianificato</li>
-              <li>Storico budget mese per mese</li>
+              <li data-i18n="feat7_b1">Budget per category with overspending alerts</li>
+              <li data-i18n="feat7_b2">Spent vs planned comparison</li>
+              <li data-i18n="feat7_b3">Month-by-month budget history</li>
             </ul>
           </div>
         </div>
@@ -797,12 +579,12 @@
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
           <div class="feature-body">
-            <h3>Privacy e Sicurezza</h3>
-            <p>I tuoi dati finanziari sono protetti. Puoi scegliere di non inviarli mai al cloud se preferisci la massima privacy.</p>
+            <h3 data-i18n="feat8_h3">Privacy &amp; Security</h3>
+            <p data-i18n="feat8_p">Your financial data is protected. You can choose to never send it to the cloud if you prefer maximum privacy.</p>
             <ul class="feature-bullets">
-              <li>Blocco app con impronta digitale o Face ID</li>
-              <li>Modalità locale: dati solo sul dispositivo</li>
-              <li>Nessun dato finanziario condiviso con terze parti</li>
+              <li data-i18n="feat8_b1">App lock with fingerprint or Face ID</li>
+              <li data-i18n="feat8_b2">Local mode: data only on device</li>
+              <li data-i18n="feat8_b3">No financial data shared with third parties</li>
             </ul>
           </div>
         </div>
@@ -815,11 +597,10 @@
   <section class="section section-alt" id="screenshots">
     <div class="container">
       <div class="section-header">
-        <div class="badge">✦ Interfaccia</div>
-        <h2>Un'interfaccia pensata per la semplicità</h2>
-        <p>Pulita, veloce, intuitiva. Tutte le informazioni importanti sempre a portata di pollice.</p>
+        <div class="badge" data-i18n="ss_badge">✦ Interface</div>
+        <h2 data-i18n="ss_h2">An interface designed for simplicity</h2>
+        <p data-i18n="ss_p">Clean, fast, intuitive. All the important information always at your fingertips.</p>
       </div>
-
       <div class="screenshots-row">
 
         <!-- Screenshot 1: Dashboard -->
@@ -829,14 +610,14 @@
             <div class="phone-sm-body">
               <div class="ss-header">
                 <h4>Dashboard</h4>
-                <div class="ss-balance">€ 8.420,50</div>
+                <div class="ss-balance">€ 8,420.50</div>
               </div>
               <div class="ss-row">
-                <div class="ss-pill"><div class="p-label">Entrate</div><div class="p-val" style="color:#16a34a">+3.200€</div></div>
-                <div class="ss-pill"><div class="p-label">Uscite</div><div class="p-val" style="color:#dc2626">−1.847€</div></div>
+                <div class="ss-pill"><div class="p-label" data-i18n="ss1_income">Income</div><div class="p-val" style="color:#16a34a">+3,200€</div></div>
+                <div class="ss-pill"><div class="p-label" data-i18n="ss1_expenses">Expenses</div><div class="p-val" style="color:#dc2626">−1,847€</div></div>
               </div>
               <div class="ss-mini-bar-wrap">
-                <div class="ss-mini-bar-title">Ultimi 4 mesi</div>
+                <div class="ss-mini-bar-title" data-i18n="ss1_last4">Last 4 months</div>
                 <div class="ss-mini-bars">
                   <div class="ss-mb i" style="height:20px;"></div><div class="ss-mb e" style="height:14px;"></div>
                   <div class="ss-mb i" style="height:24px;"></div><div class="ss-mb e" style="height:18px;"></div>
@@ -844,55 +625,55 @@
                   <div class="ss-mb i" style="height:30px;"></div><div class="ss-mb e" style="height:16px;"></div>
                 </div>
               </div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#FEF3C7">🛒</div><span class="ss-tx-name2" style="margin-left:6px">Supermercato</span></div><span class="ss-tx-amt" style="color:#dc2626">−€94</span></div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#DCFCE7">💼</div><span class="ss-tx-name2" style="margin-left:6px">Stipendio</span></div><span class="ss-tx-amt" style="color:#16a34a">+€2400</span></div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#EDE9FE">🏠</div><span class="ss-tx-name2" style="margin-left:6px">Affitto</span></div><span class="ss-tx-amt" style="color:#dc2626">−€750</span></div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#FEF3C7">🛒</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx1_name">Grocery</span></div><span class="ss-tx-amt" style="color:#dc2626">−€94</span></div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#DCFCE7">💼</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx2_name">Salary</span></div><span class="ss-tx-amt" style="color:#16a34a">+€2400</span></div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#EDE9FE">🏠</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx3_name">Rent</span></div><span class="ss-tx-amt" style="color:#dc2626">−€750</span></div>
             </div>
           </div>
-          <div class="caption">Dashboard principale</div>
+          <div class="caption" data-i18n="ss1_caption">Main dashboard</div>
         </div>
 
-        <!-- Screenshot 2: Transazioni (featured/center) -->
+        <!-- Screenshot 2: Transactions -->
         <div class="screenshot-item">
           <div class="phone-sm featured">
             <div class="phone-sm-notch"></div>
             <div class="phone-sm-body">
-              <div class="ss2-header"><h4>Transazioni</h4></div>
+              <div class="ss2-header"><h4 data-i18n="ss2_header">Transactions</h4></div>
               <div class="ss2-filter">
-                <div class="ss2-chip active">Tutte</div>
-                <div class="ss2-chip">Uscite</div>
-                <div class="ss2-chip">Entrate</div>
+                <div class="ss2-chip active" data-i18n="ss2_all">All</div>
+                <div class="ss2-chip" data-i18n="ss2_out">Expenses</div>
+                <div class="ss2-chip" data-i18n="ss2_in">Income</div>
               </div>
-              <div class="ss2-group-label">OGGI</div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF3C7">🛒</div><div class="ss2-tx-info"><div class="ss2-tx-name">Supermercato</div><div class="ss2-tx-meta">Spesa alimentare</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€94,30</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEE2E2">⛽</div><div class="ss2-tx-info"><div class="ss2-tx-name">Benzina</div><div class="ss2-tx-meta">Auto</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€58,00</div></div>
-              <div style="margin-top:6px;" class="ss2-group-label">IERI</div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#DCFCE7">💼</div><div class="ss2-tx-info"><div class="ss2-tx-name">Stipendio</div><div class="ss2-tx-meta">Lavoro</div></div><div class="ss2-tx-amt" style="color:#16a34a">+€2.400</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#EDE9FE">🎬</div><div class="ss2-tx-info"><div class="ss2-tx-name">Netflix</div><div class="ss2-tx-meta">Abbonamento</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€15,99</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF9C3">🍕</div><div class="ss2-tx-info"><div class="ss2-tx-name">Ristorante</div><div class="ss2-tx-meta">Svago</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€42,00</div></div>
+              <div class="ss2-group-label" data-i18n="ss2_today">TODAY</div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF3C7">🛒</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="phone_tx1_name">Grocery</div><div class="ss2-tx-meta" data-i18n="ss2_tx1_cat">Food</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€94.30</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEE2E2">⛽</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="ss2_tx2">Gas</div><div class="ss2-tx-meta" data-i18n="ss2_tx2_cat">Car</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€58.00</div></div>
+              <div style="margin-top:6px;" class="ss2-group-label" data-i18n="ss2_yesterday">YESTERDAY</div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#DCFCE7">💼</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="phone_tx2_name">Salary</div><div class="ss2-tx-meta" data-i18n="ss2_tx3_cat">Work</div></div><div class="ss2-tx-amt" style="color:#16a34a">+€2,400</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#EDE9FE">🎬</div><div class="ss2-tx-info"><div class="ss2-tx-name">Netflix</div><div class="ss2-tx-meta" data-i18n="ss2_tx4_cat">Subscription</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€15.99</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF9C3">🍕</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="ss2_tx5">Restaurant</div><div class="ss2-tx-meta" data-i18n="ss2_tx5_cat">Leisure</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€42.00</div></div>
             </div>
           </div>
-          <div class="caption" style="color:var(--blue-dark);font-weight:700;">Lista transazioni</div>
+          <div class="caption" style="color:var(--blue-dark);font-weight:700;" data-i18n="ss2_caption">Transaction list</div>
         </div>
 
-        <!-- Screenshot 3: Report -->
+        <!-- Screenshot 3: Reports -->
         <div class="screenshot-item">
           <div class="phone-sm">
             <div class="phone-sm-notch"></div>
             <div class="phone-sm-body">
-              <div class="ss3-header"><h4>Report</h4></div>
+              <div class="ss3-header"><h4 data-i18n="ss3_header">Reports</h4></div>
               <div class="ss3-period">
-                <div class="ss3-chip active">3 mesi</div>
-                <div class="ss3-chip">6 mesi</div>
-                <div class="ss3-chip">Anno</div>
+                <div class="ss3-chip active" data-i18n="ss3_3m">3 months</div>
+                <div class="ss3-chip" data-i18n="ss3_6m">6 months</div>
+                <div class="ss3-chip" data-i18n="ss3_year">Year</div>
               </div>
               <div class="ss3-summary">
-                <div class="ss3-sum-row"><span class="ss3-sum-label">Tot. Entrate</span><span class="ss3-sum-val" style="color:#16a34a">+€9.600</span></div>
-                <div class="ss3-sum-row"><span class="ss3-sum-label">Tot. Uscite</span><span class="ss3-sum-val" style="color:#dc2626">−€5.541</span></div>
-                <div class="ss3-sum-row"><span class="ss3-sum-label">Risparmio netto</span><span class="ss3-sum-val" style="color:#1E3A8A">+€4.059</span></div>
+                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_income">Tot. Income</span><span class="ss3-sum-val" style="color:#16a34a">+€9,600</span></div>
+                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_expenses">Tot. Expenses</span><span class="ss3-sum-val" style="color:#dc2626">−€5,541</span></div>
+                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_savings">Net savings</span><span class="ss3-sum-val" style="color:#1E3A8A">+€4,059</span></div>
               </div>
               <div class="ss3-bar-chart">
-                <div class="ss3-bar-title">Entrate vs Uscite</div>
+                <div class="ss3-bar-title" data-i18n="ss3_chart_title">Income vs Expenses</div>
                 <div class="ss3-bars">
                   <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:32px;"></div><div class="ss3-b e" style="height:20px;"></div></div><div class="ss3-month">FEB</div></div>
                   <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:28px;"></div><div class="ss3-b e" style="height:24px;"></div></div><div class="ss3-month">MAR</div></div>
@@ -901,7 +682,7 @@
               </div>
             </div>
           </div>
-          <div class="caption">Grafici e report</div>
+          <div class="caption" data-i18n="ss3_caption">Charts &amp; reports</div>
         </div>
 
       </div>
@@ -912,103 +693,99 @@
   <section class="section" id="pricing">
     <div class="container">
       <div class="section-header">
-        <div class="badge">✦ Prezzi</div>
-        <h2>Scegli il piano giusto per te</h2>
-        <p>Inizia gratis. Scegli il Premium in base a come vuoi conservare i tuoi dati.</p>
+        <div class="badge" data-i18n="pr_badge">✦ Pricing</div>
+        <h2 data-i18n="pr_h2">Choose the right plan for you</h2>
+        <p data-i18n="pr_p">Start for free. Choose Premium based on how you want to store your data.</p>
       </div>
-
       <div class="pricing-grid">
 
         <!-- Free -->
         <div class="pricing-card">
-          <div class="pricing-name">Free</div>
-          <div class="pricing-price">€0<span>/mese</span></div>
-          <div class="pricing-yearly">Per sempre gratuito</div>
+          <div class="pricing-name" data-i18n="pr_free_name">Free</div>
+          <div class="pricing-price">€0<span data-i18n="pr_free_price_suffix">/month</span></div>
+          <div class="pricing-yearly" data-i18n="pr_free_yearly">Free forever</div>
           <div class="pricing-divider"></div>
           <ul class="pricing-features">
-            <li><span class="check">✓</span> Storage locale <strong>o</strong> cloud a scelta</li>
-            <li><span class="check">✓</span> Fino a 80 transazioni/mese</li>
-            <li><span class="check">✓</span> 3 conti attivi</li>
-            <li><span class="check">✓</span> 4 ricorrenti attive</li>
-            <li><span class="check">✓</span> 15 categorie aggiuntive</li>
-            <li><span class="check">✓</span> Grafici e report base</li>
-            <li class="muted"><span class="cross">✕</span> Backup & Restore</li>
-            <li class="muted"><span class="cross">✕</span> Conti illimitati</li>
-            <li class="muted"><span class="cross">✕</span> Esportazione dati</li>
-            <li class="muted"><span class="cross">✕</span> Sync multi-dispositivo</li>
+            <li data-i18n-html="pr_free_f1"><span class="check">✓</span> Local <strong>or</strong> cloud storage of your choice</li>
+            <li data-i18n-html="pr_free_f2"><span class="check">✓</span> Up to 80 transactions/month</li>
+            <li data-i18n-html="pr_free_f3"><span class="check">✓</span> 3 active accounts</li>
+            <li data-i18n-html="pr_free_f4"><span class="check">✓</span> 4 active recurring transactions</li>
+            <li data-i18n-html="pr_free_f5"><span class="check">✓</span> 15 additional categories</li>
+            <li data-i18n-html="pr_free_f6"><span class="check">✓</span> Basic charts &amp; reports</li>
+            <li class="muted" data-i18n-html="pr_free_f7"><span class="cross">✕</span> Backup &amp; Restore</li>
+            <li class="muted" data-i18n-html="pr_free_f8"><span class="cross">✕</span> Unlimited accounts</li>
+            <li class="muted" data-i18n-html="pr_free_f9"><span class="cross">✕</span> Data export</li>
+            <li class="muted" data-i18n-html="pr_free_f10"><span class="cross">✕</span> Multi-device sync</li>
           </ul>
-          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Inizia Gratis</a>
+          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;" data-i18n="pr_free_btn">Start Free</a>
         </div>
 
         <!-- Premium Local -->
         <div class="pricing-card">
-          <div class="pricing-name">Premium Local</div>
-          <div class="pricing-price">€2<span>/mese</span></div>
-          <div class="pricing-yearly">oppure <strong>€15/anno — risparmi il 38%</strong></div>
+          <div class="pricing-name" data-i18n="pr_local_name">Premium Local</div>
+          <div class="pricing-price">€2<span data-i18n="pr_local_price_suffix">/month</span></div>
+          <div class="pricing-yearly" data-i18n-html="pr_local_yearly">or <strong>€15/year — save 38%</strong></div>
           <div class="pricing-divider"></div>
           <div style="display:flex;align-items:center;gap:8px;background:var(--neutral);border-radius:10px;padding:10px 12px;margin-bottom:16px;">
             <span style="font-size:22px;">📱</span>
             <div>
-              <div style="font-size:12px;font-weight:700;color:var(--text);">Dati sul dispositivo</div>
-              <div style="font-size:11px;color:var(--text-muted);">I tuoi dati restano solo sul dispositivo — nessun dato finanziario sul cloud</div>
+              <div style="font-size:12px;font-weight:700;color:var(--text);" data-i18n="pr_local_badge_title">Data on device</div>
+              <div style="font-size:11px;color:var(--text-muted);" data-i18n="pr_local_badge_sub">Your data stays only on the device — no financial data in the cloud</div>
             </div>
           </div>
           <ul class="pricing-features">
-            <li><span class="check">✓</span> Transazioni illimitate</li>
-            <li><span class="check">✓</span> Fino a 20 conti attivi</li>
-            <li><span class="check">✓</span> Ricorrenti illimitate</li>
-            <li><span class="check">✓</span> 150 categorie aggiuntive</li>
-            <li><span class="check">✓</span> Grafici e report avanzati</li>
-            <li><span class="check">✓</span> Backup & Restore locale</li>
-            <li><span class="check">✓</span> Esportazione dati CSV/PDF</li>
-            <li class="muted"><span class="cross">✕</span> Sync multi-dispositivo</li>
-            <li class="muted"><span class="cross">✕</span> Condivisione famiglia</li>
+            <li data-i18n-html="pr_local_f1"><span class="check">✓</span> Unlimited transactions</li>
+            <li data-i18n-html="pr_local_f2"><span class="check">✓</span> Up to 20 active accounts</li>
+            <li data-i18n-html="pr_local_f3"><span class="check">✓</span> Unlimited recurring transactions</li>
+            <li data-i18n-html="pr_local_f4"><span class="check">✓</span> 150 additional categories</li>
+            <li data-i18n-html="pr_local_f5"><span class="check">✓</span> Advanced charts &amp; reports</li>
+            <li data-i18n-html="pr_local_f6"><span class="check">✓</span> Local Backup &amp; Restore</li>
+            <li data-i18n-html="pr_local_f7"><span class="check">✓</span> CSV/PDF data export</li>
+            <li class="muted" data-i18n-html="pr_local_f8"><span class="cross">✕</span> Multi-device sync</li>
+            <li class="muted" data-i18n-html="pr_local_f9"><span class="cross">✕</span> Family sharing</li>
           </ul>
-          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Scegli Local</a>
+          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;" data-i18n="pr_local_btn">Choose Local</a>
         </div>
 
-        <!-- Premium Firebase -->
+        <!-- Premium Cloud -->
         <div class="pricing-card featured">
-          <div class="most-popular">⭐ Più completo</div>
-          <div class="pricing-name">Premium Cloud</div>
-          <div class="pricing-price">€2<span style="font-size:18px;font-weight:500;color:var(--text-muted);">,99/mese</span></div>
-          <div class="pricing-yearly">oppure <strong>€21,99/anno — risparmi il 39%</strong></div>
+          <div class="most-popular" data-i18n="pr_cloud_popular">⭐ Most complete</div>
+          <div class="pricing-name" data-i18n="pr_cloud_name">Premium Cloud</div>
+          <div class="pricing-price">€2<span style="font-size:18px;font-weight:500;color:var(--text-muted);" data-i18n="pr_cloud_price_suffix">,99/month</span></div>
+          <div class="pricing-yearly" data-i18n-html="pr_cloud_yearly">or <strong>€21.99/year — save 39%</strong></div>
           <div class="pricing-divider"></div>
           <div style="display:flex;align-items:center;gap:8px;background:var(--blue-light);border-radius:10px;padding:10px 12px;margin-bottom:16px;">
             <span style="font-size:22px;">☁️</span>
             <div>
-              <div style="font-size:12px;font-weight:700;color:var(--blue-dark);">Sync real-time su tutti i dispositivi</div>
-              <div style="font-size:11px;color:var(--blue);">Sincronizzazione cloud</div>
+              <div style="font-size:12px;font-weight:700;color:var(--blue-dark);" data-i18n="pr_cloud_badge_title">Real-time sync across all devices</div>
+              <div style="font-size:11px;color:var(--blue);" data-i18n="pr_cloud_badge_sub">Cloud synchronization</div>
             </div>
           </div>
           <ul class="pricing-features">
-            <li><span class="check">✓</span> Tutto di Premium Local</li>
-            <li><span class="check">✓</span> Sync real-time multi-dispositivo</li>
-            <li><span class="check">✓</span> Condivisione famiglia (fino a 10)</li>
-            <li><span class="check">✓</span> Accesso da browser (dashboard web)</li>
-            <li><span class="check">✓</span> Backup automatico su cloud</li>
-            <li><span class="check">✓</span> Ripristino da qualsiasi dispositivo</li>
+            <li data-i18n-html="pr_cloud_f1"><span class="check">✓</span> Everything in Premium Local</li>
+            <li data-i18n-html="pr_cloud_f2"><span class="check">✓</span> Real-time multi-device sync</li>
+            <li data-i18n-html="pr_cloud_f3"><span class="check">✓</span> Family sharing (up to 10)</li>
+            <li data-i18n-html="pr_cloud_f4"><span class="check">✓</span> Browser access (web dashboard)</li>
+            <li data-i18n-html="pr_cloud_f5"><span class="check">✓</span> Automatic cloud backup</li>
+            <li data-i18n-html="pr_cloud_f6"><span class="check">✓</span> Restore from any device</li>
           </ul>
-          <a href="#download" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Scegli Cloud</a>
+          <a href="#download" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;" data-i18n="pr_cloud_btn">Choose Cloud</a>
         </div>
 
       </div>
-
-      <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--text-muted);">
-        Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre al sicuro.
+      <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--text-muted);" data-i18n="pr_disclaimer">
+        No automatic charges. Cancel anytime. Your data is always safe.
       </p>
     </div>
   </section>
 
   <!-- ══════════ CTA BANNER ══════════ -->
   <section class="cta-banner">
-    <h2>Inizia oggi a tenere i conti in ordine</h2>
-    <p>Scarica FamlyBudget gratuitamente e inizia a tracciare le spese di famiglia in pochi secondi.</p>
+    <h2 data-i18n="cta_h2">Start keeping your finances in order today</h2>
+    <p data-i18n="cta_p">Download FamlyBudget for free and start tracking family expenses in seconds.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn btn-lg btn-white">
-        ▶ &nbsp;Scarica su Google Play
-      </a>
-      <a href="#features" class="btn btn-lg btn-ghost">Scopri le funzionalità</a>
+      <a href="#" class="btn btn-lg btn-white" data-i18n="cta_btn1">▶ &nbsp;Download on Google Play</a>
+      <a href="#features" class="btn btn-lg btn-ghost" data-i18n="cta_btn2">Explore features</a>
     </div>
   </section>
 
@@ -1022,7 +799,7 @@
               <span style="color:#fff">Fam</span><span style="color:#2DD4BF">ly</span><span style="color:#FCD34D">Budget</span>
             </span>
           </div>
-          <p>L'app per la gestione delle finanze familiari. Semplice, sicura, sempre con te.</p>
+          <p data-i18n="footer_tagline">The app for family financial management. Simple, secure, always with you.</p>
           <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
             <a href="mailto:info@famlybudget.com" style="font-size:13px;color:#94A3B8;display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94A3B8'">
               <span style="font-size:15px;">✉️</span> info@famlybudget.com
@@ -1033,49 +810,350 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>App</h4>
+          <h4 data-i18n="footer_app">App</h4>
           <ul>
-            <li><a href="#features">Funzionalità</a></li>
-            <li><a href="#screenshots">Schermate</a></li>
-            <li><a href="#pricing">Prezzi</a></li>
-            <li><a href="#">Novità</a></li>
+            <li><a href="#features" data-i18n="footer_features">Features</a></li>
+            <li><a href="#screenshots" data-i18n="footer_screenshots">Screenshots</a></li>
+            <li><a href="#pricing" data-i18n="footer_pricing">Pricing</a></li>
+            <li><a href="#" data-i18n="footer_whats_new">What's new</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Supporto</h4>
+          <h4 data-i18n="footer_support">Support</h4>
           <ul>
-            <li><a href="#">Centro aiuto</a></li>
-            <li><a href="mailto:info@famlybudget.com">Contattaci</a></li>
-            <li><a href="mailto:support@famlybudget.com">Supporto tecnico</a></li>
-            <li><a href="mailto:support@famlybudget.com">Segnala un bug</a></li>
+            <li><a href="#" data-i18n="footer_help">Help Center</a></li>
+            <li><a href="mailto:info@famlybudget.com" data-i18n="footer_contact">Contact us</a></li>
+            <li><a href="mailto:support@famlybudget.com" data-i18n="footer_tech_support">Technical support</a></li>
+            <li><a href="mailto:support@famlybudget.com" data-i18n="footer_bug">Report a bug</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Legale</h4>
+          <h4 data-i18n="footer_legal">Legal</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Termini di servizio</a></li>
-            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer_terms">Terms of Service</a></li>
+            <li><a href="#" data-i18n="footer_cookie">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 FamlyBudget. Tutti i diritti riservati.</span>
+        <span data-i18n="footer_copyright">© 2026 FamlyBudget. All rights reserved.</span>
         <div class="footer-bottom-links">
-          <a href="#">Privacy</a>
-          <a href="#">Termini</a>
-          <a href="#">Supporto</a>
+          <a href="#" data-i18n="footer_privacy_link">Privacy</a>
+          <a href="#" data-i18n="footer_terms_link">Terms</a>
+          <a href="#" data-i18n="footer_support_link">Support</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Navbar shadow on scroll
+    // ── Navbar shadow on scroll ──────────────────────────────
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    // ── i18n System ──────────────────────────────────────────
+    const translations = {
+      en: {
+        page_title: 'FamlyBudget — Family finances, finally under control',
+        nav_features: 'Features', nav_screenshots: 'Screenshots',
+        nav_pricing: 'Pricing', nav_pricing_btn: 'Pricing', nav_download: 'Download Free',
+        hero_eyebrow: '✦ New 2026',
+        hero_h1: 'Family finances,<br /><span>finally under control</span>',
+        hero_sub: 'Track income and expenses, manage shared budgets, visualize clear charts and sync your entire household in real time.',
+        hero_badge_sub: 'Get it on', hero_badge_store: 'Google Play',
+        hero_explore: 'Explore features',
+        stat1_num: '100%', stat1_label: 'Free to start',
+        stat2_num: '5 languages', stat2_label: 'IT · EN · ES · FR · HE',
+        stat3_num: 'Offline', stat3_label: 'Works without internet',
+        phone_month: 'April 2026', phone_greeting: 'Hello, Fabrizio 👋',
+        phone_balance_label: 'Total account balance',
+        phone_income: 'Income', phone_expenses: 'Expenses',
+        phone_latest_tx: 'Latest transactions',
+        phone_tx1_name: 'Grocery', phone_tx1_cat: 'Food',
+        phone_tx2_name: 'Salary', phone_tx2_cat: 'Income',
+        phone_tx3_name: 'Rent', phone_tx3_cat: 'Home',
+        phone_chart_label: '6-month trend',
+        phone_float1_label: 'Monthly savings', phone_float2_label: 'Vacation goal',
+        feat_badge: '✦ Features',
+        feat_h2: 'Everything you need to manage the family budget',
+        feat_p: 'A complete yet simple tool, designed for real everyday life.',
+        feat1_h3: 'Charts & Reports',
+        feat1_p: 'Analyze income and expenses with interactive monthly charts and discover exactly where your money goes.',
+        feat1_b1: 'Monthly bar charts with account and category filters',
+        feat1_b2: '90-day balance projection',
+        feat1_b3: 'CSV and PDF data export (Premium)',
+        feat2_h3: 'Real-time Cloud Sync',
+        feat2_p: 'Data syncs instantly across all household devices. Always up to date, wherever you are.',
+        feat2_b1: 'Real-time updates without reloading',
+        feat2_b2: 'Available in the Premium Cloud plan',
+        feat2_b3: 'Offline mode: the app works without internet',
+        feat3_h3: 'Family Multi-user',
+        feat3_p: 'Invite family members and manage the budget together, each from their own smartphone.',
+        feat3_b1: 'Up to 10 members in Premium Cloud plan',
+        feat3_b2: 'Each member adds expenses in real time',
+        feat3_b3: 'Shared view of accounts and transactions',
+        feat4_h3: 'Accounts & Credit Cards',
+        feat4_p: 'Keep track of all your financial tools in one place, with always up-to-date balances.',
+        feat4_b1: 'Current accounts, cash, savings accounts',
+        feat4_b2: 'Credit cards with statement and billing dates',
+        feat4_b3: 'Balance adjustable with opening date',
+        feat5_h3: 'Savings Goals',
+        feat5_p: 'Set financial milestones and monitor progress over time, contribution by contribution.',
+        feat5_b1: 'Holidays, purchases, emergency funds',
+        feat5_b2: 'Manual contributions with history',
+        feat5_b3: 'Visual progress bar with completion %',
+        feat6_h3: 'Recurring Transactions',
+        feat6_p: 'Subscriptions, salaries and rent generate automatically. Never miss an expense again.',
+        feat6_b1: 'Automatic generation at due date',
+        feat6_b2: 'Installment support with payment plans',
+        feat6_b3: 'Up to 4 recurring in Free plan, unlimited in Premium',
+        feat7_h3: 'Monthly Budgets',
+        feat7_p: 'Set a budget for each category and monitor in real time how much you have already spent against the limit.',
+        feat7_b1: 'Budget per category with overspending alerts',
+        feat7_b2: 'Spent vs planned comparison',
+        feat7_b3: 'Month-by-month budget history',
+        feat8_h3: 'Privacy & Security',
+        feat8_p: 'Your financial data is protected. You can choose to never send it to the cloud if you prefer maximum privacy.',
+        feat8_b1: 'App lock with fingerprint or Face ID',
+        feat8_b2: 'Local mode: data only on device',
+        feat8_b3: 'No financial data shared with third parties',
+        ss_badge: '✦ Interface', ss_h2: 'An interface designed for simplicity',
+        ss_p: 'Clean, fast, intuitive. All the important information always at your fingertips.',
+        ss1_income: 'Income', ss1_expenses: 'Expenses', ss1_last4: 'Last 4 months',
+        ss1_caption: 'Main dashboard',
+        ss2_header: 'Transactions', ss2_all: 'All', ss2_out: 'Expenses', ss2_in: 'Income',
+        ss2_today: 'TODAY', ss2_tx1_cat: 'Food', ss2_tx2: 'Gas', ss2_tx2_cat: 'Car',
+        ss2_yesterday: 'YESTERDAY', ss2_tx3_cat: 'Work', ss2_tx4_cat: 'Subscription',
+        ss2_tx5: 'Restaurant', ss2_tx5_cat: 'Leisure', ss2_caption: 'Transaction list',
+        ss3_header: 'Reports', ss3_3m: '3 months', ss3_6m: '6 months', ss3_year: 'Year',
+        ss3_income: 'Tot. Income', ss3_expenses: 'Tot. Expenses', ss3_savings: 'Net savings',
+        ss3_chart_title: 'Income vs Expenses', ss3_caption: 'Charts & reports',
+        pr_badge: '✦ Pricing', pr_h2: 'Choose the right plan for you',
+        pr_p: 'Start for free. Choose Premium based on how you want to store your data.',
+        pr_free_name: 'Free', pr_free_price_suffix: '/month', pr_free_yearly: 'Free forever',
+        pr_free_f1: '<span class="check">✓</span> Local <strong>or</strong> cloud storage of your choice',
+        pr_free_f2: '<span class="check">✓</span> Up to 80 transactions/month',
+        pr_free_f3: '<span class="check">✓</span> 3 active accounts',
+        pr_free_f4: '<span class="check">✓</span> 4 active recurring transactions',
+        pr_free_f5: '<span class="check">✓</span> 15 additional categories',
+        pr_free_f6: '<span class="check">✓</span> Basic charts & reports',
+        pr_free_f7: '<span class="cross">✕</span> Backup & Restore',
+        pr_free_f8: '<span class="cross">✕</span> Unlimited accounts',
+        pr_free_f9: '<span class="cross">✕</span> Data export',
+        pr_free_f10: '<span class="cross">✕</span> Multi-device sync',
+        pr_free_btn: 'Start Free',
+        pr_local_name: 'Premium Local', pr_local_price_suffix: '/month',
+        pr_local_yearly: 'or <strong>€15/year — save 38%</strong>',
+        pr_local_badge_title: 'Data on device',
+        pr_local_badge_sub: 'Your data stays only on the device — no financial data in the cloud',
+        pr_local_f1: '<span class="check">✓</span> Unlimited transactions',
+        pr_local_f2: '<span class="check">✓</span> Up to 20 active accounts',
+        pr_local_f3: '<span class="check">✓</span> Unlimited recurring transactions',
+        pr_local_f4: '<span class="check">✓</span> 150 additional categories',
+        pr_local_f5: '<span class="check">✓</span> Advanced charts & reports',
+        pr_local_f6: '<span class="check">✓</span> Local Backup & Restore',
+        pr_local_f7: '<span class="check">✓</span> CSV/PDF data export',
+        pr_local_f8: '<span class="cross">✕</span> Multi-device sync',
+        pr_local_f9: '<span class="cross">✕</span> Family sharing',
+        pr_local_btn: 'Choose Local',
+        pr_cloud_popular: '⭐ Most complete', pr_cloud_name: 'Premium Cloud',
+        pr_cloud_price_suffix: ',99/month',
+        pr_cloud_yearly: 'or <strong>€21.99/year — save 39%</strong>',
+        pr_cloud_badge_title: 'Real-time sync across all devices',
+        pr_cloud_badge_sub: 'Cloud synchronization',
+        pr_cloud_f1: '<span class="check">✓</span> Everything in Premium Local',
+        pr_cloud_f2: '<span class="check">✓</span> Real-time multi-device sync',
+        pr_cloud_f3: '<span class="check">✓</span> Family sharing (up to 10)',
+        pr_cloud_f4: '<span class="check">✓</span> Browser access (web dashboard)',
+        pr_cloud_f5: '<span class="check">✓</span> Automatic cloud backup',
+        pr_cloud_f6: '<span class="check">✓</span> Restore from any device',
+        pr_cloud_btn: 'Choose Cloud',
+        pr_disclaimer: 'No automatic charges. Cancel anytime. Your data is always safe.',
+        cta_h2: 'Start keeping your finances in order today',
+        cta_p: 'Download FamlyBudget for free and start tracking family expenses in seconds.',
+        cta_btn1: '▶ \u00a0Download on Google Play', cta_btn2: 'Explore features',
+        footer_tagline: 'The app for family financial management. Simple, secure, always with you.',
+        footer_app: 'App', footer_features: 'Features', footer_screenshots: 'Screenshots',
+        footer_pricing: 'Pricing', footer_whats_new: "What's new",
+        footer_support: 'Support', footer_help: 'Help Center', footer_contact: 'Contact us',
+        footer_tech_support: 'Technical support', footer_bug: 'Report a bug',
+        footer_legal: 'Legal', footer_privacy: 'Privacy Policy',
+        footer_terms: 'Terms of Service', footer_cookie: 'Cookie Policy',
+        footer_copyright: '© 2026 FamlyBudget. All rights reserved.',
+        footer_privacy_link: 'Privacy', footer_terms_link: 'Terms', footer_support_link: 'Support',
+      },
+      it: {
+        page_title: 'FamlyBudget — Le finanze di famiglia, sotto controllo',
+        nav_features: 'Funzionalità', nav_screenshots: 'Schermate',
+        nav_pricing: 'Prezzi', nav_pricing_btn: 'Prezzi', nav_download: 'Scarica Gratis',
+        hero_eyebrow: '✦ Novità 2026',
+        hero_h1: 'Le finanze di famiglia,<br /><span>finalmente sotto controllo</span>',
+        hero_sub: 'Traccia entrate e uscite, gestisci budget condivisi, visualizza grafici chiari e sincronizza tutto il nucleo familiare in tempo reale.',
+        hero_badge_sub: 'Scarica su', hero_badge_store: 'Google Play',
+        hero_explore: 'Scopri le funzionalità',
+        stat1_num: '100%', stat1_label: 'Gratuito per iniziare',
+        stat2_num: '5 lingue', stat2_label: 'IT · EN · ES · FR · HE',
+        stat3_num: 'Offline', stat3_label: 'Funziona senza rete',
+        phone_month: 'Aprile 2026', phone_greeting: 'Ciao, Fabrizio 👋',
+        phone_balance_label: 'Saldo totale conti',
+        phone_income: 'Entrate', phone_expenses: 'Uscite',
+        phone_latest_tx: 'Ultime transazioni',
+        phone_tx1_name: 'Supermercato', phone_tx1_cat: 'Spesa',
+        phone_tx2_name: 'Stipendio', phone_tx2_cat: 'Entrata',
+        phone_tx3_name: 'Affitto', phone_tx3_cat: 'Casa',
+        phone_chart_label: 'Andamento 6 mesi',
+        phone_float1_label: 'Risparmio mensile', phone_float2_label: 'Obiettivo vacanze',
+        feat_badge: '✦ Funzionalità',
+        feat_h2: 'Tutto quello che serve per gestire il budget di famiglia',
+        feat_p: 'Uno strumento completo ma semplice, pensato per la vita reale di tutti i giorni.',
+        feat1_h3: 'Grafici e Report',
+        feat1_p: 'Analizza entrate e uscite con grafici mensili interattivi e scopri esattamente dove vanno i tuoi soldi.',
+        feat1_b1: 'Grafici a barre mensili con filtri per conto e categoria',
+        feat1_b2: 'Proiezione del saldo nei prossimi 90 giorni',
+        feat1_b3: 'Esportazione dati in CSV e PDF (Premium)',
+        feat2_h3: 'Sync Cloud Real-time',
+        feat2_p: 'I dati si sincronizzano istantaneamente su tutti i dispositivi del nucleo familiare. Sempre aggiornati, ovunque tu sia.',
+        feat2_b1: 'Aggiornamenti in tempo reale senza ricaricare',
+        feat2_b2: 'Disponibile nel piano Premium Cloud',
+        feat2_b3: "Modalità offline: l'app funziona anche senza rete",
+        feat3_h3: 'Multi-utente Famiglia',
+        feat3_p: 'Invita i membri della famiglia e gestite il budget insieme, ognuno dal proprio smartphone.',
+        feat3_b1: 'Fino a 10 membri nel piano Premium Cloud',
+        feat3_b2: 'Ogni membro aggiunge spese in tempo reale',
+        feat3_b3: 'Visione condivisa di conti e transazioni',
+        feat4_h3: 'Conti e Carte di Credito',
+        feat4_p: 'Tieni traccia di tutti i tuoi strumenti finanziari in un unico posto, con saldi sempre aggiornati.',
+        feat4_b1: 'Conti correnti, contanti, conti risparmio',
+        feat4_b2: 'Carte di credito con data estratto e addebito',
+        feat4_b3: 'Saldo rettificabile con data di apertura',
+        feat5_h3: 'Obiettivi di Risparmio',
+        feat5_p: 'Definisci traguardi finanziari e monitora i progressi nel tempo, contribuzione dopo contribuzione.',
+        feat5_b1: 'Vacanze, acquisti, fondi di emergenza',
+        feat5_b2: 'Contribuzioni manuali con storico',
+        feat5_b3: 'Barra di avanzamento visiva con % completamento',
+        feat6_h3: 'Transazioni Ricorrenti',
+        feat6_p: 'Abbonamenti, stipendi e affitti si generano automaticamente. Mai più una spesa dimenticata.',
+        feat6_b1: 'Generazione automatica a scadenza',
+        feat6_b2: 'Supporto rate con piani di rateizzazione',
+        feat6_b3: 'Fino a 4 ricorrenti nel piano Free, illimitate nel Premium',
+        feat7_h3: 'Budget Mensili',
+        feat7_p: 'Imposta un budget per ogni categoria e monitora in tempo reale quanto hai già speso rispetto al limite.',
+        feat7_b1: 'Budget per categoria con avvisi di superamento',
+        feat7_b2: 'Confronto speso vs pianificato',
+        feat7_b3: 'Storico budget mese per mese',
+        feat8_h3: 'Privacy e Sicurezza',
+        feat8_p: 'I tuoi dati finanziari sono protetti. Puoi scegliere di non inviarli mai al cloud se preferisci la massima privacy.',
+        feat8_b1: 'Blocco app con impronta digitale o Face ID',
+        feat8_b2: 'Modalità locale: dati solo sul dispositivo',
+        feat8_b3: 'Nessun dato finanziario condiviso con terze parti',
+        ss_badge: '✦ Interfaccia', ss_h2: "Un'interfaccia pensata per la semplicità",
+        ss_p: 'Pulita, veloce, intuitiva. Tutte le informazioni importanti sempre a portata di pollice.',
+        ss1_income: 'Entrate', ss1_expenses: 'Uscite', ss1_last4: 'Ultimi 4 mesi',
+        ss1_caption: 'Dashboard principale',
+        ss2_header: 'Transazioni', ss2_all: 'Tutte', ss2_out: 'Uscite', ss2_in: 'Entrate',
+        ss2_today: 'OGGI', ss2_tx1_cat: 'Spesa alimentare', ss2_tx2: 'Benzina', ss2_tx2_cat: 'Auto',
+        ss2_yesterday: 'IERI', ss2_tx3_cat: 'Lavoro', ss2_tx4_cat: 'Abbonamento',
+        ss2_tx5: 'Ristorante', ss2_tx5_cat: 'Svago', ss2_caption: 'Lista transazioni',
+        ss3_header: 'Report', ss3_3m: '3 mesi', ss3_6m: '6 mesi', ss3_year: 'Anno',
+        ss3_income: 'Tot. Entrate', ss3_expenses: 'Tot. Uscite', ss3_savings: 'Risparmio netto',
+        ss3_chart_title: 'Entrate vs Uscite', ss3_caption: 'Grafici e report',
+        pr_badge: '✦ Prezzi', pr_h2: 'Scegli il piano giusto per te',
+        pr_p: 'Inizia gratis. Scegli il Premium in base a come vuoi conservare i tuoi dati.',
+        pr_free_name: 'Free', pr_free_price_suffix: '/mese', pr_free_yearly: 'Per sempre gratuito',
+        pr_free_f1: '<span class="check">✓</span> Storage locale <strong>o</strong> cloud a scelta',
+        pr_free_f2: '<span class="check">✓</span> Fino a 80 transazioni/mese',
+        pr_free_f3: '<span class="check">✓</span> 3 conti attivi',
+        pr_free_f4: '<span class="check">✓</span> 4 ricorrenti attive',
+        pr_free_f5: '<span class="check">✓</span> 15 categorie aggiuntive',
+        pr_free_f6: '<span class="check">✓</span> Grafici e report base',
+        pr_free_f7: '<span class="cross">✕</span> Backup & Restore',
+        pr_free_f8: '<span class="cross">✕</span> Conti illimitati',
+        pr_free_f9: '<span class="cross">✕</span> Esportazione dati',
+        pr_free_f10: '<span class="cross">✕</span> Sync multi-dispositivo',
+        pr_free_btn: 'Inizia Gratis',
+        pr_local_name: 'Premium Local', pr_local_price_suffix: '/mese',
+        pr_local_yearly: 'oppure <strong>€15/anno — risparmi il 38%</strong>',
+        pr_local_badge_title: 'Dati sul dispositivo',
+        pr_local_badge_sub: 'I tuoi dati restano solo sul dispositivo — nessun dato finanziario sul cloud',
+        pr_local_f1: '<span class="check">✓</span> Transazioni illimitate',
+        pr_local_f2: '<span class="check">✓</span> Fino a 20 conti attivi',
+        pr_local_f3: '<span class="check">✓</span> Ricorrenti illimitate',
+        pr_local_f4: '<span class="check">✓</span> 150 categorie aggiuntive',
+        pr_local_f5: '<span class="check">✓</span> Grafici e report avanzati',
+        pr_local_f6: '<span class="check">✓</span> Backup & Restore locale',
+        pr_local_f7: '<span class="check">✓</span> Esportazione dati CSV/PDF',
+        pr_local_f8: '<span class="cross">✕</span> Sync multi-dispositivo',
+        pr_local_f9: '<span class="cross">✕</span> Condivisione famiglia',
+        pr_local_btn: 'Scegli Local',
+        pr_cloud_popular: '⭐ Più completo', pr_cloud_name: 'Premium Cloud',
+        pr_cloud_price_suffix: ',99/mese',
+        pr_cloud_yearly: 'oppure <strong>€21,99/anno — risparmi il 39%</strong>',
+        pr_cloud_badge_title: 'Sync real-time su tutti i dispositivi',
+        pr_cloud_badge_sub: 'Sincronizzazione cloud',
+        pr_cloud_f1: '<span class="check">✓</span> Tutto di Premium Local',
+        pr_cloud_f2: '<span class="check">✓</span> Sync real-time multi-dispositivo',
+        pr_cloud_f3: '<span class="check">✓</span> Condivisione famiglia (fino a 10)',
+        pr_cloud_f4: '<span class="check">✓</span> Accesso da browser (dashboard web)',
+        pr_cloud_f5: '<span class="check">✓</span> Backup automatico su cloud',
+        pr_cloud_f6: '<span class="check">✓</span> Ripristino da qualsiasi dispositivo',
+        pr_cloud_btn: 'Scegli Cloud',
+        pr_disclaimer: 'Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre al sicuro.',
+        cta_h2: 'Inizia oggi a tenere i conti in ordine',
+        cta_p: 'Scarica FamlyBudget gratuitamente e inizia a tracciare le spese di famiglia in pochi secondi.',
+        cta_btn1: '▶ \u00a0Scarica su Google Play', cta_btn2: 'Scopri le funzionalità',
+        footer_tagline: "L'app per la gestione delle finanze familiari. Semplice, sicura, sempre con te.",
+        footer_app: 'App', footer_features: 'Funzionalità', footer_screenshots: 'Schermate',
+        footer_pricing: 'Prezzi', footer_whats_new: 'Novità',
+        footer_support: 'Supporto', footer_help: 'Centro aiuto', footer_contact: 'Contattaci',
+        footer_tech_support: 'Supporto tecnico', footer_bug: 'Segnala un bug',
+        footer_legal: 'Legale', footer_privacy: 'Privacy Policy',
+        footer_terms: 'Termini di servizio', footer_cookie: 'Cookie Policy',
+        footer_copyright: '© 2026 FamlyBudget. Tutti i diritti riservati.',
+        footer_privacy_link: 'Privacy', footer_terms_link: 'Termini', footer_support_link: 'Supporto',
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+
+      // Update <html lang> and <title>
+      document.getElementById('html-root').setAttribute('lang', lang);
+      document.getElementById('page-title').textContent = t.page_title;
+
+      // textContent replacements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      // innerHTML replacements (for elements with nested HTML)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      // Update lang switcher buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      // Persist choice
+      localStorage.setItem('fb_lang', lang);
+    }
+
+    // Wire up buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+    });
+
+    // Init: use saved preference, default to English
+    const savedLang = localStorage.getItem('fb_lang') || 'en';
+    setLanguage(savedLang);
   </script>
+
 </body>
 </html>

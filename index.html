@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FamlyBudget — Le finanze di famiglia, sotto controllo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Variables ────────────────────────────────────────────── */
+    :root {
+      --blue-dark:   #1E3A8A;
+      --blue:        #3B82F6;
+      --blue-light:  #EFF6FF;
+      --blue-mid:    #DBEAFE;
+      --neutral:     #F8FAFC;
+      --text:        #0F172A;
+      --text-muted:  #64748B;
+      --border:      #E2E8F0;
+      --radius:      14px;
+      --radius-lg:   22px;
+      --shadow:      0 4px 24px rgba(30,58,138,0.08);
+      --shadow-lg:   0 8px 40px rgba(30,58,138,0.14);
+    }
+
+    /* ── Utilities ────────────────────────────────────────────── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--neutral); }
+    .section-blue { background: var(--blue-light); }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blue-mid); color: var(--blue-dark);
+      font-size: 13px; font-weight: 600; padding: 4px 12px;
+      border-radius: 99px; letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800; color: var(--text);
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-header p {
+      font-size: 18px; color: var(--text-muted);
+      max-width: 560px; margin: 0 auto;
+    }
+
+    /* ── Buttons ──────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 28px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; border: none;
+    }
+    .btn-primary {
+      background: var(--blue-dark); color: #fff;
+    }
+    .btn-primary:hover { background: #1e40af; transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+    .btn-secondary {
+      background: transparent; color: var(--blue-dark);
+      border: 2px solid var(--blue-dark);
+    }
+    .btn-secondary:hover { background: var(--blue-light); }
+    .btn-lg { padding: 16px 36px; font-size: 16px; border-radius: 12px; }
+
+    /* ── Navbar ───────────────────────────────────────────────── */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .navbar.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 2px 16px rgba(30,58,138,0.06);
+    }
+    .navbar .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 100px;
+    }
+    .navbar-logo {
+      display: flex; align-items: center;
+    }
+    /* Wrapper che taglia eventuale badge nell'angolo basso-destra.
+       Immagine: 1380×752px. Wordmark finisce a ~79.8%, badge a ~83.8%.
+       Wrapper=88px, immagine=108px → mostra l'81.5% → wordmark ✓, badge ✗ */
+    .logo-img-wrap {
+      height: 88px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: flex-start;
+    }
+    .logo-img {
+      height: 108px;
+      width: auto;
+      display: block;
+    }
+    /* Footer wordmark su sfondo scuro */
+    .footer-wordmark {
+      font-size: 22px; font-weight: 800; letter-spacing: -0.3px;
+    }
+    .navbar-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .navbar-links a {
+      font-size: 14px; font-weight: 500; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover { color: var(--blue-dark); }
+    .navbar-cta { display: flex; align-items: center; gap: 12px; }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 100px;
+      background: linear-gradient(135deg, #fff 60%, #EFF6FF 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero .container {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-content {}
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-mid); color: var(--blue-dark);
+      font-size: 12px; font-weight: 700; padding: 5px 14px;
+      border-radius: 99px; margin-bottom: 24px; letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      font-weight: 800; line-height: 1.15; color: var(--text);
+      margin-bottom: 22px;
+    }
+    .hero h1 span { color: var(--blue-dark); }
+    .hero-sub {
+      font-size: 18px; color: var(--text-muted); margin-bottom: 40px;
+      max-width: 480px; line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Google Play Badge */
+    .gplay-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #0F172A; color: #fff;
+      padding: 10px 20px; border-radius: 10px;
+      font-size: 14px; font-weight: 600;
+      transition: all 0.2s; cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .gplay-badge:hover { background: #1e293b; transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+    .gplay-badge .badge-icon { font-size: 26px; }
+    .gplay-badge .badge-text { display: flex; flex-direction: column; }
+    .gplay-badge .badge-sub { font-size: 10px; font-weight: 400; opacity: 0.7; }
+    .gplay-badge .badge-store { font-size: 15px; font-weight: 700; }
+
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 48px;
+      padding-top: 32px; border-top: 1px solid var(--border);
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num { font-size: 24px; font-weight: 800; color: var(--blue-dark); }
+    .stat-label { font-size: 13px; color: var(--text-muted); }
+
+    /* ── Phone Mockup ─────────────────────────────────────────── */
+    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
+
+    .phone {
+      width: 260px; height: 520px;
+      background: #fff;
+      border-radius: 44px;
+      border: 10px solid #1E3A8A;
+      box-shadow: 0 32px 80px rgba(30,58,138,0.25), 0 4px 16px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-notch {
+      width: 90px; height: 24px;
+      background: #1E3A8A;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto;
+    }
+    .phone-screen {
+      padding: 12px 14px;
+    }
+    .phone-header {
+      background: var(--blue-dark);
+      margin: -12px -14px 12px;
+      padding: 10px 16px 14px;
+      color: #fff;
+    }
+    .phone-header-top {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 11px; opacity: 0.8; margin-bottom: 8px;
+    }
+    .phone-greeting { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .phone-balance-label { font-size: 10px; opacity: 0.7; }
+    .phone-balance { font-size: 24px; font-weight: 800; margin: 4px 0; }
+
+    .phone-cards-row {
+      display: flex; gap: 8px; margin-bottom: 12px;
+    }
+    .phone-card {
+      flex: 1; background: #F8FAFC; border-radius: 10px;
+      padding: 8px 10px; border: 1px solid var(--border);
+    }
+    .phone-card-label { font-size: 8px; color: var(--text-muted); margin-bottom: 3px; }
+    .phone-card-value { font-size: 12px; font-weight: 700; }
+    .phone-card-value.income { color: #16a34a; }
+    .phone-card-value.expense { color: #dc2626; }
+
+    .phone-section-title { font-size: 10px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .phone-tx {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 6px 0; border-bottom: 1px solid #F1F5F9;
+    }
+    .phone-tx:last-child { border-bottom: none; }
+    .phone-tx-left { display: flex; align-items: center; gap: 8px; }
+    .phone-tx-icon {
+      width: 26px; height: 26px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 12px;
+    }
+    .phone-tx-name { font-size: 10px; font-weight: 600; color: var(--text); }
+    .phone-tx-cat { font-size: 8px; color: var(--text-muted); }
+    .phone-tx-amount { font-size: 10px; font-weight: 700; }
+    .phone-tx-amount.neg { color: #dc2626; }
+    .phone-tx-amount.pos { color: #16a34a; }
+
+    .phone-chart {
+      background: var(--blue-light); border-radius: 10px;
+      padding: 10px; margin-top: 10px;
+    }
+    .phone-chart-label { font-size: 9px; color: var(--text-muted); margin-bottom: 8px; }
+    .phone-bars { display: flex; gap: 6px; align-items: flex-end; height: 48px; }
+    .phone-bar-group { display: flex; gap: 2px; align-items: flex-end; }
+    .phone-bar {
+      width: 8px; border-radius: 3px 3px 0 0;
+    }
+    .bar-income { background: #16a34a; }
+    .bar-expense { background: #dc2626; }
+
+    /* Floating card behind phone */
+    .phone-float-card {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+    }
+    .phone-float-1 {
+      top: 60px; right: -20px;
+      font-size: 12px;
+    }
+    .phone-float-1 .fc-label { font-size: 10px; color: var(--text-muted); }
+    .phone-float-1 .fc-val { font-size: 18px; font-weight: 800; color: #16a34a; }
+
+    .phone-float-2 {
+      bottom: 80px; left: -30px;
+      font-size: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .phone-float-2-icon {
+      width: 36px; height: 36px; background: var(--blue-mid);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .phone-float-2-text .fc-label { font-size: 10px; color: var(--text-muted); }
+    .phone-float-2-text .fc-val { font-size: 13px; font-weight: 700; color: var(--text); }
+
+    /* ── Features ─────────────────────────────────────────────── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: all 0.2s;
+      display: flex; gap: 24px; align-items: flex-start;
+    }
+    .feature-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: var(--blue-light); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+    }
+    .feature-body { flex: 1; }
+    .feature-card h3 {
+      font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text);
+    }
+    .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
+    .feature-bullets { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .feature-bullets li {
+      font-size: 13px; color: var(--text-muted);
+      display: flex; align-items: center; gap: 7px;
+    }
+    .feature-bullets li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0;
+    }
+
+    /* ── Screenshots ──────────────────────────────────────────── */
+    .screenshots-row {
+      display: flex; gap: 40px; justify-content: center; align-items: flex-end;
+    }
+    .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .screenshot-item .caption {
+      font-size: 13px; font-weight: 600; color: var(--text-muted);
+      text-align: center;
+    }
+
+    .phone-sm {
+      width: 200px; height: 400px;
+      background: #fff;
+      border-radius: 36px;
+      border: 8px solid #1E3A8A;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .phone-sm:hover { transform: translateY(-8px); }
+    .phone-sm.featured {
+      width: 220px; height: 440px;
+      border-color: #3B82F6;
+      box-shadow: 0 20px 60px rgba(59,130,246,0.3);
+    }
+    .phone-sm-notch {
+      width: 70px; height: 18px;
+      background: #1E3A8A;
+      border-radius: 0 0 12px 12px;
+      margin: 0 auto;
+    }
+    .phone-sm.featured .phone-sm-notch { background: #3B82F6; }
+    .phone-sm-body { padding: 10px; }
+
+    /* Screen 1: Dashboard */
+    .ss-header {
+      background: var(--blue-dark); color: #fff;
+      margin: -10px -10px 10px; padding: 10px 12px 16px;
+      border-radius: 0 0 12px 12px;
+    }
+    .ss-header h4 { font-size: 11px; font-weight: 700; }
+    .ss-header .ss-balance { font-size: 20px; font-weight: 800; margin-top: 4px; }
+
+    .ss-row { display: flex; gap: 6px; margin-bottom: 8px; }
+    .ss-pill {
+      flex: 1; background: var(--neutral); border-radius: 8px;
+      padding: 6px 8px; text-align: center;
+    }
+    .ss-pill .p-label { font-size: 7px; color: var(--text-muted); }
+    .ss-pill .p-val { font-size: 11px; font-weight: 700; }
+
+    .ss-mini-bar-wrap {
+      background: var(--neutral); border-radius: 8px; padding: 8px; margin-bottom: 8px;
+    }
+    .ss-mini-bar-title { font-size: 8px; color: var(--text-muted); margin-bottom: 6px; }
+    .ss-mini-bars { display: flex; gap: 4px; align-items: flex-end; height: 36px; }
+    .ss-mb { width: 10px; border-radius: 2px 2px 0 0; }
+    .ss-mb.i { background: #16a34a; } .ss-mb.e { background: #dc2626; }
+
+    .ss-tx-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 5px 0; border-bottom: 1px solid #F1F5F9;
+    }
+    .ss-tx-item:last-child { border-bottom: none; }
+    .ss-tx-icon2 { width: 20px; height: 20px; border-radius: 6px; font-size: 10px; display: flex; align-items: center; justify-content: center; }
+    .ss-tx-name2 { font-size: 9px; font-weight: 600; margin-left: 6px; }
+    .ss-tx-amt { font-size: 9px; font-weight: 700; }
+
+    /* Screen 2: Transazioni */
+    .ss2-header { background: #1E3A8A; color: #fff; margin: -10px -10px 10px; padding: 10px 12px; }
+    .ss2-header h4 { font-size: 11px; font-weight: 700; }
+    .ss2-filter { display: flex; gap: 4px; margin-bottom: 8px; }
+    .ss2-chip {
+      font-size: 8px; padding: 3px 8px; border-radius: 99px; background: var(--neutral);
+      color: var(--text-muted); font-weight: 500;
+    }
+    .ss2-chip.active { background: var(--blue-dark); color: #fff; }
+    .ss2-group-label { font-size: 8px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+    .ss2-tx {
+      display: flex; align-items: center; padding: 5px 0; gap: 6px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .ss2-tx-icon { width: 22px; height: 22px; border-radius: 7px; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+    .ss2-tx-info { flex: 1; }
+    .ss2-tx-name { font-size: 9px; font-weight: 600; }
+    .ss2-tx-meta { font-size: 7px; color: var(--text-muted); }
+    .ss2-tx-amt { font-size: 9px; font-weight: 700; }
+
+    /* Screen 3: Report */
+    .ss3-header { background: #3B82F6; color: #fff; margin: -10px -10px 10px; padding: 10px 12px; }
+    .ss3-header h4 { font-size: 11px; font-weight: 700; }
+    .ss3-period { display: flex; gap: 3px; margin-bottom: 8px; }
+    .ss3-chip { font-size: 7px; padding: 3px 6px; border-radius: 99px; background: var(--neutral); color: var(--text-muted); }
+    .ss3-chip.active { background: var(--blue); color: #fff; }
+    .ss3-summary { background: var(--neutral); border-radius: 8px; padding: 8px; margin-bottom: 8px; }
+    .ss3-sum-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+    .ss3-sum-label { font-size: 8px; color: var(--text-muted); }
+    .ss3-sum-val { font-size: 9px; font-weight: 700; }
+    .ss3-bar-chart { background: var(--neutral); border-radius: 8px; padding: 8px; }
+    .ss3-bar-title { font-size: 8px; color: var(--text-muted); margin-bottom: 8px; }
+    .ss3-bars { display: flex; gap: 5px; align-items: flex-end; height: 50px; }
+    .ss3-bar-grp { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .ss3-bar-grp .bars { display: flex; gap: 2px; align-items: flex-end; }
+    .ss3-b { width: 7px; border-radius: 2px 2px 0 0; }
+    .ss3-b.i { background: #16a34a; }
+    .ss3-b.e { background: #dc2626; }
+    .ss3-month { font-size: 6px; color: var(--text-muted); }
+
+    /* ── Pricing ──────────────────────────────────────────────── */
+    .pricing-grid { display: flex; gap: 22px; justify-content: center; align-items: stretch; }
+    .pricing-card {
+      background: #fff; border: 2px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px 28px;
+      flex: 1; max-width: 360px;
+      position: relative;
+      display: flex; flex-direction: column;
+    }
+    .pricing-card.featured {
+      border-color: var(--blue); box-shadow: var(--shadow-lg);
+    }
+    .most-popular {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff;
+      font-size: 12px; font-weight: 700; padding: 4px 16px;
+      border-radius: 99px; white-space: nowrap;
+    }
+    .pricing-name { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+    .pricing-price {
+      font-size: 48px; font-weight: 800; color: var(--text); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pricing-price span { font-size: 18px; font-weight: 500; color: var(--text-muted); }
+    .pricing-yearly { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .pricing-yearly strong { color: #16a34a; }
+    .pricing-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 32px; flex: 1; }
+    .pricing-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; padding: 7px 0; color: var(--text);
+    }
+    .pricing-features li .check { color: #16a34a; flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+    .pricing-features li .cross { color: #94A3B8; flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+    .pricing-features li.muted { color: var(--text-muted); }
+
+    /* ── CTA Banner ───────────────────────────────────────────── */
+    .cta-banner {
+      background: var(--blue-dark);
+      color: #fff; text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-banner h2 {
+      font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px;
+    }
+    .cta-banner p { font-size: 18px; opacity: 0.8; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: #fff; color: var(--blue-dark); font-weight: 700;
+    }
+    .btn-white:hover { background: #EFF6FF; transform: translateY(-1px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    .btn-ghost {
+      background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      background: #0F172A; color: #94A3B8;
+      padding: 56px 0 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand { }
+    .footer-brand .navbar-logo { margin-bottom: 0; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
+
+    .footer-col h4 { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a { font-size: 14px; color: #94A3B8; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid #1E293B;
+      padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px;
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: #94A3B8; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: #fff; }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-grid { flex-direction: column; align-items: center; }
+      .screenshots-row { gap: 20px; }
+      .phone-sm { width: 160px; height: 320px; }
+      .phone-sm.featured { width: 180px; height: 360px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .navbar-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar-logo">
+        <div class="logo-img-wrap">
+          <img src="assets/famlybudget-logo.png" alt="FamlyBudget" class="logo-img" />
+        </div>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="#features">Funzionalità</a></li>
+        <li><a href="#screenshots">Schermate</a></li>
+        <li><a href="#pricing">Prezzi</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="#pricing" class="btn btn-secondary" style="padding:10px 20px;font-size:14px;">Prezzi</a>
+        <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Scarica Gratis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">✦ Novità 2026</div>
+        <h1>Le finanze di famiglia,<br /><span>finalmente sotto controllo</span></h1>
+        <p class="hero-sub">
+          Traccia entrate e uscite, gestisci budget condivisi, visualizza grafici chiari
+          e sincronizza tutto il nucleo familiare in tempo reale.
+        </p>
+        <div class="hero-buttons">
+          <a href="#download" class="gplay-badge" id="download">
+            <span class="badge-icon">▶</span>
+            <span class="badge-text">
+              <span class="badge-sub">Scarica su</span>
+              <span class="badge-store">Google Play</span>
+            </span>
+          </a>
+          <a href="#features" class="btn btn-secondary btn-lg">Scopri le funzionalità</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Gratuito per iniziare</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5 lingue</span>
+            <span class="stat-label">IT · EN · ES · FR · HE</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Offline</span>
+            <span class="stat-label">Funziona senza rete</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Floating card 1 -->
+        <div class="phone-float-card phone-float-1">
+          <div class="fc-label">Risparmio mensile</div>
+          <div class="fc-val">+ €340</div>
+        </div>
+
+        <!-- Main phone -->
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-header-top">
+                <span>FamlyBudget</span>
+                <span>Aprile 2026</span>
+              </div>
+              <div class="phone-greeting">Ciao, Fabrizio 👋</div>
+              <div class="phone-balance-label">Saldo totale conti</div>
+              <div class="phone-balance">€ 8.420,50</div>
+            </div>
+
+            <div class="phone-cards-row">
+              <div class="phone-card">
+                <div class="phone-card-label">Entrate</div>
+                <div class="phone-card-value income">+€3.200</div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-label">Uscite</div>
+                <div class="phone-card-value expense">−€1.847</div>
+              </div>
+            </div>
+
+            <div class="phone-section-title">Ultime transazioni</div>
+            <div class="phone-tx">
+              <div class="phone-tx-left">
+                <div class="phone-tx-icon" style="background:#FEF3C7;">🛒</div>
+                <div>
+                  <div class="phone-tx-name">Supermercato</div>
+                  <div class="phone-tx-cat">Spesa</div>
+                </div>
+              </div>
+              <div class="phone-tx-amount neg">−€94,30</div>
+            </div>
+            <div class="phone-tx">
+              <div class="phone-tx-left">
+                <div class="phone-tx-icon" style="background:#DCFCE7;">💼</div>
+                <div>
+                  <div class="phone-tx-name">Stipendio</div>
+                  <div class="phone-tx-cat">Entrata</div>
+                </div>
+              </div>
+              <div class="phone-tx-amount pos">+€2.400</div>
+            </div>
+            <div class="phone-tx">
+              <div class="phone-tx-left">
+                <div class="phone-tx-icon" style="background:#EDE9FE;">🏠</div>
+                <div>
+                  <div class="phone-tx-name">Affitto</div>
+                  <div class="phone-tx-cat">Casa</div>
+                </div>
+              </div>
+              <div class="phone-tx-amount neg">−€750</div>
+            </div>
+
+            <div class="phone-chart">
+              <div class="phone-chart-label">Andamento 6 mesi</div>
+              <div class="phone-bars">
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:28px;"></div><div class="phone-bar bar-expense" style="height:22px;"></div></div>
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:32px;"></div><div class="phone-bar bar-expense" style="height:18px;"></div></div>
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:24px;"></div><div class="phone-bar bar-expense" style="height:30px;"></div></div>
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:36px;"></div><div class="phone-bar bar-expense" style="height:20px;"></div></div>
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:30px;"></div><div class="phone-bar bar-expense" style="height:16px;"></div></div>
+                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:40px;"></div><div class="phone-bar bar-expense" style="height:24px;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating card 2 -->
+        <div class="phone-float-card phone-float-2">
+          <div class="phone-float-2-icon">🎯</div>
+          <div class="phone-float-2-text">
+            <div class="fc-label">Obiettivo vacanze</div>
+            <div class="fc-val">€ 1.200 / €3.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FEATURES ══════════ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">✦ Funzionalità</div>
+        <h2>Tutto quello che serve per gestire il budget di famiglia</h2>
+        <p>Uno strumento completo ma semplice, pensato per la vita reale di tutti i giorni.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <div class="feature-body">
+            <h3>Grafici e Report</h3>
+            <p>Analizza entrate e uscite con grafici mensili interattivi e scopri esattamente dove vanno i tuoi soldi.</p>
+            <ul class="feature-bullets">
+              <li>Grafici a barre mensili con filtri per conto e categoria</li>
+              <li>Proiezione del saldo nei prossimi 90 giorni</li>
+              <li>Esportazione dati in CSV e PDF (Premium)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <div class="feature-body">
+            <h3>Sync Cloud Real-time</h3>
+            <p>I dati si sincronizzano istantaneamente su tutti i dispositivi del nucleo familiare. Sempre aggiornati, ovunque tu sia.</p>
+            <ul class="feature-bullets">
+              <li>Aggiornamenti in tempo reale senza ricaricare</li>
+              <li>Disponibile nel piano Premium Cloud</li>
+              <li>Modalità offline: l'app funziona anche senza rete</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👨‍👩‍👧</div>
+          <div class="feature-body">
+            <h3>Multi-utente Famiglia</h3>
+            <p>Invita i membri della famiglia e gestite il budget insieme, ognuno dal proprio smartphone.</p>
+            <ul class="feature-bullets">
+              <li>Fino a 10 membri nel piano Premium Cloud</li>
+              <li>Ogni membro aggiunge spese in tempo reale</li>
+              <li>Visione condivisa di conti e transazioni</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <div class="feature-body">
+            <h3>Conti e Carte di Credito</h3>
+            <p>Tieni traccia di tutti i tuoi strumenti finanziari in un unico posto, con saldi sempre aggiornati.</p>
+            <ul class="feature-bullets">
+              <li>Conti correnti, contanti, conti risparmio</li>
+              <li>Carte di credito con data estratto e addebito</li>
+              <li>Saldo rettificabile con data di apertura</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-body">
+            <h3>Obiettivi di Risparmio</h3>
+            <p>Definisci traguardi finanziari e monitora i progressi nel tempo, contribuzione dopo contribuzione.</p>
+            <ul class="feature-bullets">
+              <li>Vacanze, acquisti, fondi di emergenza</li>
+              <li>Contribuzioni manuali con storico</li>
+              <li>Barra di avanzamento visiva con % completamento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔁</div>
+          <div class="feature-body">
+            <h3>Transazioni Ricorrenti</h3>
+            <p>Abbonamenti, stipendi e affitti si generano automaticamente. Mai più una spesa dimenticata.</p>
+            <ul class="feature-bullets">
+              <li>Generazione automatica a scadenza</li>
+              <li>Supporto rate con piani di rateizzazione</li>
+              <li>Fino a 4 ricorrenti nel piano Free, illimitate nel Premium</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏦</div>
+          <div class="feature-body">
+            <h3>Budget Mensili</h3>
+            <p>Imposta un budget per ogni categoria e monitora in tempo reale quanto hai già speso rispetto al limite.</p>
+            <ul class="feature-bullets">
+              <li>Budget per categoria con avvisi di superamento</li>
+              <li>Confronto speso vs pianificato</li>
+              <li>Storico budget mese per mese</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-body">
+            <h3>Privacy e Sicurezza</h3>
+            <p>I tuoi dati finanziari sono protetti. Puoi scegliere di non inviarli mai al cloud se preferisci la massima privacy.</p>
+            <ul class="feature-bullets">
+              <li>Blocco app con impronta digitale o Face ID</li>
+              <li>Modalità locale: dati solo sul dispositivo</li>
+              <li>Nessun dato finanziario condiviso con terze parti</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SCREENSHOTS ══════════ -->
+  <section class="section section-alt" id="screenshots">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">✦ Interfaccia</div>
+        <h2>Un'interfaccia pensata per la semplicità</h2>
+        <p>Pulita, veloce, intuitiva. Tutte le informazioni importanti sempre a portata di pollice.</p>
+      </div>
+
+      <div class="screenshots-row">
+
+        <!-- Screenshot 1: Dashboard -->
+        <div class="screenshot-item">
+          <div class="phone-sm">
+            <div class="phone-sm-notch"></div>
+            <div class="phone-sm-body">
+              <div class="ss-header">
+                <h4>Dashboard</h4>
+                <div class="ss-balance">€ 8.420,50</div>
+              </div>
+              <div class="ss-row">
+                <div class="ss-pill"><div class="p-label">Entrate</div><div class="p-val" style="color:#16a34a">+3.200€</div></div>
+                <div class="ss-pill"><div class="p-label">Uscite</div><div class="p-val" style="color:#dc2626">−1.847€</div></div>
+              </div>
+              <div class="ss-mini-bar-wrap">
+                <div class="ss-mini-bar-title">Ultimi 4 mesi</div>
+                <div class="ss-mini-bars">
+                  <div class="ss-mb i" style="height:20px;"></div><div class="ss-mb e" style="height:14px;"></div>
+                  <div class="ss-mb i" style="height:24px;"></div><div class="ss-mb e" style="height:18px;"></div>
+                  <div class="ss-mb i" style="height:18px;"></div><div class="ss-mb e" style="height:22px;"></div>
+                  <div class="ss-mb i" style="height:30px;"></div><div class="ss-mb e" style="height:16px;"></div>
+                </div>
+              </div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#FEF3C7">🛒</div><span class="ss-tx-name2" style="margin-left:6px">Supermercato</span></div><span class="ss-tx-amt" style="color:#dc2626">−€94</span></div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#DCFCE7">💼</div><span class="ss-tx-name2" style="margin-left:6px">Stipendio</span></div><span class="ss-tx-amt" style="color:#16a34a">+€2400</span></div>
+              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#EDE9FE">🏠</div><span class="ss-tx-name2" style="margin-left:6px">Affitto</span></div><span class="ss-tx-amt" style="color:#dc2626">−€750</span></div>
+            </div>
+          </div>
+          <div class="caption">Dashboard principale</div>
+        </div>
+
+        <!-- Screenshot 2: Transazioni (featured/center) -->
+        <div class="screenshot-item">
+          <div class="phone-sm featured">
+            <div class="phone-sm-notch"></div>
+            <div class="phone-sm-body">
+              <div class="ss2-header"><h4>Transazioni</h4></div>
+              <div class="ss2-filter">
+                <div class="ss2-chip active">Tutte</div>
+                <div class="ss2-chip">Uscite</div>
+                <div class="ss2-chip">Entrate</div>
+              </div>
+              <div class="ss2-group-label">OGGI</div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF3C7">🛒</div><div class="ss2-tx-info"><div class="ss2-tx-name">Supermercato</div><div class="ss2-tx-meta">Spesa alimentare</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€94,30</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEE2E2">⛽</div><div class="ss2-tx-info"><div class="ss2-tx-name">Benzina</div><div class="ss2-tx-meta">Auto</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€58,00</div></div>
+              <div style="margin-top:6px;" class="ss2-group-label">IERI</div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#DCFCE7">💼</div><div class="ss2-tx-info"><div class="ss2-tx-name">Stipendio</div><div class="ss2-tx-meta">Lavoro</div></div><div class="ss2-tx-amt" style="color:#16a34a">+€2.400</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#EDE9FE">🎬</div><div class="ss2-tx-info"><div class="ss2-tx-name">Netflix</div><div class="ss2-tx-meta">Abbonamento</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€15,99</div></div>
+              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF9C3">🍕</div><div class="ss2-tx-info"><div class="ss2-tx-name">Ristorante</div><div class="ss2-tx-meta">Svago</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€42,00</div></div>
+            </div>
+          </div>
+          <div class="caption" style="color:var(--blue-dark);font-weight:700;">Lista transazioni</div>
+        </div>
+
+        <!-- Screenshot 3: Report -->
+        <div class="screenshot-item">
+          <div class="phone-sm">
+            <div class="phone-sm-notch"></div>
+            <div class="phone-sm-body">
+              <div class="ss3-header"><h4>Report</h4></div>
+              <div class="ss3-period">
+                <div class="ss3-chip active">3 mesi</div>
+                <div class="ss3-chip">6 mesi</div>
+                <div class="ss3-chip">Anno</div>
+              </div>
+              <div class="ss3-summary">
+                <div class="ss3-sum-row"><span class="ss3-sum-label">Tot. Entrate</span><span class="ss3-sum-val" style="color:#16a34a">+€9.600</span></div>
+                <div class="ss3-sum-row"><span class="ss3-sum-label">Tot. Uscite</span><span class="ss3-sum-val" style="color:#dc2626">−€5.541</span></div>
+                <div class="ss3-sum-row"><span class="ss3-sum-label">Risparmio netto</span><span class="ss3-sum-val" style="color:#1E3A8A">+€4.059</span></div>
+              </div>
+              <div class="ss3-bar-chart">
+                <div class="ss3-bar-title">Entrate vs Uscite</div>
+                <div class="ss3-bars">
+                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:32px;"></div><div class="ss3-b e" style="height:20px;"></div></div><div class="ss3-month">FEB</div></div>
+                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:28px;"></div><div class="ss3-b e" style="height:24px;"></div></div><div class="ss3-month">MAR</div></div>
+                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:36px;"></div><div class="ss3-b e" style="height:18px;"></div></div><div class="ss3-month">APR</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption">Grafici e report</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PRICING ══════════ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">✦ Prezzi</div>
+        <h2>Scegli il piano giusto per te</h2>
+        <p>Inizia gratis. Scegli il Premium in base a come vuoi conservare i tuoi dati.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="pricing-name">Free</div>
+          <div class="pricing-price">€0<span>/mese</span></div>
+          <div class="pricing-yearly">Per sempre gratuito</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Storage locale <strong>o</strong> cloud a scelta</li>
+            <li><span class="check">✓</span> Fino a 80 transazioni/mese</li>
+            <li><span class="check">✓</span> 3 conti attivi</li>
+            <li><span class="check">✓</span> 4 ricorrenti attive</li>
+            <li><span class="check">✓</span> 15 categorie aggiuntive</li>
+            <li><span class="check">✓</span> Grafici e report base</li>
+            <li class="muted"><span class="cross">✕</span> Backup & Restore</li>
+            <li class="muted"><span class="cross">✕</span> Conti illimitati</li>
+            <li class="muted"><span class="cross">✕</span> Esportazione dati</li>
+            <li class="muted"><span class="cross">✕</span> Sync multi-dispositivo</li>
+          </ul>
+          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Inizia Gratis</a>
+        </div>
+
+        <!-- Premium Local -->
+        <div class="pricing-card">
+          <div class="pricing-name">Premium Local</div>
+          <div class="pricing-price">€2<span>/mese</span></div>
+          <div class="pricing-yearly">oppure <strong>€15/anno — risparmi il 38%</strong></div>
+          <div class="pricing-divider"></div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--neutral);border-radius:10px;padding:10px 12px;margin-bottom:16px;">
+            <span style="font-size:22px;">📱</span>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--text);">Dati sul dispositivo</div>
+              <div style="font-size:11px;color:var(--text-muted);">I tuoi dati restano solo sul dispositivo — nessun dato finanziario sul cloud</div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Transazioni illimitate</li>
+            <li><span class="check">✓</span> Fino a 20 conti attivi</li>
+            <li><span class="check">✓</span> Ricorrenti illimitate</li>
+            <li><span class="check">✓</span> 150 categorie aggiuntive</li>
+            <li><span class="check">✓</span> Grafici e report avanzati</li>
+            <li><span class="check">✓</span> Backup & Restore locale</li>
+            <li><span class="check">✓</span> Esportazione dati CSV/PDF</li>
+            <li class="muted"><span class="cross">✕</span> Sync multi-dispositivo</li>
+            <li class="muted"><span class="cross">✕</span> Condivisione famiglia</li>
+          </ul>
+          <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Scegli Local</a>
+        </div>
+
+        <!-- Premium Firebase -->
+        <div class="pricing-card featured">
+          <div class="most-popular">⭐ Più completo</div>
+          <div class="pricing-name">Premium Cloud</div>
+          <div class="pricing-price">€2<span style="font-size:18px;font-weight:500;color:var(--text-muted);">,99/mese</span></div>
+          <div class="pricing-yearly">oppure <strong>€21,99/anno — risparmi il 39%</strong></div>
+          <div class="pricing-divider"></div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--blue-light);border-radius:10px;padding:10px 12px;margin-bottom:16px;">
+            <span style="font-size:22px;">☁️</span>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--blue-dark);">Sync real-time su tutti i dispositivi</div>
+              <div style="font-size:11px;color:var(--blue);">Sincronizzazione cloud</div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Tutto di Premium Local</li>
+            <li><span class="check">✓</span> Sync real-time multi-dispositivo</li>
+            <li><span class="check">✓</span> Condivisione famiglia (fino a 10)</li>
+            <li><span class="check">✓</span> Accesso da browser (dashboard web)</li>
+            <li><span class="check">✓</span> Backup automatico su cloud</li>
+            <li><span class="check">✓</span> Ripristino da qualsiasi dispositivo</li>
+          </ul>
+          <a href="#download" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Scegli Cloud</a>
+        </div>
+
+      </div>
+
+      <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--text-muted);">
+        Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre al sicuro.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA BANNER ══════════ -->
+  <section class="cta-banner">
+    <h2>Inizia oggi a tenere i conti in ordine</h2>
+    <p>Scarica FamlyBudget gratuitamente e inizia a tracciare le spese di famiglia in pochi secondi.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-lg btn-white">
+        ▶ &nbsp;Scarica su Google Play
+      </a>
+      <a href="#features" class="btn btn-lg btn-ghost">Scopri le funzionalità</a>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-logo" style="margin-bottom:16px;">
+            <span class="footer-wordmark">
+              <span style="color:#fff">Fam</span><span style="color:#2DD4BF">ly</span><span style="color:#FCD34D">Budget</span>
+            </span>
+          </div>
+          <p>L'app per la gestione delle finanze familiari. Semplice, sicura, sempre con te.</p>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
+            <a href="mailto:info@famlybudget.com" style="font-size:13px;color:#94A3B8;display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94A3B8'">
+              <span style="font-size:15px;">✉️</span> info@famlybudget.com
+            </a>
+            <a href="mailto:support@famlybudget.com" style="font-size:13px;color:#94A3B8;display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94A3B8'">
+              <span style="font-size:15px;">🛟</span> support@famlybudget.com
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>App</h4>
+          <ul>
+            <li><a href="#features">Funzionalità</a></li>
+            <li><a href="#screenshots">Schermate</a></li>
+            <li><a href="#pricing">Prezzi</a></li>
+            <li><a href="#">Novità</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Supporto</h4>
+          <ul>
+            <li><a href="#">Centro aiuto</a></li>
+            <li><a href="mailto:info@famlybudget.com">Contattaci</a></li>
+            <li><a href="mailto:support@famlybudget.com">Supporto tecnico</a></li>
+            <li><a href="mailto:support@famlybudget.com">Segnala un bug</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legale</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Termini di servizio</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FamlyBudget. Tutti i diritti riservati.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Termini</a>
+          <a href="#">Supporto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

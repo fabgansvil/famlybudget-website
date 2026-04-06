@@ -9,14 +9,8 @@ import Layout from '../layouts/Layout.astro';
   <div class="legal-page">
     <div class="legal-container">
 
-      <!-- Language toggle -->
-      <div class="legal-lang-toggle">
-        <a href="#it" class="active">🇮🇹 Italiano</a>
-        <a href="#en">🇬🇧 English</a>
-      </div>
-
       <!-- ══════════ VERSIONE ITALIANA ══════════ -->
-      <div class="legal-section" id="it">
+      <div class="legal-section" id="it" data-lang-section="it">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">Ultima revisione: 6 aprile 2026 &nbsp;·&nbsp; Versione 1.0</p>
 
@@ -163,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
       <hr class="legal-divider" />
 
       <!-- ══════════ ENGLISH VERSION ══════════ -->
-      <div class="legal-section" id="en">
+      <div class="legal-section" id="en" data-lang-section="en">
         <h1>Privacy Policy</h1>
         <p class="legal-meta">Last updated: April 6, 2026 &nbsp;·&nbsp; Version 1.0</p>
 

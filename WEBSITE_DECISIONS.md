@@ -64,11 +64,11 @@ Serve come riferimento visivo per la versione definitiva in Astro.
 ## Step da completare — indipendenti dalla pubblicazione
 
 ### Sviluppo sito
-- [ ] Convertire mockup HTML in progetto **Astro** reale
+- [x] Convertire mockup HTML in progetto **Astro** reale (Sprint 3 — 2026-04-06)
 - [ ] Collegare repository GitHub a Netlify (deploy automatico su push)
-- [ ] Implementare versione **responsive mobile** completa
-- [ ] Pagina **Privacy Policy** (obbligatoria per Google Play)
-- [ ] Pagina **Termini di Servizio**
+- [x] Versione **responsive mobile** completa (CSS ereditato dal mockup originale)
+- [x] Pagina **Privacy Policy** — `famlybudget.com/privacy` (Sprint 3 — 2026-04-06)
+- [x] Pagina **Termini di Servizio** — `famlybudget.com/terms` (Sprint 3 — 2026-04-06)
 - [ ] Pagina **Cookie Policy**
 - [ ] Sezione **FAQ** (domande frequenti sui piani, storage, dati)
 - [ ] Pagina **Supporto** / form di contatto
@@ -108,4 +108,6 @@ famlybudget.com/account    → gestione abbonamento RevenueCat
 - Deploy: push su branch `main` → Netlify build automatico
 - Build command: `astro build`
 - Publish directory: `dist`
-- Node version: 18+
+- Node version: 20 (configurato in `netlify.toml`)
+- Struttura file: `src/layouts/Layout.astro` + `src/pages/{index,privacy,terms}.astro`
+- Logo: `public/famlybudget-logo.png` (copiato da `assets/`)

@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Terms of Service — FamlyBudget"
+  description="Terms of Service for FamlyBudget app. Rules, plans, limitations and user responsibilities."
+  isLegal={true}
+>
+  <div class="legal-page">
+    <div class="legal-container">
+
+      <!-- Language toggle -->
+      <div class="legal-lang-toggle">
+        <a href="#it" class="active">🇮🇹 Italiano</a>
+        <a href="#en">🇬🇧 English</a>
+      </div>
+
+      <!-- ══════════ VERSIONE ITALIANA ══════════ -->
+      <div class="legal-section" id="it">
+        <h1>Termini di Servizio</h1>
+        <p class="legal-meta">Ultima revisione: 6 aprile 2026 &nbsp;·&nbsp; Versione 1.0</p>
+
+        <div class="legal-notice">
+          <p>Utilizzando l'applicazione FamlyBudget accetti i seguenti Termini di Servizio. Ti invitiamo a leggerli attentamente prima di utilizzare l'app.</p>
+        </div>
+
+        <h2>1. Definizioni</h2>
+        <ul>
+          <li><strong>Servizio</strong> — l'applicazione mobile FamlyBudget (Android) e il sito web famlybudget.com</li>
+          <li><strong>Utente</strong> — qualsiasi persona fisica che acceda e utilizzi il Servizio</li>
+          <li><strong>Piano Free</strong> — il piano gratuito con funzionalità limitate descritte nella Sezione 4</li>
+          <li><strong>Piano Premium</strong> — piani a pagamento (Premium Local o Premium Cloud) che rimuovono i limiti del piano Free</li>
+          <li><strong>Titolare</strong> — Fabrizio Ganem, sviluppatore e responsabile del Servizio</li>
+        </ul>
+
+        <h2>2. Accettazione dei Termini</h2>
+        <p>Accedendo o utilizzando FamlyBudget, dichiari di:</p>
+        <ul>
+          <li>Avere almeno 13 anni di età</li>
+          <li>Avere letto e accettato questi Termini di Servizio e la <a href="/privacy">Privacy Policy</a></li>
+          <li>Essere responsabile di tutte le attività svolte con il tuo account</li>
+        </ul>
+        <p>Se non accetti questi termini, ti preghiamo di non utilizzare il Servizio.</p>
+
+        <h2>3. Descrizione del Servizio</h2>
+        <p>FamlyBudget è un'applicazione per la gestione delle finanze personali e familiari. Permette di:</p>
+        <ul>
+          <li>Registrare e classificare entrate, uscite e trasferimenti</li>
+          <li>Gestire più conti bancari, contanti e carte di credito</li>
+          <li>Impostare budget mensili per categoria</li>
+          <li>Definire obiettivi di risparmio e monitorarne il progresso</li>
+          <li>Pianificare transazioni ricorrenti</li>
+          <li>Visualizzare grafici e report sull'andamento finanziario</li>
+          <li>Sincronizzare i dati tra dispositivi (solo Piano Premium Cloud)</li>
+          <li>Condividere la gestione del budget con i membri della famiglia (solo Piano Premium Cloud)</li>
+        </ul>
+
+        <h2>4. Piano Free — Limiti Applicati</h2>
+        <p>Il Piano Free include le seguenti limitazioni:</p>
+        <table>
+          <tr><th>Funzionalità</th><th>Limite Free</th><th>Premium</th></tr>
+          <tr><td>Transazioni per mese</td><td>80</td><td>Illimitate</td></tr>
+          <tr><td>Conti attivi</td><td>3</td><td>Fino a 20</td></tr>
+          <tr><td>Transazioni ricorrenti attive</td><td>4</td><td>Illimitate</td></tr>
+          <tr><td>Categorie aggiuntive</td><td>15</td><td>150</td></tr>
+          <tr><td>Valute aggiuntive</td><td>1</td><td>Fino a 10</td></tr>
+          <tr><td>Backup e Ripristino</td><td>Non disponibile</td><td>Disponibile</td></tr>
+          <tr><td>Esportazione dati</td><td>Non disponibile</td><td>CSV e PDF</td></tr>
+          <tr><td>Sync multi-dispositivo</td><td>Non disponibile</td><td>Solo Premium Cloud</td></tr>
+          <tr><td>Condivisione famiglia</td><td>1 membro</td><td>Fino a 10 (solo Cloud)</td></tr>
+        </table>
+
+        <h2>5. Piani Premium</h2>
+        <p>I piani Premium sono disponibili in due varianti:</p>
+        <ul>
+          <li><strong>Premium Local</strong> — rimozione di tutti i limiti del piano Free; dati archiviati solo sul dispositivo. Prezzo indicativo: €2/mese o €15/anno.</li>
+          <li><strong>Premium Cloud</strong> — tutto di Premium Local + sincronizzazione cloud multi-dispositivo + condivisione famiglia. Prezzo indicativo: €2,99/mese o €21,99/anno.</li>
+        </ul>
+        <p>I prezzi definitivi sono visibili nella sezione acquisti dell'app e su Google Play. I prezzi possono variare in base al paese.</p>
+
+        <h2>6. Acquisti e Pagamenti</h2>
+        <ul>
+          <li>Gli acquisti in-app vengono processati tramite <strong>Google Play</strong> secondo le politiche di Google</li>
+          <li>I pagamenti sono gestiti da <strong>RevenueCat</strong> (quando disponibile)</li>
+          <li>Gli abbonamenti si rinnovano automaticamente alla scadenza salvo cancellazione preventiva</li>
+          <li>Per annullare un abbonamento: Impostazioni Google Play → Abbonamenti → FamlyBudget → Annulla</li>
+          <li>Non viene offerto rimborso per i periodi già pagati, salvo quanto previsto dalle politiche di Google Play e dalla legge applicabile</li>
+        </ul>
+
+        <h2>7. Downgrade — Gestione dei Dati in Caso di Cancellazione</h2>
+        <p>Se l'abbonamento Premium scade o viene annullato:</p>
+        <ul>
+          <li><strong>I dati non vengono mai eliminati</strong> — tutti i dati rimangono accessibili in sola lettura</li>
+          <li><strong>Conti</strong> — i 3 conti con data di creazione più antica rimangono completamente attivi; gli altri diventano in sola lettura (nessuna nuova transazione)</li>
+          <li><strong>Categorie</strong> — le 15 categorie più vecchie rimangono attive; le altre in sola lettura</li>
+          <li><strong>Ricorrenti</strong> — solo le 4 più vecchie restano attive; le altre vengono sospese</li>
+          <li>Un badge visivo indica gli elementi "congelati" che richiedono Premium per essere riattivati</li>
+        </ul>
+
+        <h2>8. Responsabilità dell'Utente</h2>
+        <p>L'utente è responsabile di:</p>
+        <ul>
+          <li>Mantenere riservate le proprie credenziali di accesso</li>
+          <li>Garantire l'accuratezza dei dati inseriti nell'app</li>
+          <li>Non utilizzare il Servizio per attività illegali o contrarie all'ordine pubblico</li>
+          <li>Non tentare di accedere a dati di altri utenti</li>
+          <li>Non effettuare reverse engineering, decompilazione o modifica dell'app</li>
+        </ul>
+
+        <h2>9. Limitazione di Responsabilità</h2>
+        <p>FamlyBudget è uno strumento di <strong>supporto alla gestione finanziaria personale</strong>. Non è un servizio finanziario regolamentato e non fornisce consulenza finanziaria, fiscale o legale.</p>
+        <p>Il Titolare non è responsabile per:</p>
+        <ul>
+          <li>Decisioni finanziarie prese dall'utente sulla base dei dati inseriti nell'app</li>
+          <li>Perdita di dati causata da malfunzionamenti del dispositivo, disinstallazione dell'app (modalità Local) o azioni dell'utente stesso</li>
+          <li>Interruzioni del servizio causate da terze parti (Google Firebase, Play Store)</li>
+          <li>Inesattezze nei calcoli causate da dati inseriti in modo errato dall'utente</li>
+        </ul>
+        <p>Il Servizio è fornito "così com'è" (<em>as is</em>). Ci impegniamo a mantenere un alto livello di qualità e disponibilità, ma non garantiamo un servizio privo di interruzioni o errori.</p>
+
+        <h2>10. Proprietà Intellettuale</h2>
+        <p>Tutto il codice sorgente, il design, i loghi, i marchi e i contenuti del Servizio sono di proprietà del Titolare e protetti dalle leggi sul diritto d'autore. L'utente non acquista alcun diritto di proprietà intellettuale sull'app.</p>
+        <p>I dati inseriti dall'utente (transazioni, conti, categorie, ecc.) sono e rimangono di proprietà esclusiva dell'utente.</p>
+
+        <h2>11. Modifiche al Servizio e ai Termini</h2>
+        <p>Il Titolare si riserva di modificare, sospendere o interrompere il Servizio in qualsiasi momento, con o senza preavviso. In caso di modifiche sostanziali ai presenti Termini, l'utente sarà informato tramite notifica nell'app o per email con almeno 30 giorni di anticipo.</p>
+        <p>L'uso continuato del Servizio dopo la notifica delle modifiche costituisce accettazione dei nuovi termini.</p>
+
+        <h2>12. Legge Applicabile e Foro Competente</h2>
+        <p>I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia è competente il Foro del luogo di residenza dell'utente consumatore, ai sensi della normativa vigente in materia di tutela dei consumatori.</p>
+
+        <h2>13. Contatti</h2>
+        <p>Per qualsiasi domanda sui presenti Termini di Servizio:<br />
+        Email: <a href="mailto:info@famlybudget.com">info@famlybudget.com</a><br />
+        Supporto: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+      </div>
+
+      <hr class="legal-divider" />
+
+      <!-- ══════════ ENGLISH VERSION ══════════ -->
+      <div class="legal-section" id="en">
+        <h1>Terms of Service</h1>
+        <p class="legal-meta">Last updated: April 6, 2026 &nbsp;·&nbsp; Version 1.0</p>
+
+        <div class="legal-notice">
+          <p>By using the FamlyBudget application you accept these Terms of Service. Please read them carefully before using the app.</p>
+        </div>
+
+        <h2>1. Definitions</h2>
+        <ul>
+          <li><strong>Service</strong> — the FamlyBudget mobile application (Android) and the website famlybudget.com</li>
+          <li><strong>User</strong> — any individual who accesses and uses the Service</li>
+          <li><strong>Free Plan</strong> — the free plan with limited features described in Section 4</li>
+          <li><strong>Premium Plan</strong> — paid plans (Premium Local or Premium Cloud) that remove Free plan limits</li>
+          <li><strong>Owner</strong> — Fabrizio Ganem, developer and responsible party for the Service</li>
+        </ul>
+
+        <h2>2. Acceptance of Terms</h2>
+        <p>By accessing or using FamlyBudget, you declare that you:</p>
+        <ul>
+          <li>Are at least 13 years of age</li>
+          <li>Have read and accepted these Terms of Service and the <a href="/privacy">Privacy Policy</a></li>
+          <li>Are responsible for all activities conducted with your account</li>
+        </ul>
+        <p>If you do not accept these terms, please do not use the Service.</p>
+
+        <h2>3. Service Description</h2>
+        <p>FamlyBudget is an application for managing personal and family finances. It allows you to:</p>
+        <ul>
+          <li>Record and categorize income, expenses, and transfers</li>
+          <li>Manage multiple bank accounts, cash, and credit cards</li>
+          <li>Set monthly budgets per category</li>
+          <li>Define savings goals and monitor progress</li>
+          <li>Plan recurring transactions</li>
+          <li>View charts and reports on financial trends</li>
+          <li>Sync data across devices (Premium Cloud Plan only)</li>
+          <li>Share budget management with family members (Premium Cloud Plan only)</li>
+        </ul>
+
+        <h2>4. Free Plan — Applied Limits</h2>
+        <p>The Free Plan includes the following limitations:</p>
+        <table>
+          <tr><th>Feature</th><th>Free Limit</th><th>Premium</th></tr>
+          <tr><td>Transactions per month</td><td>80</td><td>Unlimited</td></tr>
+          <tr><td>Active accounts</td><td>3</td><td>Up to 20</td></tr>
+          <tr><td>Active recurring transactions</td><td>4</td><td>Unlimited</td></tr>
+          <tr><td>Additional categories</td><td>15</td><td>150</td></tr>
+          <tr><td>Additional currencies</td><td>1</td><td>Up to 10</td></tr>
+          <tr><td>Backup and Restore</td><td>Not available</td><td>Available</td></tr>
+          <tr><td>Data export</td><td>Not available</td><td>CSV and PDF</td></tr>
+          <tr><td>Multi-device sync</td><td>Not available</td><td>Premium Cloud only</td></tr>
+          <tr><td>Family sharing</td><td>1 member</td><td>Up to 10 (Cloud only)</td></tr>
+        </table>
+
+        <h2>5. Premium Plans</h2>
+        <p>Premium plans are available in two variants:</p>
+        <ul>
+          <li><strong>Premium Local</strong> — removal of all Free plan limits; data stored only on the device. Indicative price: €2/month or €15/year.</li>
+          <li><strong>Premium Cloud</strong> — everything in Premium Local + cloud multi-device sync + family sharing. Indicative price: €2.99/month or €21.99/year.</li>
+        </ul>
+        <p>Final prices are shown in the in-app purchase section and on Google Play. Prices may vary by country.</p>
+
+        <h2>6. Purchases and Payments</h2>
+        <ul>
+          <li>In-app purchases are processed through <strong>Google Play</strong> according to Google's policies</li>
+          <li>Payments are managed by <strong>RevenueCat</strong> (when available)</li>
+          <li>Subscriptions automatically renew at expiry unless cancelled in advance</li>
+          <li>To cancel a subscription: Google Play Settings → Subscriptions → FamlyBudget → Cancel</li>
+          <li>No refund is offered for periods already paid, except as provided by Google Play policies and applicable law</li>
+        </ul>
+
+        <h2>7. Downgrade — Data Management upon Cancellation</h2>
+        <p>If a Premium subscription expires or is cancelled:</p>
+        <ul>
+          <li><strong>Data is never deleted</strong> — all data remains accessible in read-only mode</li>
+          <li><strong>Accounts</strong> — the 3 accounts with the oldest creation date remain fully active; others become read-only (no new transactions)</li>
+          <li><strong>Categories</strong> — the 15 oldest categories remain active; others become read-only</li>
+          <li><strong>Recurring transactions</strong> — only the 4 oldest remain active; others are suspended</li>
+          <li>A visual badge indicates "frozen" items that require Premium to be reactivated</li>
+        </ul>
+
+        <h2>8. User Responsibilities</h2>
+        <p>The user is responsible for:</p>
+        <ul>
+          <li>Keeping their login credentials confidential</li>
+          <li>Ensuring the accuracy of data entered in the app</li>
+          <li>Not using the Service for illegal activities or activities contrary to public order</li>
+          <li>Not attempting to access other users' data</li>
+          <li>Not reverse engineering, decompiling, or modifying the app</li>
+        </ul>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>FamlyBudget is a <strong>personal finance management support tool</strong>. It is not a regulated financial service and does not provide financial, tax, or legal advice.</p>
+        <p>The Owner is not responsible for:</p>
+        <ul>
+          <li>Financial decisions made by the user based on data entered in the app</li>
+          <li>Data loss caused by device malfunction, uninstalling the app (Local mode), or the user's own actions</li>
+          <li>Service interruptions caused by third parties (Google Firebase, Play Store)</li>
+          <li>Inaccuracies in calculations caused by data incorrectly entered by the user</li>
+        </ul>
+        <p>The Service is provided "as is." We strive to maintain a high level of quality and availability, but do not guarantee a service free of interruptions or errors.</p>
+
+        <h2>10. Intellectual Property</h2>
+        <p>All source code, design, logos, trademarks, and content of the Service are the property of the Owner and protected by copyright law. The user does not acquire any intellectual property rights to the app.</p>
+        <p>Data entered by the user (transactions, accounts, categories, etc.) is and remains the exclusive property of the user.</p>
+
+        <h2>11. Changes to Service and Terms</h2>
+        <p>The Owner reserves the right to modify, suspend, or discontinue the Service at any time, with or without notice. In case of material changes to these Terms, users will be informed via an in-app notification or by email with at least 30 days' notice.</p>
+        <p>Continued use of the Service after notification of changes constitutes acceptance of the new terms.</p>
+
+        <h2>12. Governing Law and Jurisdiction</h2>
+        <p>These Terms are governed by Italian law. For any dispute, the court of the user's place of residence as a consumer shall have jurisdiction, in accordance with applicable consumer protection law.</p>
+
+        <h2>13. Contact</h2>
+        <p>For any questions about these Terms of Service:<br />
+        Email: <a href="mailto:info@famlybudget.com">info@famlybudget.com</a><br />
+        Support: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</Layout>

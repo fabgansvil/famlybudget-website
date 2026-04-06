@@ -1,0 +1,312 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Privacy Policy — FamlyBudget"
+  description="Privacy Policy of FamlyBudget app. How we collect, use and protect your personal data."
+  isLegal={true}
+>
+  <div class="legal-page">
+    <div class="legal-container">
+
+      <!-- Language toggle -->
+      <div class="legal-lang-toggle">
+        <a href="#it" class="active">🇮🇹 Italiano</a>
+        <a href="#en">🇬🇧 English</a>
+      </div>
+
+      <!-- ══════════ VERSIONE ITALIANA ══════════ -->
+      <div class="legal-section" id="it">
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Ultima revisione: 6 aprile 2026 &nbsp;·&nbsp; Versione 1.0</p>
+
+        <div class="legal-notice">
+          <p>Questa Privacy Policy descrive come FamlyBudget raccoglie, utilizza e protegge i dati personali degli utenti dell'applicazione mobile FamlyBudget (Android).</p>
+        </div>
+
+        <h2>1. Titolare del Trattamento</h2>
+        <p>Il Titolare del Trattamento dei dati personali è:</p>
+        <p><strong>Fabrizio Ganem</strong><br />
+        Email: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a><br />
+        Supporto: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+
+        <h2>2. Dati Raccolti</h2>
+
+        <h3>2.1 Dati di Account</h3>
+        <p>Per utilizzare FamlyBudget è necessario autenticarsi. Raccogliamo:</p>
+        <ul>
+          <li><strong>Indirizzo email</strong> — fornito al momento della registrazione o tramite Google Sign-In</li>
+          <li><strong>Nome visualizzato</strong> — opzionale, fornito dall'utente o dal profilo Google</li>
+          <li><strong>Identificatore utente (UID)</strong> — generato da Firebase Auth</li>
+        </ul>
+
+        <h3>2.2 Dati Finanziari</h3>
+        <p>FamlyBudget permette di scegliere dove archiviare i propri dati:</p>
+        <table>
+          <tr><th>Modalità</th><th>Dove vengono salvati i dati</th><th>Accesso da remoto</th></tr>
+          <tr><td><strong>Locale (Local)</strong></td><td>Solo sul dispositivo dell'utente (SQLite)</td><td>No — i dati non lasciano mai il dispositivo</td></tr>
+          <tr><td><strong>Cloud (Firebase)</strong></td><td>Firebase Firestore (Google Cloud)</td><td>Sì — sincronizzazione multi-dispositivo</td></tr>
+        </table>
+        <p>I dati finanziari includono: transazioni, conti, categorie, budget, obiettivi di risparmio, ricorrenze e saldi. Questi dati sono di proprietà esclusiva dell'utente.</p>
+
+        <h3>2.3 Dati Tecnici e di Diagnostica</h3>
+        <p>Raccogliamo automaticamente dati tecnici aggregati e anonimi per migliorare l'app:</p>
+        <ul>
+          <li><strong>Firebase Analytics</strong> — eventi di utilizzo anonimi (es. schermate visualizzate, funzionalità usate). Non includiamo dati finanziari negli eventi analytics.</li>
+          <li><strong>Firebase Crashlytics</strong> — report di crash e anomalie tecniche, per identificare e risolvere bug. I report non contengono dati finanziari dell'utente.</li>
+        </ul>
+
+        <h2>3. Finalità del Trattamento</h2>
+        <p>Utilizziamo i dati raccolti per le seguenti finalità:</p>
+        <ul>
+          <li><strong>Erogazione del servizio</strong> — autenticazione, salvataggio e sincronizzazione dei dati dell'utente</li>
+          <li><strong>Miglioramento dell'app</strong> — analisi aggregata anonima del comportamento d'uso</li>
+          <li><strong>Diagnostica e stabilità</strong> — rilevamento e correzione di bug tramite Crashlytics</li>
+          <li><strong>Comunicazioni di servizio</strong> — notifiche tecniche essenziali (es. modifiche alla Privacy Policy)</li>
+        </ul>
+        <p>Non utilizziamo i dati per pubblicità di terze parti, profilazione commerciale o vendita a soggetti terzi.</p>
+
+        <h2>4. Servizi Terzi Coinvolti</h2>
+        <table>
+          <tr><th>Servizio</th><th>Fornitore</th><th>Dati trasmessi</th><th>Privacy Policy</th></tr>
+          <tr>
+            <td>Firebase Auth</td>
+            <td>Google LLC</td>
+            <td>Email, nome, UID</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Firestore</td>
+            <td>Google LLC</td>
+            <td>Dati finanziari (solo modalità Cloud)</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td>Google LLC</td>
+            <td>Eventi d'uso anonimi</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Crashlytics</td>
+            <td>Google LLC</td>
+            <td>Stack trace, versione app, dispositivo</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Sign-In</td>
+            <td>Google LLC</td>
+            <td>Email, nome profilo (se usato)</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+          </tr>
+        </table>
+        <p>RevenueCat (gestione acquisti in-app) sarà integrato in una versione futura e aggiorneremo questa policy di conseguenza.</p>
+
+        <h2>5. Base Giuridica del Trattamento</h2>
+        <p>Il trattamento dei dati si basa su:</p>
+        <ul>
+          <li><strong>Esecuzione del contratto (Art. 6.1.b GDPR)</strong> — per fornire il servizio richiesto dall'utente</li>
+          <li><strong>Legittimo interesse (Art. 6.1.f GDPR)</strong> — per diagnostica tecnica e miglioramento dell'app</li>
+          <li><strong>Consenso (Art. 6.1.a GDPR)</strong> — dove richiesto dalla normativa applicabile</li>
+        </ul>
+
+        <h2>6. Conservazione dei Dati</h2>
+        <ul>
+          <li><strong>Dati account (Firebase Auth)</strong> — conservati finché l'account è attivo</li>
+          <li><strong>Dati finanziari (modalità Cloud)</strong> — conservati su Firestore finché l'utente non richiede la cancellazione</li>
+          <li><strong>Dati finanziari (modalità Local)</strong> — conservati esclusivamente sul dispositivo; la disinstallazione dell'app elimina tutti i dati</li>
+          <li><strong>Dati analytics e crash</strong> — conservati per 60 giorni da Google secondo le loro politiche</li>
+        </ul>
+        <p>L'utente può eliminare il proprio account e tutti i dati associati direttamente dall'app: <strong>Impostazioni → Elimina account</strong>.</p>
+
+        <h2>7. Diritti dell'Utente (GDPR)</h2>
+        <p>In conformità al Regolamento UE 2016/679 (GDPR), l'utente ha diritto a:</p>
+        <ul>
+          <li><strong>Accesso</strong> — richiedere copia dei propri dati personali</li>
+          <li><strong>Rettifica</strong> — correggere dati inesatti</li>
+          <li><strong>Cancellazione</strong> — richiedere la cancellazione dei propri dati ("diritto all'oblio")</li>
+          <li><strong>Portabilità</strong> — ricevere i propri dati in formato strutturato (l'app offre esportazione CSV/JSON per gli utenti Premium)</li>
+          <li><strong>Limitazione</strong> — richiedere la limitazione del trattamento in specifiche circostanze</li>
+          <li><strong>Opposizione</strong> — opporsi al trattamento basato su legittimo interesse</li>
+          <li><strong>Reclamo</strong> — presentare reclamo all'Autorità Garante per la Protezione dei Dati Personali (www.garanteprivacy.it)</li>
+        </ul>
+        <p>Per esercitare questi diritti: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a></p>
+
+        <h2>8. Cookie e Tecnologie di Tracciamento</h2>
+        <p>L'applicazione mobile FamlyBudget non utilizza cookie. Utilizza <strong>SharedPreferences</strong> (Android) per memorizzare preferenze locali dell'utente (lingua selezionata, stato del blocco app, modalità storage) — questi dati non vengono mai trasmessi a server esterni.</p>
+        <p>Il sito web <strong>famlybudget.com</strong> utilizza esclusivamente cookie tecnici essenziali per il funzionamento del sito. Nessun cookie di profilazione o di terze parti viene impostato.</p>
+
+        <h2>9. Sicurezza dei Dati</h2>
+        <p>Adottiamo misure tecniche appropriate per proteggere i dati:</p>
+        <ul>
+          <li>Tutte le comunicazioni con Firebase avvengono via HTTPS/TLS</li>
+          <li>L'accesso a Firestore è regolato da regole di sicurezza che permettono a ciascun utente di accedere solo ai propri dati</li>
+          <li>L'app supporta il blocco biometrico (impronta digitale / Face ID) per proteggere l'accesso locale</li>
+          <li>I dati in modalità Local non lasciano mai il dispositivo</li>
+        </ul>
+
+        <h2>10. Trasferimento Internazionale dei Dati</h2>
+        <p>I servizi Firebase di Google LLC comportano il trasferimento di dati negli Stati Uniti. Google garantisce tale trasferimento mediante le Clausole Contrattuali Standard (Standard Contractual Clauses) approvate dalla Commissione Europea. Maggiori dettagli: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+
+        <h2>11. Minori</h2>
+        <p>FamlyBudget non è destinato a minori di 13 anni. Non raccogliamo consapevolmente dati personali di minori. Se sei a conoscenza che un minore ha fornito dati personali, contattaci a <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a>.</p>
+
+        <h2>12. Modifiche alla Privacy Policy</h2>
+        <p>Ci riserviamo di aggiornare questa Privacy Policy. In caso di modifiche sostanziali, l'utente sarà informato tramite notifica nell'app o per email. La data di "Ultima revisione" in cima alla pagina indica sempre la versione in vigore.</p>
+
+        <h2>13. Contatti</h2>
+        <p>Per qualsiasi domanda relativa al trattamento dei dati:<br />
+        Email: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a><br />
+        Supporto generale: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+      </div>
+
+      <hr class="legal-divider" />
+
+      <!-- ══════════ ENGLISH VERSION ══════════ -->
+      <div class="legal-section" id="en">
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Last updated: April 6, 2026 &nbsp;·&nbsp; Version 1.0</p>
+
+        <div class="legal-notice">
+          <p>This Privacy Policy describes how FamlyBudget collects, uses, and protects the personal data of users of the FamlyBudget mobile application (Android).</p>
+        </div>
+
+        <h2>1. Data Controller</h2>
+        <p>The Data Controller for personal data is:</p>
+        <p><strong>Fabrizio Ganem</strong><br />
+        Email: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a><br />
+        Support: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+
+        <h2>2. Data Collected</h2>
+
+        <h3>2.1 Account Data</h3>
+        <p>To use FamlyBudget you need to authenticate. We collect:</p>
+        <ul>
+          <li><strong>Email address</strong> — provided at registration or via Google Sign-In</li>
+          <li><strong>Display name</strong> — optional, provided by the user or Google profile</li>
+          <li><strong>User identifier (UID)</strong> — generated by Firebase Auth</li>
+        </ul>
+
+        <h3>2.2 Financial Data</h3>
+        <p>FamlyBudget allows you to choose where to store your data:</p>
+        <table>
+          <tr><th>Mode</th><th>Where data is saved</th><th>Remote access</th></tr>
+          <tr><td><strong>Local</strong></td><td>Only on the user's device (SQLite)</td><td>No — data never leaves the device</td></tr>
+          <tr><td><strong>Cloud (Firebase)</strong></td><td>Firebase Firestore (Google Cloud)</td><td>Yes — multi-device sync</td></tr>
+        </table>
+        <p>Financial data includes: transactions, accounts, categories, budgets, savings goals, recurring entries, and balances. This data is exclusively owned by the user.</p>
+
+        <h3>2.3 Technical and Diagnostic Data</h3>
+        <p>We automatically collect aggregated, anonymous technical data to improve the app:</p>
+        <ul>
+          <li><strong>Firebase Analytics</strong> — anonymous usage events (e.g., screens viewed, features used). We do not include financial data in analytics events.</li>
+          <li><strong>Firebase Crashlytics</strong> — crash reports and technical anomalies, to identify and fix bugs. Reports do not contain the user's financial data.</li>
+        </ul>
+
+        <h2>3. Purposes of Processing</h2>
+        <p>We use the collected data for the following purposes:</p>
+        <ul>
+          <li><strong>Service delivery</strong> — authentication, saving and syncing user data</li>
+          <li><strong>App improvement</strong> — anonymous aggregate analysis of usage behavior</li>
+          <li><strong>Diagnostics and stability</strong> — bug detection and resolution via Crashlytics</li>
+          <li><strong>Service communications</strong> — essential technical notifications (e.g., Privacy Policy changes)</li>
+        </ul>
+        <p>We do not use data for third-party advertising, commercial profiling, or sale to third parties.</p>
+
+        <h2>4. Third-Party Services</h2>
+        <table>
+          <tr><th>Service</th><th>Provider</th><th>Data transmitted</th><th>Privacy Policy</th></tr>
+          <tr>
+            <td>Firebase Auth</td>
+            <td>Google LLC</td>
+            <td>Email, name, UID</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Firestore</td>
+            <td>Google LLC</td>
+            <td>Financial data (Cloud mode only)</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td>Google LLC</td>
+            <td>Anonymous usage events</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase Crashlytics</td>
+            <td>Google LLC</td>
+            <td>Stack trace, app version, device info</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Sign-In</td>
+            <td>Google LLC</td>
+            <td>Email, profile name (if used)</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+          </tr>
+        </table>
+        <p>RevenueCat (in-app purchase management) will be integrated in a future version and we will update this policy accordingly.</p>
+
+        <h2>5. Legal Basis for Processing</h2>
+        <p>Data processing is based on:</p>
+        <ul>
+          <li><strong>Performance of a contract (Art. 6.1.b GDPR)</strong> — to provide the service requested by the user</li>
+          <li><strong>Legitimate interest (Art. 6.1.f GDPR)</strong> — for technical diagnostics and app improvement</li>
+          <li><strong>Consent (Art. 6.1.a GDPR)</strong> — where required by applicable law</li>
+        </ul>
+
+        <h2>6. Data Retention</h2>
+        <ul>
+          <li><strong>Account data (Firebase Auth)</strong> — retained while the account is active</li>
+          <li><strong>Financial data (Cloud mode)</strong> — retained on Firestore until the user requests deletion</li>
+          <li><strong>Financial data (Local mode)</strong> — stored exclusively on the device; uninstalling the app deletes all data</li>
+          <li><strong>Analytics and crash data</strong> — retained for 60 days by Google per their policies</li>
+        </ul>
+        <p>Users can delete their account and all associated data directly from the app: <strong>Settings → Delete account</strong>.</p>
+
+        <h2>7. Your Rights (GDPR)</h2>
+        <p>In accordance with EU Regulation 2016/679 (GDPR), you have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> — request a copy of your personal data</li>
+          <li><strong>Rectification</strong> — correct inaccurate data</li>
+          <li><strong>Erasure</strong> — request deletion of your data ("right to be forgotten")</li>
+          <li><strong>Portability</strong> — receive your data in a structured format (the app offers CSV/JSON export for Premium users)</li>
+          <li><strong>Restriction</strong> — request restriction of processing in specific circumstances</li>
+          <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+          <li><strong>Lodge a complaint</strong> — with your local data protection authority</li>
+        </ul>
+        <p>To exercise these rights: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a></p>
+
+        <h2>8. Cookies and Tracking Technologies</h2>
+        <p>The FamlyBudget mobile app does not use cookies. It uses <strong>SharedPreferences</strong> (Android) to store local user preferences (selected language, app lock state, storage mode) — this data is never transmitted to external servers.</p>
+        <p>The website <strong>famlybudget.com</strong> uses only essential technical cookies required for site operation. No profiling or third-party cookies are set.</p>
+
+        <h2>9. Data Security</h2>
+        <p>We implement appropriate technical measures to protect data:</p>
+        <ul>
+          <li>All communications with Firebase occur via HTTPS/TLS</li>
+          <li>Access to Firestore is governed by security rules that allow each user to access only their own data</li>
+          <li>The app supports biometric lock (fingerprint / Face ID) to protect local access</li>
+          <li>Data in Local mode never leaves the device</li>
+        </ul>
+
+        <h2>10. International Data Transfer</h2>
+        <p>Google LLC's Firebase services involve the transfer of data to the United States. Google ensures this transfer via Standard Contractual Clauses approved by the European Commission. More details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+
+        <h2>11. Children</h2>
+        <p>FamlyBudget is not intended for children under 13. We do not knowingly collect personal data from minors. If you are aware that a minor has provided personal data, please contact us at <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a>.</p>
+
+        <h2>12. Changes to this Privacy Policy</h2>
+        <p>We reserve the right to update this Privacy Policy. In case of substantial changes, users will be informed via an in-app notification or by email. The "Last updated" date at the top of the page always indicates the current version in force.</p>
+
+        <h2>13. Contact</h2>
+        <p>For any questions regarding data processing:<br />
+        Email: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a><br />
+        General support: <a href="mailto:support@famlybudget.com">support@famlybudget.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</Layout>

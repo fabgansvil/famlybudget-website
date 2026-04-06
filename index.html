@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="page-title">FamlyBudget — Family finances, finally under control</title>
+  <meta name="description" content="FamlyBudget — Track income and expenses, manage shared budgets and sync your entire household in real time. Free to start." />
+  <meta name="theme-color" content="#1E3A8A" />
+  <meta property="og:title" content="FamlyBudget — Family finances, finally under control" />
+  <meta property="og:description" content="Track income and expenses, manage shared budgets and sync your entire household in real time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://famlybudget.com" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="FamlyBudget" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -99,6 +108,57 @@
     .navbar-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
     .navbar-links a:hover { color: var(--blue-dark); }
     .navbar-cta { display: flex; align-items: center; gap: 12px; }
+
+    /* ── Hamburger ────────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 44px; height: 44px; background: none; border: none;
+      cursor: pointer; padding: 8px; border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: var(--neutral); }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Mobile Menu ──────────────────────────────────────────── */
+    .mobile-menu {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,23,42,0.5); z-index: 99;
+      backdrop-filter: blur(2px);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-panel {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: min(300px, 85vw);
+      background: #fff; padding: 24px 20px;
+      display: flex; flex-direction: column; gap: 8px;
+      box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+      overflow-y: auto;
+    }
+    .mobile-menu-close-area { position: absolute; top: 0; left: 0; right: min(300px, 85vw); bottom: 0; }
+    .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .mobile-menu-title { font-size: 16px; font-weight: 700; color: var(--text); }
+    .mobile-menu-x { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; font-size: 20px; color: var(--text-muted); border-radius: 8px; }
+    .mobile-menu-x:hover { background: var(--neutral); }
+    .mobile-nav-link {
+      display: block; padding: 14px 16px; border-radius: 10px;
+      font-size: 16px; font-weight: 500; color: var(--text);
+      transition: background 0.15s; text-decoration: none;
+      min-height: 44px;
+    }
+    .mobile-nav-link:hover { background: var(--neutral); color: var(--blue-dark); }
+    .mobile-nav-divider { height: 1px; background: var(--border); margin: 8px 0; }
+    .mobile-nav-cta { margin-top: 8px; display: flex; flex-direction: column; gap: 10px; }
+    .mobile-nav-cta .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; min-height: 44px; }
+    .mobile-lang { display: flex; align-items: center; gap: 8px; padding: 8px 16px; }
+    .mobile-lang-label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+    .mobile-lang .lang-switcher { margin-left: auto; }
 
     /* ── Language Switcher ────────────────────────────────────── */
     .lang-switcher {
@@ -321,16 +381,60 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
+      /* Navbar */
+      .navbar .container { height: 68px; }
+      .logo-img-wrap { height: 56px; }
+      .logo-img { height: 70px; }
+      .navbar-links { display: none; }
+      .navbar-cta .btn { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
       .hero .container { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
+      .hero { padding: 48px 0 64px; }
+      .hero-sub { font-size: 16px; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; }
+      .section-header p { font-size: 16px; }
+
+      /* Features */
       .features-grid { grid-template-columns: 1fr; }
+      .feature-card { padding: 24px 20px; gap: 16px; }
+
+      /* Screenshots */
+      .screenshots-row { gap: 12px; flex-wrap: wrap; justify-content: center; }
+      .phone-sm { width: 140px; height: 280px; border-radius: 28px; border-width: 6px; }
+      .phone-sm.featured { width: 155px; height: 310px; }
+
+      /* Pricing */
       .pricing-grid { flex-direction: column; align-items: center; }
-      .screenshots-row { gap: 20px; }
-      .phone-sm { width: 160px; height: 320px; }
-      .phone-sm.featured { width: 180px; height: 360px; }
+      .pricing-card { padding: 28px 20px; width: 100%; max-width: 400px; }
+
+      /* Sections */
+      .section { padding: 56px 0; }
+      .section-header { margin-bottom: 40px; }
+      .cta-banner { padding: 56px 20px; }
+      .cta-banner p { font-size: 16px; }
+
+      /* Footer */
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-      .navbar-links { display: none; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero h1 { font-size: 30px; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; justify-content: center; }
+      .hero-stats { gap: 16px; }
+      .stat-num { font-size: 20px; }
+      .screenshots-row { gap: 8px; }
+      .phone-sm { width: 120px; height: 240px; border-radius: 24px; border-width: 5px; }
+      .phone-sm.featured { width: 135px; height: 268px; }
+      .pricing-card { padding: 24px 16px; }
+      .cta-banner { padding: 40px 16px; }
+      .footer-bottom-links { flex-direction: column; gap: 12px; }
+      /* Touch targets */
+      .lang-btn { padding: 8px 14px; font-size: 13px; }
     }
   </style>
 </head>
@@ -341,7 +445,7 @@
     <div class="container">
       <a href="#" class="navbar-logo">
         <div class="logo-img-wrap">
-          <img src="assets/famlybudget-logo.png" alt="FamlyBudget" class="logo-img" />
+          <img src="assets/famlybudget-logo.png" alt="FamlyBudget" class="logo-img" loading="eager" />
         </div>
       </a>
       <ul class="navbar-links">
@@ -357,8 +461,38 @@
         <a href="#pricing" class="btn btn-secondary" style="padding:10px 20px;font-size:14px;" data-i18n="nav_pricing_btn">Pricing</a>
         <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px;" data-i18n="nav_download">Download Free</a>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- ══════════ MOBILE MENU ══════════ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-menu-close-area" id="mobile-menu-backdrop"></div>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">FamlyBudget</span>
+        <button class="mobile-menu-x" id="mobile-menu-close" aria-label="Close menu">✕</button>
+      </div>
+      <a href="#features" class="mobile-nav-link" data-i18n="nav_features">Features</a>
+      <a href="#screenshots" class="mobile-nav-link" data-i18n="nav_screenshots">Screenshots</a>
+      <a href="#pricing" class="mobile-nav-link" data-i18n="nav_pricing">Pricing</a>
+      <div class="mobile-nav-divider"></div>
+      <div class="mobile-lang">
+        <span class="mobile-lang-label">Language</span>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+      <div class="mobile-nav-divider"></div>
+      <div class="mobile-nav-cta">
+        <a href="#pricing" class="btn btn-secondary" data-i18n="nav_pricing_btn">Pricing</a>
+        <a href="#download" class="btn btn-primary" data-i18n="nav_download">Download Free</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════ HERO ══════════ -->
   <section class="hero">
@@ -1145,7 +1279,7 @@
       localStorage.setItem('fb_lang', lang);
     }
 
-    // Wire up buttons
+    // Wire up language buttons (navbar + mobile menu)
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
     });
@@ -1153,6 +1287,42 @@
     // Init: use saved preference, default to English
     const savedLang = localStorage.getItem('fb_lang') || 'en';
     setLanguage(savedLang);
+
+    // ── Hamburger / Mobile Menu ──────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+    });
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+    // Close on nav link click
+    mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta .btn').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+    });
   </script>
 
 </body>

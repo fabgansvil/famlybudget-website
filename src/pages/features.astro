@@ -1,0 +1,1717 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="FamlyBudget — Features"
+  description="Discover all FamlyBudget features: dashboard, budgets, savings goals, recurring transactions, 90-day projection and much more."
+>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO — Dark cinematic
+══════════════════════════════════════════════════════════ -->
+<section class="fp-hero">
+  <div class="fp-hero-bg"></div>
+  <div class="fp-hero-glow fp-hero-glow-1"></div>
+  <div class="fp-hero-glow fp-hero-glow-2"></div>
+  <div class="container fp-hero-inner">
+    <div class="fp-hero-content">
+      <div class="fp-eyebrow" data-i18n="fp_hero_eyebrow">✦ FamlyBudget 2026</div>
+      <h1 class="fp-hero-h1" data-i18n-html="fp_hero_h1">Your budget.<br>Your family.<br><span class="fp-gradient-text">Finally together.</span></h1>
+      <p class="fp-hero-sub" data-i18n="fp_hero_sub">
+        One app to track every euro, plan every month and never be caught off guard again.
+      </p>
+      <div class="fp-hero-btns">
+        <a href="#download" class="fp-btn fp-btn-primary" data-i18n="fp_hero_download">▶ &nbsp;Download Free</a>
+        <a href="#cinema" class="fp-btn fp-btn-ghost" data-i18n="fp_hero_explore">Explore features ↓</a>
+      </div>
+    </div>
+    <div class="fp-hero-phone-wrap">
+      <div class="fp-hero-phone">
+        <div class="fp-phone-notch"></div>
+        <div class="fp-phone-inner">
+          <div class="fp-phone-header">
+            <div class="fp-ph-row">
+              <span class="fp-ph-greeting" data-i18n="fp_ph_greeting">Hello, Fabrizio 👋</span>
+              <span class="fp-ph-date" data-i18n="fp_ph_date">May 2026</span>
+            </div>
+            <div class="fp-ph-label" data-i18n="fp_ph_balance_label">Total balance</div>
+            <div class="fp-ph-balance">€ 8,420.50</div>
+            <div class="fp-ph-stats">
+              <div class="fp-ph-stat">
+                <span class="fp-ph-stat-icon fp-income-icon">↑</span>
+                <div>
+                  <div class="fp-ph-stat-label" data-i18n="fp_ph_income">Income</div>
+                  <div class="fp-ph-stat-val fp-green">+€3,200</div>
+                </div>
+              </div>
+              <div class="fp-ph-stat">
+                <span class="fp-ph-stat-icon fp-expense-icon">↓</span>
+                <div>
+                  <div class="fp-ph-stat-label" data-i18n="fp_ph_expenses">Expenses</div>
+                  <div class="fp-ph-stat-val fp-red">−€1,847</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fp-phone-body">
+            <div class="fp-survival-widget">
+              <div class="fp-sw-title" data-i18n="fp_sw_title">Balance Projection — 90 days</div>
+              <div class="fp-sw-chart">
+                <svg viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="fp-sw-svg">
+                  <path d="M0 48 C20 44 40 36 60 30 C80 24 90 28 100 26 C120 20 130 18 150 22 C170 26 180 34 200 32 L220 28" stroke="#3B82F6" stroke-width="2" fill="none"/>
+                  <path d="M0 48 C20 44 40 36 60 30 C80 24 90 28 100 26 C120 20 130 18 150 22 C170 26 180 34 200 32 L220 28 L220 64 L0 64Z" fill="url(#sw-grad)" opacity="0.3"/>
+                  <line x1="110" y1="0" x2="110" y2="64" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="3,3"/>
+                  <text x="113" y="10" font-size="7" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif" data-i18n="fp_sw_today">Today</text>
+                  <defs>
+                    <linearGradient id="sw-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#3B82F6"/>
+                      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="fp-sw-footer">
+                <span class="fp-sw-safe" data-i18n="fp_sw_safe">Safe to spend today</span>
+                <span class="fp-sw-amount">€ 340</span>
+              </div>
+            </div>
+            <div class="fp-phone-txlist">
+              <div class="fp-ptx"><div class="fp-ptx-icon" style="background:#FEF3C7">🛒</div><div class="fp-ptx-info"><span data-i18n="fp_tx1">Grocery</span><span class="fp-ptx-cat" data-i18n="fp_tx1_cat">Food</span></div><span class="fp-ptx-amt fp-red">−€94</span></div>
+              <div class="fp-ptx"><div class="fp-ptx-icon" style="background:#DCFCE7">💼</div><div class="fp-ptx-info"><span data-i18n="fp_tx2">Salary</span><span class="fp-ptx-cat" data-i18n="fp_tx2_cat">Income</span></div><span class="fp-ptx-amt fp-green">+€2,400</span></div>
+              <div class="fp-ptx"><div class="fp-ptx-icon" style="background:#EDE9FE">🏠</div><div class="fp-ptx-info"><span data-i18n="fp_tx3">Rent</span><span class="fp-ptx-cat" data-i18n="fp_tx3_cat">Home</span></div><span class="fp-ptx-amt fp-red">−€750</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- floating badges -->
+      <div class="fp-float fp-float-a fp-reveal">
+        <span class="fp-float-icon">🎯</span>
+        <div>
+          <div class="fp-float-label" data-i18n="fp_float_goal">Vacation goal</div>
+          <div class="fp-float-val">€1,200 / €3,000</div>
+        </div>
+      </div>
+      <div class="fp-float fp-float-b fp-reveal">
+        <span class="fp-float-icon fp-green">✓</span>
+        <div>
+          <div class="fp-float-label" data-i18n="fp_float_budget">Budget on track</div>
+          <div class="fp-float-val">72% <span data-i18n="fp_float_used">used</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fp-scroll-hint">
+    <div class="fp-scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     VALUE PILLARS — Light section
+══════════════════════════════════════════════════════════ -->
+<section class="fp-pillars">
+  <div class="container">
+    <div class="fp-pillars-grid">
+      <div class="fp-pillar fp-reveal">
+        <div class="fp-pillar-icon">🔒</div>
+        <h3 data-i18n="fp_pillar1_h">Your data, your rules</h3>
+        <p data-i18n="fp_pillar1_p">Choose to keep everything on-device or sync to the cloud. You decide — anytime, no migration needed.</p>
+      </div>
+      <div class="fp-pillar fp-reveal">
+        <div class="fp-pillar-icon">👨‍👩‍👧</div>
+        <h3 data-i18n="fp_pillar2_h">Built for families and solo users</h3>
+        <p data-i18n="fp_pillar2_p">Invite up to 10 family members and manage finances together, each from their own phone, all in real time.</p>
+      </div>
+      <div class="fp-pillar fp-reveal">
+        <div class="fp-pillar-icon">📊</div>
+        <h3 data-i18n="fp_pillar3_h">Insights that actually make sense</h3>
+        <p data-i18n="fp_pillar3_p">Know exactly where your money goes, how much you can safely spend today, and what your balance will look like in 90 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CINEMA SECTION — Sticky scroll Apple style
+══════════════════════════════════════════════════════════ -->
+<section class="fp-cinema-outer" id="cinema">
+  <div class="fp-cinema-sticky">
+    <div class="fp-cinema-left">
+      <!-- Slide 0 -->
+      <div class="fp-slide active" data-slide="0">
+        <div class="fp-slide-badge" data-i18n="fp_s0_badge">Dashboard</div>
+        <h2 data-i18n-html="fp_s0_h">Everything at a glance.<br>Nothing left unseen.</h2>
+        <p data-i18n="fp_s0_p">A fully customisable dashboard with 13 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s0_l1">13 configurable widgets</li>
+          <li data-i18n="fp_s0_l2">Spending flow breakdown by category</li>
+          <li data-i18n="fp_s0_l3">Monthly income vs expenses chart</li>
+        </ul>
+      </div>
+      <!-- Slide 1 -->
+      <div class="fp-slide" data-slide="1">
+        <div class="fp-slide-badge" data-i18n="fp_s1_badge">Transactions</div>
+        <h2 data-i18n-html="fp_s1_h">Every euro.<br>Tracked, categorised, understood.</h2>
+        <p data-i18n="fp_s1_p">Add expenses and income in seconds. Powerful filters, CSV import from your bank, automatic transfer tracking — and a reconciliation tool to match your statement line by line.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s1_l1">Import CSV from 10+ bank profiles</li>
+          <li data-i18n="fp_s1_l2">3-level category hierarchy</li>
+          <li data-i18n="fp_s1_l3">Statement reconciliation with lock badge</li>
+        </ul>
+      </div>
+      <!-- Slide 2 -->
+      <div class="fp-slide" data-slide="2">
+        <div class="fp-slide-badge" data-i18n="fp_s2_badge">Budgets</div>
+        <h2 data-i18n-html="fp_s2_h">Set a limit.<br>Respect it. Every month.</h2>
+        <p data-i18n="fp_s2_p">Assign monthly budgets to any category. The app alerts you at 80% and 100% so you act before going over. Compare spent vs planned month by month.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s2_l1">Category budgets with smart alerts</li>
+          <li data-i18n="fp_s2_l2">Visual spent-vs-planned bars</li>
+          <li data-i18n="fp_s2_l3">Month-by-month history</li>
+        </ul>
+      </div>
+      <!-- Slide 3 -->
+      <div class="fp-slide" data-slide="3">
+        <div class="fp-slide-badge" data-i18n="fp_s3_badge">Recurring</div>
+        <h2 data-i18n-html="fp_s3_h">Rent, salary, subscriptions.<br>All on autopilot.</h2>
+        <p data-i18n="fp_s3_p">Recurring transactions generate themselves at the right date. Installment plans split any purchase into monthly payments automatically tracked in your calendar.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s3_l1">Auto-generation at due date</li>
+          <li data-i18n="fp_s3_l2">Instalment purchase tracking</li>
+          <li data-i18n="fp_s3_l3">Calendar view of upcoming payments</li>
+        </ul>
+      </div>
+      <!-- Slide 4 -->
+      <div class="fp-slide" data-slide="4">
+        <div class="fp-slide-badge" data-i18n="fp_s4_badge">Savings Goals</div>
+        <h2 data-i18n-html="fp_s4_h">Dream it.<br>Plan it. Reach it.</h2>
+        <p data-i18n="fp_s4_p">Create goals for holidays, emergency funds or big purchases. Track contributions over time and watch the progress bar fill up — without touching your real account balances.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s4_l1">Unlimited goals (Premium)</li>
+          <li data-i18n="fp_s4_l2">Contribution history</li>
+          <li data-i18n="fp_s4_l3">Target date and pause/complete</li>
+        </ul>
+      </div>
+      <!-- Slide 5 -->
+      <div class="fp-slide" data-slide="5">
+        <div class="fp-slide-badge" data-i18n="fp_s5_badge">Survival Line</div>
+        <h2 data-i18n-html="fp_s5_h">See your future balance.<br>Act before it's too late.</h2>
+        <p data-i18n="fp_s5_p">The 90-day projection combines your recurring transactions, scheduled payments and credit card billing dates to show exactly where your balance is headed — and whether you're safe to spend today.</p>
+        <ul class="fp-slide-list">
+          <li data-i18n="fp_s5_l1">90-day forward computation</li>
+          <li data-i18n="fp_s5_l2">Safe-to-spend daily figure</li>
+          <li data-i18n="fp_s5_l3">Credit card billing date awareness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fp-cinema-right">
+      <div class="fp-cinema-phone">
+        <div class="fp-cp-notch"></div>
+        <div class="fp-cp-inner" id="cinemaPhoneInner">
+          <!-- Screen 0: Dashboard -->
+          <div class="fp-cscreen active" data-screen="0">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span>FamlyBudget</span><span data-i18n="fp_ph_date">May 2026</span></div>
+              <div class="fp-cs-balance-label" data-i18n="fp_ph_balance_label">Total balance</div>
+              <div class="fp-cs-balance">€ 8,420.50</div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-row">
+                <div class="fp-cs-card"><div class="fp-cs-clabel" data-i18n="fp_ph_income">Income</div><div class="fp-cs-cval fp-green">+€3,200</div></div>
+                <div class="fp-cs-card"><div class="fp-cs-clabel" data-i18n="fp_ph_expenses">Expenses</div><div class="fp-cs-cval fp-red">−€1,847</div></div>
+              </div>
+              <div class="fp-cs-widget-title" data-i18n="fp_cs0_trend">6-month trend</div>
+              <div class="fp-cs-bars">
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:22px"></div><div class="fp-cs-b fp-cs-b-e" style="height:16px"></div></div>
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:28px"></div><div class="fp-cs-b fp-cs-b-e" style="height:14px"></div></div>
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:20px"></div><div class="fp-cs-b fp-cs-b-e" style="height:24px"></div></div>
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:32px"></div><div class="fp-cs-b fp-cs-b-e" style="height:18px"></div></div>
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:26px"></div><div class="fp-cs-b fp-cs-b-e" style="height:12px"></div></div>
+                <div class="fp-cs-bar-grp"><div class="fp-cs-b fp-cs-b-i" style="height:36px"></div><div class="fp-cs-b fp-cs-b-e" style="height:20px"></div></div>
+              </div>
+              <div class="fp-cs-widget-title" data-i18n="fp_cs0_spending">Top spending</div>
+              <div class="fp-cs-spend-row"><span class="fp-cs-spend-cat" data-i18n="fp_cs0_food">🛒 Food</span><div class="fp-cs-spend-bar-wrap"><div class="fp-cs-spend-bar" style="width:72%"></div></div><span class="fp-cs-spend-val">€532</span></div>
+              <div class="fp-cs-spend-row"><span class="fp-cs-spend-cat">🏠 Home</span><div class="fp-cs-spend-bar-wrap"><div class="fp-cs-spend-bar" style="width:55%"></div></div><span class="fp-cs-spend-val">€750</span></div>
+              <div class="fp-cs-spend-row"><span class="fp-cs-spend-cat" data-i18n="fp_cs0_car">🚗 Car</span><div class="fp-cs-spend-bar-wrap"><div class="fp-cs-spend-bar" style="width:38%"></div></div><span class="fp-cs-spend-val">€280</span></div>
+            </div>
+          </div>
+          <!-- Screen 1: Transactions -->
+          <div class="fp-cscreen" data-screen="1">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span data-i18n="fp_s1_badge">Transactions</span></div>
+              <div class="fp-cs-chips">
+                <span class="fp-chip active" data-i18n="fp_c_all">All</span>
+                <span class="fp-chip" data-i18n="fp_c_out">Expenses</span>
+                <span class="fp-chip" data-i18n="fp_c_in">Income</span>
+              </div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-group-label" data-i18n="fp_c_today">TODAY</div>
+              <div class="fp-cs-tx"><div class="fp-cs-tx-icon" style="background:#FEF3C7">🛒</div><div class="fp-cs-tx-info"><b data-i18n="fp_tx1">Grocery</b><span data-i18n="fp_tx1_cat">Food</span></div><span class="fp-red fp-cs-tx-amt">−€94.30</span></div>
+              <div class="fp-cs-tx"><div class="fp-cs-tx-icon" style="background:#FEE2E2">⛽</div><div class="fp-cs-tx-info"><b data-i18n="fp_c_fuel">Fuel</b><span data-i18n="fp_c_car">Car</span></div><span class="fp-red fp-cs-tx-amt">−€58.00</span></div>
+              <div class="fp-cs-group-label" data-i18n="fp_c_yesterday">YESTERDAY</div>
+              <div class="fp-cs-tx"><div class="fp-cs-tx-icon" style="background:#DCFCE7">💼</div><div class="fp-cs-tx-info"><b data-i18n="fp_tx2">Salary</b><span data-i18n="fp_c_work">Work</span></div><span class="fp-green fp-cs-tx-amt">+€2,400</span></div>
+              <div class="fp-cs-tx"><div class="fp-cs-tx-icon" style="background:#EDE9FE">🎬</div><div class="fp-cs-tx-info"><b>Netflix</b><span data-i18n="fp_c_sub">Subscription</span></div><span class="fp-red fp-cs-tx-amt">−€15.99</span></div>
+              <div class="fp-cs-tx fp-cs-tx-reconciled"><div class="fp-cs-tx-icon" style="background:#F0FDF4">🏠</div><div class="fp-cs-tx-info"><b data-i18n="fp_tx3">Rent</b><span>🔒</span></div><span class="fp-red fp-cs-tx-amt">−€750</span></div>
+            </div>
+          </div>
+          <!-- Screen 2: Budget -->
+          <div class="fp-cscreen" data-screen="2">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span data-i18n="fp_s2_badge">Budgets</span><span data-i18n="fp_ph_date">May 2026</span></div>
+              <div class="fp-cs-balance-label" data-i18n="fp_cs2_total">Total budget</div>
+              <div class="fp-cs-balance">€ 2,500</div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-budget-item">
+                <div class="fp-bud-row"><span>🛒</span><span data-i18n="fp_tx1_cat">Food</span><span class="fp-bud-pct">72%</span></div>
+                <div class="fp-bud-track"><div class="fp-bud-fill fp-bud-ok" style="width:72%"></div></div>
+                <div class="fp-bud-vals"><span>€360 / €500</span></div>
+              </div>
+              <div class="fp-cs-budget-item">
+                <div class="fp-bud-row"><span>🏠</span><span data-i18n="fp_tx3_cat">Home</span><span class="fp-bud-pct fp-red">103%</span></div>
+                <div class="fp-bud-track"><div class="fp-bud-fill fp-bud-over" style="width:100%"></div></div>
+                <div class="fp-bud-vals"><span>€824 / €800</span><span class="fp-bud-alert">⚠️ Over</span></div>
+              </div>
+              <div class="fp-cs-budget-item">
+                <div class="fp-bud-row"><span>🚗</span><span data-i18n="fp_c_car">Car</span><span class="fp-bud-pct">56%</span></div>
+                <div class="fp-bud-track"><div class="fp-bud-fill fp-bud-ok" style="width:56%"></div></div>
+                <div class="fp-bud-vals"><span>€280 / €500</span></div>
+              </div>
+              <div class="fp-cs-budget-item">
+                <div class="fp-bud-row"><span>🎉</span><span data-i18n="fp_c_leisure">Leisure</span><span class="fp-bud-pct fp-orange">81%</span></div>
+                <div class="fp-bud-track"><div class="fp-bud-fill fp-bud-warn" style="width:81%"></div></div>
+                <div class="fp-bud-vals"><span>€243 / €300</span><span class="fp-bud-alert fp-orange" data-i18n="fp_bud_almost">Almost there</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Screen 3: Recurring -->
+          <div class="fp-cscreen" data-screen="3">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span data-i18n="fp_s3_badge">Recurring</span></div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-rec-item"><div class="fp-cs-tx-icon" style="background:#EDE9FE">🏠</div><div class="fp-cs-tx-info"><b data-i18n="fp_tx3">Rent</b><span data-i18n="fp_rec_monthly">Monthly · 1st</span></div><span class="fp-red fp-cs-tx-amt">−€750</span></div>
+              <div class="fp-cs-rec-item"><div class="fp-cs-tx-icon" style="background:#DCFCE7">💼</div><div class="fp-cs-tx-info"><b data-i18n="fp_tx2">Salary</b><span data-i18n="fp_rec_27">Monthly · 27th</span></div><span class="fp-green fp-cs-tx-amt">+€2,400</span></div>
+              <div class="fp-cs-rec-item"><div class="fp-cs-tx-icon" style="background:#EDE9FE">🎬</div><div class="fp-cs-tx-info"><b>Netflix</b><span data-i18n="fp_rec_monthly">Monthly · 1st</span></div><span class="fp-red fp-cs-tx-amt">−€15.99</span></div>
+              <div class="fp-cs-rec-item"><div class="fp-cs-tx-icon" style="background:#FEF3C7">📦</div><div class="fp-cs-tx-info"><b>Amazon Prime</b><span data-i18n="fp_rec_yearly">Yearly · Jan</span></div><span class="fp-red fp-cs-tx-amt">−€49.90</span></div>
+              <div class="fp-cs-group-label" style="margin-top:10px" data-i18n="fp_rec_installments">INSTALLMENTS</div>
+              <div class="fp-cs-rec-item"><div class="fp-cs-tx-icon" style="background:#FEF9C3">📱</div><div class="fp-cs-tx-info"><b data-i18n="fp_rec_phone">New phone</b><span>3 / 12</span></div><span class="fp-red fp-cs-tx-amt">−€49.17</span></div>
+            </div>
+          </div>
+          <!-- Screen 4: Savings Goals -->
+          <div class="fp-cscreen" data-screen="4">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span data-i18n="fp_s4_badge">Savings Goals</span></div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-goal">
+                <div class="fp-goal-row"><span>✈️</span><span data-i18n="fp_goal_vacation">Vacation 2026</span><span class="fp-goal-pct">40%</span></div>
+                <div class="fp-goal-track"><div class="fp-goal-fill" style="width:40%;background:#3B82F6"></div></div>
+                <div class="fp-goal-vals"><span>€1,200 / €3,000</span><span class="fp-goal-eta" data-i18n="fp_goal_eta_aug">Aug 2026</span></div>
+              </div>
+              <div class="fp-cs-goal">
+                <div class="fp-goal-row"><span>🚨</span><span data-i18n="fp_goal_emergency">Emergency Fund</span><span class="fp-goal-pct">68%</span></div>
+                <div class="fp-goal-track"><div class="fp-goal-fill" style="width:68%;background:#16a34a"></div></div>
+                <div class="fp-goal-vals"><span>€3,400 / €5,000</span><span class="fp-goal-eta" data-i18n="fp_goal_eta_oct">Oct 2026</span></div>
+              </div>
+              <div class="fp-cs-goal">
+                <div class="fp-goal-row"><span>🚗</span><span data-i18n="fp_goal_car">New car</span><span class="fp-goal-pct">12%</span></div>
+                <div class="fp-goal-track"><div class="fp-goal-fill" style="width:12%;background:#F59E0B"></div></div>
+                <div class="fp-goal-vals"><span>€2,400 / €20,000</span><span class="fp-goal-eta" data-i18n="fp_goal_eta_2028">2028</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Screen 5: Survival Line -->
+          <div class="fp-cscreen" data-screen="5">
+            <div class="fp-cs-header fp-cs-navy">
+              <div class="fp-cs-h-top"><span data-i18n="fp_s5_badge">Survival Line</span></div>
+              <div class="fp-cs-balance-label" data-i18n="fp_sw_safe">Safe to spend today</div>
+              <div class="fp-cs-balance fp-green">€ 340</div>
+            </div>
+            <div class="fp-cs-body">
+              <div class="fp-cs-widget-title" data-i18n="fp_sw_title">Balance Projection — 90 days</div>
+              <div class="fp-sw-chart-big">
+                <svg viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%">
+                  <path d="M0 60 C15 55 30 48 50 42 C70 36 80 40 95 38 C110 34 120 28 140 30 C160 32 175 42 200 38 L220 34" stroke="#3B82F6" stroke-width="2.5" fill="none"/>
+                  <path d="M0 60 C15 55 30 48 50 42 C70 36 80 40 95 38 C110 34 120 28 140 30 C160 32 175 42 200 38 L220 34 L220 80 L0 80Z" fill="url(#big-grad)" opacity="0.25"/>
+                  <line x1="110" y1="0" x2="110" y2="80" stroke="rgba(59,130,246,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+                  <circle cx="110" cy="36" r="3" fill="#3B82F6"/>
+                  <text x="113" y="14" font-size="8" fill="#3B82F6" font-family="Inter,sans-serif" data-i18n="fp_sw_today">Today</text>
+                  <defs>
+                    <linearGradient id="big-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#3B82F6"/>
+                      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="fp-cs-survival-row">
+                <div class="fp-cs-surv-item"><span class="fp-cs-surv-label" data-i18n="fp_surv_min">Min (30d)</span><span class="fp-cs-surv-val fp-orange">€4,120</span></div>
+                <div class="fp-cs-surv-item"><span class="fp-cs-surv-label" data-i18n="fp_surv_90">In 90 days</span><span class="fp-cs-surv-val fp-green">€6,840</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cinema progress dots -->
+      <div class="fp-cinema-dots" id="cinemaDots">
+        <span class="fp-dot active" data-dot="0"></span>
+        <span class="fp-dot" data-dot="1"></span>
+        <span class="fp-dot" data-dot="2"></span>
+        <span class="fp-dot" data-dot="3"></span>
+        <span class="fp-dot" data-dot="4"></span>
+        <span class="fp-dot" data-dot="5"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     STATS COUNTER — Animated numbers
+══════════════════════════════════════════════════════════ -->
+<section class="fp-stats">
+  <div class="container">
+    <div class="fp-stats-grid">
+      <div class="fp-stat-item fp-reveal">
+        <div class="fp-stat-num" data-count="1000" data-suffix="+">0</div>
+        <div class="fp-stat-label" data-i18n="fp_stat1_label">transactions / month (Premium)</div>
+      </div>
+      <div class="fp-stat-item fp-reveal">
+        <div class="fp-stat-num" data-count="13" data-suffix="">0</div>
+        <div class="fp-stat-label" data-i18n="fp_stat2_label">dashboard widgets</div>
+      </div>
+      <div class="fp-stat-item fp-reveal">
+        <div class="fp-stat-num" data-count="90" data-suffix=" days">0</div>
+        <div class="fp-stat-label" data-i18n="fp_stat3_label">balance projection ahead</div>
+      </div>
+      <div class="fp-stat-item fp-reveal">
+        <div class="fp-stat-num" data-count="5" data-suffix="">0</div>
+        <div class="fp-stat-label" data-i18n="fp_stat4_label">supported languages</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRICING — Monthly / Yearly toggle
+══════════════════════════════════════════════════════════ -->
+<section class="fp-pricing">
+  <div class="container">
+    <div class="fp-section-header fp-reveal">
+      <div class="fp-badge" data-i18n="fp_pr_badge">✦ Pricing</div>
+      <h2 data-i18n="fp_pr_h2">Start free. Upgrade when you need more.</h2>
+      <p data-i18n="fp_pr_sub">No automatic charges. Cancel anytime. Your data is always yours.</p>
+    </div>
+    <!-- Toggle -->
+    <div class="fp-toggle-wrap fp-reveal">
+      <span class="fp-toggle-label fp-toggle-label-monthly" data-i18n="fp_pr_monthly">Monthly</span>
+      <button class="fp-toggle" id="priceToggle" aria-label="Toggle billing period">
+        <span class="fp-toggle-thumb"></span>
+      </button>
+      <span class="fp-toggle-label fp-toggle-label-yearly" data-i18n="fp_pr_yearly">Yearly</span>
+      <span class="fp-save-badge" data-i18n="fp_pr_save">Save up to 39%</span>
+    </div>
+    <!-- Cards -->
+    <div class="fp-pricing-grid fp-reveal">
+      <!-- Free -->
+      <div class="fp-pcard">
+        <div class="fp-pcard-name" data-i18n="fp_p0_name">Free</div>
+        <div class="fp-pcard-price">
+          <span class="fp-pcard-amount">€0</span>
+          <span class="fp-pcard-period" data-i18n="fp_p_month">/month</span>
+        </div>
+        <div class="fp-pcard-sub" data-i18n="fp_p0_sub">Free forever</div>
+        <ul class="fp-pcard-list">
+          <li class="fp-check" data-i18n="fp_p0_f1">Local or cloud storage</li>
+          <li class="fp-check" data-i18n="fp_p0_f2">Up to 80 transactions/month</li>
+          <li class="fp-check" data-i18n="fp_p0_f3">3 active accounts</li>
+          <li class="fp-check" data-i18n="fp_p0_f4">4 active recurring</li>
+          <li class="fp-check" data-i18n="fp_p0_f5">Basic charts & reports</li>
+          <li class="fp-cross" data-i18n="fp_p0_f6">Backup & Restore</li>
+          <li class="fp-cross" data-i18n="fp_p0_f7">Unlimited accounts</li>
+          <li class="fp-cross" data-i18n="fp_p0_f8">CSV export</li>
+        </ul>
+        <a href="#download" class="fp-pcard-btn fp-pcard-btn-outline" data-i18n="fp_p0_btn">Start Free</a>
+      </div>
+      <!-- Premium Local -->
+      <div class="fp-pcard">
+        <div class="fp-pcard-name" data-i18n="fp_p1_name">Premium Local</div>
+        <div class="fp-pcard-price">
+          <span class="fp-pcard-amount" data-monthly="€2" data-yearly="€1.25">€2</span>
+          <span class="fp-pcard-period" data-i18n="fp_p_month">/month</span>
+        </div>
+        <div class="fp-pcard-sub">
+          <span class="fp-yearly-hint" style="display:none" data-i18n="fp_p1_yearly">€15/year — save 38%</span>
+          <span class="fp-monthly-hint" data-i18n="fp_p1_monthly">or €15/year — save 38%</span>
+        </div>
+        <div class="fp-pcard-badge"><span>📱</span> <span data-i18n="fp_p1_badge">Data stays on device</span></div>
+        <ul class="fp-pcard-list">
+          <li class="fp-check" data-i18n="fp_p1_f1">Unlimited transactions</li>
+          <li class="fp-check" data-i18n="fp_p1_f2">Up to 20 active accounts</li>
+          <li class="fp-check" data-i18n="fp_p1_f3">Unlimited recurring</li>
+          <li class="fp-check" data-i18n="fp_p1_f4">150 categories</li>
+          <li class="fp-check" data-i18n="fp_p1_f5">Backup & Restore</li>
+          <li class="fp-check" data-i18n="fp_p1_f6">CSV/PDF export</li>
+          <li class="fp-cross" data-i18n="fp_p1_f7">Multi-device sync</li>
+          <li class="fp-cross" data-i18n="fp_p1_f8">Family sharing</li>
+        </ul>
+        <a href="#download" class="fp-pcard-btn fp-pcard-btn-outline" data-i18n="fp_p1_btn">Choose Local</a>
+      </div>
+      <!-- Premium Cloud -->
+      <div class="fp-pcard fp-pcard-featured">
+        <div class="fp-pcard-popular" data-i18n="fp_p2_popular">⭐ Most complete</div>
+        <div class="fp-pcard-name" data-i18n="fp_p2_name">Premium Cloud</div>
+        <div class="fp-pcard-price">
+          <span class="fp-pcard-amount" data-monthly="€2.99" data-yearly="€1.83">€2.99</span>
+          <span class="fp-pcard-period" data-i18n="fp_p_month">/month</span>
+        </div>
+        <div class="fp-pcard-sub">
+          <span class="fp-yearly-hint" style="display:none" data-i18n="fp_p2_yearly">€21.99/year — save 39%</span>
+          <span class="fp-monthly-hint" data-i18n="fp_p2_monthly">or €21.99/year — save 39%</span>
+        </div>
+        <div class="fp-pcard-badge fp-pcard-badge-blue"><span>☁️</span> <span data-i18n="fp_p2_badge">Real-time sync</span></div>
+        <ul class="fp-pcard-list">
+          <li class="fp-check" data-i18n="fp_p2_f1">Everything in Premium Local</li>
+          <li class="fp-check" data-i18n="fp_p2_f2">Real-time multi-device sync</li>
+          <li class="fp-check" data-i18n="fp_p2_f3">Family sharing (up to 10)</li>
+          <li class="fp-check" data-i18n="fp_p2_f4">Automatic cloud backup</li>
+          <li class="fp-check" data-i18n="fp_p2_f5">Restore from any device</li>
+        </ul>
+        <a href="#download" class="fp-pcard-btn fp-pcard-btn-primary" data-i18n="fp_p2_btn">Choose Cloud</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TRUST — Privacy first
+══════════════════════════════════════════════════════════ -->
+<section class="fp-trust">
+  <div class="container">
+    <div class="fp-section-header fp-section-header-light fp-reveal">
+      <h2 data-i18n="fp_trust_h2">Built on trust. Designed for privacy.</h2>
+    </div>
+    <div class="fp-trust-grid">
+      <div class="fp-trust-item fp-reveal">
+        <div class="fp-trust-icon">🔒</div>
+        <h3 data-i18n="fp_trust1_h">Zero financial data to third parties</h3>
+        <p data-i18n="fp_trust1_p">Your transactions, accounts and balances are never shared with advertisers, data brokers or analytics platforms.</p>
+      </div>
+      <div class="fp-trust-item fp-reveal">
+        <div class="fp-trust-icon">📱</div>
+        <h3 data-i18n="fp_trust2_h">Local mode: cloud-free option</h3>
+        <p data-i18n="fp_trust2_p">Choose to keep all your data exclusively on your device. No internet required — the app works fully offline.</p>
+      </div>
+      <div class="fp-trust-item fp-reveal">
+        <div class="fp-trust-icon">🚫</div>
+        <h3 data-i18n="fp_trust3_h">Zero ads. Zero tracking.</h3>
+        <p data-i18n="fp_trust3_p">FamlyBudget has no advertising, no in-app tracking, no profiling. The only revenue is the Premium subscription.</p>
+      </div>
+      <div class="fp-trust-item fp-reveal">
+        <div class="fp-trust-icon">🛡️</div>
+        <h3 data-i18n="fp_trust4_h">Biometric app lock</h3>
+        <p data-i18n="fp_trust4_p">Lock the app with fingerprint or Face ID. Even if someone picks up your phone, your finances stay private.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CTA FINALE — Glow effect
+══════════════════════════════════════════════════════════ -->
+<section class="fp-final-cta">
+  <div class="fp-cta-glow"></div>
+  <div class="container fp-cta-inner fp-reveal">
+    <div class="fp-cta-eyebrow" data-i18n="fp_cta_eyebrow">Free to start · No credit card required</div>
+    <h2 data-i18n="fp_cta_h2">Take control of your finances today.</h2>
+    <p data-i18n="fp_cta_sub">Download FamlyBudget and start tracking in seconds. Free, forever.</p>
+    <div class="fp-cta-btns">
+      <a href="#download" class="fp-btn fp-btn-primary fp-btn-xl" id="download">
+        <span>▶</span> <span data-i18n="fp_cta_download">Download on Google Play</span>
+      </a>
+      <a href="/" class="fp-btn fp-btn-ghost fp-btn-xl" data-i18n="fp_cta_home">Back to Home</a>
+    </div>
+    <div class="fp-cta-trust" data-i18n="fp_cta_trust">Available on Android · 5 languages · Works offline</div>
+  </div>
+</section>
+
+</Layout>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE-SPECIFIC STYLES
+═══════════════════════════════════════════════════════════ -->
+<style>
+  /* ── Variables override for dark sections ─── */
+  :root {
+    --fp-dark: #0B1120;
+    --fp-dark-2: #111827;
+    --fp-dark-3: #1E293B;
+    --fp-accent: #3B82F6;
+    --fp-accent-2: #6366F1;
+    --fp-green: #10B981;
+    --fp-red: #EF4444;
+    --fp-orange: #F59E0B;
+    --fp-text-light: rgba(255,255,255,0.92);
+    --fp-text-muted-dark: rgba(255,255,255,0.5);
+    --fp-radius: 16px;
+    --fp-radius-lg: 24px;
+  }
+
+  /* ── Utility ─────────────────────────────── */
+  .fp-green { color: var(--fp-green); }
+  .fp-red   { color: var(--fp-red); }
+  .fp-orange{ color: var(--fp-orange); }
+
+  .fp-gradient-text {
+    background: linear-gradient(90deg, #60A5FA, #818CF8, #A78BFA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Reveal animation ────────────────────── */
+  .fp-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fp-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ════════════════════ HERO ════════════════ */
+  .fp-hero {
+    position: relative;
+    background: var(--fp-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 100px 0 60px;
+  }
+  .fp-hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 70%);
+  }
+  .fp-hero-glow {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
+  }
+  .fp-hero-glow-1 {
+    width: 600px; height: 600px;
+    top: -200px; right: -100px;
+    background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+    animation: fp-float 8s ease-in-out infinite;
+  }
+  .fp-hero-glow-2 {
+    width: 400px; height: 400px;
+    bottom: -100px; left: -50px;
+    background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+    animation: fp-float 10s ease-in-out infinite reverse;
+  }
+  @keyframes fp-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%       { transform: translateY(-20px) scale(1.03); }
+  }
+
+  .fp-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .fp-hero-content {
+    animation: fp-hero-in 0.9s ease both;
+  }
+  @keyframes fp-hero-in {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fp-eyebrow {
+    display: inline-flex; align-items: center;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: #93C5FD;
+    font-size: 12px; font-weight: 700;
+    padding: 5px 14px; border-radius: 99px;
+    margin-bottom: 24px; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .fp-hero-h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--fp-text-light);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+  .fp-hero-sub {
+    font-size: 18px;
+    color: var(--fp-text-muted-dark);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+  .fp-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ── Hero Phone ──────────────────────────── */
+  .fp-hero-phone-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: fp-hero-phone-in 1s 0.2s ease both;
+  }
+  @keyframes fp-hero-phone-in {
+    from { opacity: 0; transform: translateY(50px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .fp-hero-phone {
+    width: 270px;
+    background: #0F172A;
+    border-radius: 48px;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    box-shadow:
+      0 0 0 1px rgba(59,130,246,0.2),
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 60px rgba(59,130,246,0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  .fp-phone-notch {
+    width: 100px; height: 26px;
+    background: #000;
+    border-radius: 0 0 18px 18px;
+    margin: 0 auto;
+  }
+  .fp-phone-inner { padding: 0; }
+  .fp-phone-header {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+    padding: 14px 16px 16px;
+    color: #fff;
+  }
+  .fp-ph-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .fp-ph-greeting { font-size: 13px; font-weight: 700; }
+  .fp-ph-date { font-size: 10px; opacity: 0.6; }
+  .fp-ph-label { font-size: 10px; opacity: 0.65; margin-bottom: 4px; }
+  .fp-ph-balance { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+  .fp-ph-stats { display: flex; gap: 12px; }
+  .fp-ph-stat { display: flex; align-items: center; gap: 6px; }
+  .fp-ph-stat-icon {
+    width: 22px; height: 22px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+  }
+  .fp-income-icon { background: rgba(16,185,129,0.2); color: var(--fp-green); }
+  .fp-expense-icon { background: rgba(239,68,68,0.2); color: var(--fp-red); }
+  .fp-ph-stat-label { font-size: 8px; opacity: 0.65; }
+  .fp-ph-stat-val { font-size: 11px; font-weight: 700; }
+
+  .fp-phone-body { padding: 12px 14px; background: #0F172A; }
+  .fp-survival-widget {
+    background: #1E293B;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .fp-sw-title { font-size: 8px; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .fp-sw-chart { height: 40px; }
+  .fp-sw-svg { width: 100%; height: 40px; }
+  .fp-sw-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .fp-sw-safe { font-size: 8px; color: rgba(255,255,255,0.5); }
+  .fp-sw-amount { font-size: 13px; font-weight: 800; color: var(--fp-green); }
+
+  .fp-phone-txlist { display: flex; flex-direction: column; gap: 0; }
+  .fp-ptx {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .fp-ptx:last-child { border-bottom: none; }
+  .fp-ptx-icon {
+    width: 26px; height: 26px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+  }
+  .fp-ptx-info { flex: 1; display: flex; flex-direction: column; }
+  .fp-ptx-info span:first-child { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.9); }
+  .fp-ptx-cat { font-size: 8px; color: rgba(255,255,255,0.4); }
+  .fp-ptx-amt { font-size: 10px; font-weight: 700; }
+
+  /* ── Floating badges ─────────────────────── */
+  .fp-float {
+    position: absolute;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .fp-float-a { top: 40px; right: -24px; }
+  .fp-float-b { bottom: 60px; left: -24px; }
+  .fp-float-icon { font-size: 20px; }
+  .fp-float-label { font-size: 9px; color: rgba(255,255,255,0.5); }
+  .fp-float-val { font-size: 12px; font-weight: 700; }
+
+  .fp-scroll-hint {
+    position: absolute; bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .fp-scroll-dot {
+    width: 6px; height: 6px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    animation: fp-scroll-bounce 1.6s ease-in-out infinite;
+  }
+  @keyframes fp-scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50%       { transform: translateY(8px); opacity: 1; }
+  }
+
+  /* ── Buttons ─────────────────────────────── */
+  .fp-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 12px;
+    font-size: 15px; font-weight: 700;
+    cursor: pointer; border: none; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .fp-btn-primary {
+    background: linear-gradient(135deg, #3B82F6, #6366F1);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+  }
+  .fp-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(99,102,241,0.55);
+  }
+  .fp-btn-ghost {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .fp-btn-ghost:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .fp-btn-xl { padding: 16px 36px; font-size: 16px; border-radius: 14px; }
+
+  /* ════════════════ VALUE PILLARS ═══════════ */
+  .fp-pillars {
+    background: #fff;
+    padding: 80px 0;
+  }
+  .fp-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .fp-pillar {
+    text-align: center;
+    padding: 36px 24px;
+    border-radius: var(--fp-radius-lg);
+    border: 1px solid #E2E8F0;
+    transition: all 0.3s;
+  }
+  .fp-pillar:hover {
+    border-color: var(--fp-accent);
+    box-shadow: 0 8px 40px rgba(59,130,246,0.1);
+    transform: translateY(-4px);
+  }
+  .fp-pillar-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .fp-pillar h3 {
+    font-size: 18px; font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 12px;
+  }
+  .fp-pillar p {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.7;
+  }
+
+  /* ════════════════ CINEMA SECTION ══════════ */
+  .fp-cinema-outer {
+    height: calc(6 * 100vh);
+    background: var(--fp-dark);
+    position: relative;
+  }
+  .fp-cinema-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    gap: 60px;
+    overflow: hidden;
+  }
+
+  /* Left: Text slides */
+  .fp-cinema-left { position: relative; min-height: 400px; }
+  .fp-slide {
+    position: absolute; top: 0; left: 0; right: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
+  .fp-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .fp-slide-badge {
+    display: inline-flex;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: #93C5FD;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 12px; border-radius: 99px;
+    margin-bottom: 20px; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .fp-slide h2 {
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 800;
+    color: var(--fp-text-light);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .fp-slide p {
+    font-size: 16px;
+    color: var(--fp-text-muted-dark);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    max-width: 460px;
+  }
+  .fp-slide-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fp-slide-list li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fp-slide-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #3B82F6;
+    flex-shrink: 0;
+  }
+
+  /* Right: Cinema Phone */
+  .fp-cinema-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .fp-cinema-phone {
+    width: 260px;
+    background: #0F172A;
+    border-radius: 44px;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    box-shadow:
+      0 0 0 1px rgba(59,130,246,0.15),
+      0 32px 64px rgba(0,0,0,0.7),
+      0 0 80px rgba(59,130,246,0.08);
+    overflow: hidden;
+    position: relative;
+  }
+  .fp-cp-notch {
+    width: 90px; height: 22px;
+    background: #000;
+    border-radius: 0 0 14px 14px;
+    margin: 0 auto;
+  }
+  .fp-cp-inner { position: relative; }
+
+  /* Cinema Screens */
+  .fp-cscreen {
+    position: absolute; top: 0; left: 0; right: 0;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+  }
+  .fp-cscreen.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+  }
+  .fp-cs-header {
+    padding: 10px 14px 14px;
+    color: #fff;
+  }
+  .fp-cs-navy { background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%); }
+  .fp-cs-h-top {
+    display: flex; justify-content: space-between;
+    font-size: 9px; opacity: 0.65; margin-bottom: 6px;
+  }
+  .fp-cs-balance-label { font-size: 8px; opacity: 0.65; margin-bottom: 2px; }
+  .fp-cs-balance { font-size: 20px; font-weight: 800; }
+  .fp-cs-chips {
+    display: flex; gap: 5px; margin-top: 6px;
+  }
+  .fp-chip {
+    font-size: 8px; padding: 3px 8px; border-radius: 99px;
+    background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+  }
+  .fp-chip.active { background: rgba(255,255,255,0.25); color: #fff; }
+
+  .fp-cs-body { padding: 10px 12px; background: #0F172A; min-height: 280px; }
+  .fp-cs-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .fp-cs-card {
+    flex: 1; background: #1E293B; border-radius: 8px;
+    padding: 7px 9px; border: 1px solid rgba(255,255,255,0.06);
+  }
+  .fp-cs-clabel { font-size: 7px; color: rgba(255,255,255,0.45); margin-bottom: 3px; }
+  .fp-cs-cval { font-size: 11px; font-weight: 700; }
+
+  .fp-cs-widget-title { font-size: 8px; color: rgba(255,255,255,0.4); margin-bottom: 8px; margin-top: 8px; }
+  .fp-cs-bars { display: flex; gap: 6px; align-items: flex-end; height: 40px; margin-bottom: 10px; }
+  .fp-cs-bar-grp { display: flex; gap: 2px; align-items: flex-end; }
+  .fp-cs-b { width: 8px; border-radius: 3px 3px 0 0; }
+  .fp-cs-b-i { background: var(--fp-green); }
+  .fp-cs-b-e { background: var(--fp-red); }
+
+  .fp-cs-spend-row {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 7px; font-size: 9px;
+  }
+  .fp-cs-spend-cat { flex-shrink: 0; width: 56px; color: rgba(255,255,255,0.7); font-size: 8px; }
+  .fp-cs-spend-bar-wrap { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .fp-cs-spend-bar { height: 100%; background: linear-gradient(90deg, #3B82F6, #6366F1); border-radius: 2px; }
+  .fp-cs-spend-val { font-size: 8px; color: rgba(255,255,255,0.6); flex-shrink: 0; }
+
+  .fp-cs-group-label { font-size: 7px; font-weight: 700; color: rgba(255,255,255,0.3); margin-bottom: 4px; letter-spacing: 0.5px; }
+  .fp-cs-tx {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .fp-cs-tx:last-child { border-bottom: none; }
+  .fp-cs-tx-reconciled { opacity: 0.7; }
+  .fp-cs-tx-icon {
+    width: 22px; height: 22px; border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0;
+  }
+  .fp-cs-tx-info { flex: 1; display: flex; flex-direction: column; }
+  .fp-cs-tx-info b { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.85); }
+  .fp-cs-tx-info span { font-size: 7px; color: rgba(255,255,255,0.4); }
+  .fp-cs-tx-amt { font-size: 9px; font-weight: 700; }
+
+  /* Budget screen */
+  .fp-cs-budget-item { margin-bottom: 10px; }
+  .fp-bud-row { display: flex; align-items: center; gap: 4px; font-size: 9px; color: rgba(255,255,255,0.8); margin-bottom: 4px; }
+  .fp-bud-row span:nth-child(2) { flex: 1; }
+  .fp-bud-pct { font-weight: 700; font-size: 9px; }
+  .fp-bud-track { height: 5px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; margin-bottom: 3px; }
+  .fp-bud-fill { height: 100%; border-radius: 99px; }
+  .fp-bud-ok { background: linear-gradient(90deg, #10B981, #34D399); }
+  .fp-bud-warn { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+  .fp-bud-over { background: linear-gradient(90deg, #EF4444, #F87171); }
+  .fp-bud-vals { display: flex; justify-content: space-between; font-size: 7px; color: rgba(255,255,255,0.4); }
+  .fp-bud-alert { font-weight: 600; }
+
+  /* Recurring screen */
+  .fp-cs-rec-item {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Goals screen */
+  .fp-cs-goal { margin-bottom: 12px; }
+  .fp-goal-row { display: flex; align-items: center; gap: 4px; font-size: 9px; color: rgba(255,255,255,0.8); margin-bottom: 5px; }
+  .fp-goal-row span:nth-child(2) { flex: 1; }
+  .fp-goal-pct { font-weight: 700; }
+  .fp-goal-track { height: 5px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; margin-bottom: 3px; }
+  .fp-goal-fill { height: 100%; border-radius: 99px; }
+  .fp-goal-vals { display: flex; justify-content: space-between; font-size: 7px; color: rgba(255,255,255,0.4); }
+  .fp-goal-eta { color: rgba(255,255,255,0.3); }
+
+  /* Survival screen */
+  .fp-sw-chart-big { margin-bottom: 8px; }
+  .fp-cs-survival-row { display: flex; gap: 12px; }
+  .fp-cs-surv-item { flex: 1; background: #1E293B; border-radius: 8px; padding: 8px; text-align: center; }
+  .fp-cs-surv-label { display: block; font-size: 7px; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .fp-cs-surv-val { font-size: 13px; font-weight: 800; }
+
+  /* Progress dots */
+  .fp-cinema-dots {
+    display: flex; gap: 8px;
+  }
+  .fp-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .fp-dot.active {
+    background: #3B82F6;
+    transform: scale(1.3);
+  }
+
+  /* ════════════════ STATS COUNTER ═══════════ */
+  .fp-stats {
+    background: var(--fp-dark-2);
+    padding: 80px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .fp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .fp-stat-item { padding: 24px; }
+  .fp-stat-num {
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #60A5FA, #818CF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .fp-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+  }
+
+  /* ════════════════ PRICING ═════════════════ */
+  .fp-pricing {
+    background: #F8FAFC;
+    padding: 96px 0;
+  }
+  .fp-section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .fp-section-header h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .fp-section-header p {
+    font-size: 16px;
+    color: #64748B;
+  }
+  .fp-section-header-light h2 { color: var(--fp-text-light); }
+  .fp-section-header-light p { color: var(--fp-text-muted-dark); }
+
+  .fp-badge {
+    display: inline-flex;
+    background: #DBEAFE;
+    color: #1E3A8A;
+    font-size: 12px; font-weight: 700;
+    padding: 4px 14px; border-radius: 99px;
+    margin-bottom: 16px; letter-spacing: 0.3px;
+  }
+
+  /* Toggle */
+  .fp-toggle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .fp-toggle-label { font-size: 14px; font-weight: 600; color: #64748B; }
+  .fp-toggle {
+    width: 52px; height: 28px;
+    background: #E2E8F0;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.25s;
+  }
+  .fp-toggle.yearly { background: #3B82F6; }
+  .fp-toggle-thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 22px; height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transition: left 0.25s;
+  }
+  .fp-toggle.yearly .fp-toggle-thumb { left: calc(100% - 25px); }
+  .fp-save-badge {
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 99px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .fp-save-badge.visible { opacity: 1; }
+
+  /* Pricing cards */
+  .fp-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .fp-pcard {
+    background: #fff;
+    border: 2px solid #E2E8F0;
+    border-radius: var(--fp-radius-lg);
+    padding: 32px 24px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .fp-pcard:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 8px 40px rgba(59,130,246,0.12);
+    transform: translateY(-4px);
+  }
+  .fp-pcard-featured {
+    border-color: #3B82F6;
+    box-shadow: 0 8px 40px rgba(59,130,246,0.15);
+  }
+  .fp-pcard-popular {
+    position: absolute; top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: #3B82F6; color: #fff;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 16px; border-radius: 99px;
+    white-space: nowrap;
+  }
+  .fp-pcard-name { font-size: 13px; font-weight: 600; color: #64748B; margin-bottom: 8px; }
+  .fp-pcard-price { display: flex; align-items: baseline; gap: 2px; margin-bottom: 4px; }
+  .fp-pcard-amount { font-size: 48px; font-weight: 800; color: #0F172A; line-height: 1; }
+  .fp-pcard-period { font-size: 16px; color: #64748B; }
+  .fp-pcard-sub { font-size: 12px; color: #64748B; margin-bottom: 20px; min-height: 18px; }
+  .fp-pcard-badge {
+    display: flex; align-items: center; gap: 6px;
+    background: #F8FAFC;
+    border-radius: 10px; padding: 8px 10px;
+    font-size: 11px; font-weight: 600; color: #0F172A;
+    margin-bottom: 20px;
+  }
+  .fp-pcard-badge-blue { background: #EFF6FF; color: #1E3A8A; }
+  .fp-pcard-list { list-style: none; margin-bottom: 28px; }
+  .fp-pcard-list li {
+    font-size: 13px; padding: 6px 0;
+    border-bottom: 1px solid #F1F5F9;
+    display: flex; align-items: center; gap: 8px;
+    color: #0F172A;
+  }
+  .fp-pcard-list li:last-child { border-bottom: none; }
+  .fp-check::before { content: '✓'; color: #10B981; font-weight: 700; flex-shrink: 0; }
+  .fp-cross { color: #94A3B8; }
+  .fp-cross::before { content: '✕'; color: #CBD5E1; font-weight: 700; flex-shrink: 0; }
+  .fp-pcard-btn {
+    display: block; width: 100%; text-align: center;
+    padding: 13px 20px; border-radius: 12px;
+    font-size: 14px; font-weight: 700;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .fp-pcard-btn-outline {
+    border: 2px solid #1E3A8A; color: #1E3A8A;
+  }
+  .fp-pcard-btn-outline:hover { background: #EFF6FF; }
+  .fp-pcard-btn-primary {
+    background: linear-gradient(135deg, #3B82F6, #6366F1);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.35);
+  }
+  .fp-pcard-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(99,102,241,0.5);
+  }
+
+  /* ════════════════ TRUST ════════════════════ */
+  .fp-trust {
+    background: var(--fp-dark);
+    padding: 96px 0;
+  }
+  .fp-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .fp-trust-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: var(--fp-radius-lg);
+    padding: 28px 20px;
+    transition: all 0.3s;
+  }
+  .fp-trust-item:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(59,130,246,0.3);
+    transform: translateY(-3px);
+  }
+  .fp-trust-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+  .fp-trust-item h3 {
+    font-size: 15px; font-weight: 700;
+    color: var(--fp-text-light);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .fp-trust-item p {
+    font-size: 13px;
+    color: var(--fp-text-muted-dark);
+    line-height: 1.65;
+  }
+
+  /* ════════════════ FINAL CTA ════════════════ */
+  .fp-final-cta {
+    background: var(--fp-dark);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .fp-cta-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(99,102,241,0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .fp-cta-inner { position: relative; z-index: 1; }
+  .fp-cta-eyebrow {
+    font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .fp-final-cta h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    color: var(--fp-text-light);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .fp-final-cta p {
+    font-size: 18px;
+    color: var(--fp-text-muted-dark);
+    margin-bottom: 44px;
+  }
+  .fp-cta-btns {
+    display: flex; gap: 16px;
+    justify-content: center; flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .fp-cta-trust {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.3px;
+  }
+
+  /* ════════════════ RESPONSIVE ═══════════════ */
+  @media (max-width: 1024px) {
+    .fp-hero-inner { grid-template-columns: 1fr; }
+    .fp-hero-phone-wrap { display: none; }
+    .fp-cinema-sticky { grid-template-columns: 1fr; }
+    .fp-cinema-right { display: none; }
+    .fp-cinema-outer { height: calc(6 * 80vh); }
+    .fp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .fp-trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .fp-pillars-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  }
+  @media (max-width: 768px) {
+    .fp-hero { padding: 80px 0 48px; min-height: auto; }
+    .fp-hero-h1 { font-size: 36px; }
+    .fp-cinema-sticky { padding: 0 16px; }
+    .fp-slide h2 { font-size: 28px; }
+    .fp-slide p { font-size: 15px; }
+    .fp-pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .fp-trust-grid { grid-template-columns: 1fr 1fr; }
+    .fp-stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .fp-hero-h1 { font-size: 30px; }
+    .fp-hero-btns { flex-direction: column; }
+    .fp-trust-grid { grid-template-columns: 1fr; }
+    .fp-cta-btns { flex-direction: column; align-items: center; }
+    .fp-float { display: none; }
+    .fp-stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE SCRIPTS
+═══════════════════════════════════════════════════════════ -->
+<script is:inline>
+(function() {
+
+  /* ── Cinema sticky scroll ───────────────── */
+  const cinemaOuter = document.querySelector('.fp-cinema-outer');
+  const slides      = document.querySelectorAll('.fp-slide');
+  const screens     = document.querySelectorAll('.fp-cscreen');
+  const dots        = document.querySelectorAll('.fp-dot');
+  const totalSlides = slides.length;
+
+  function setSlide(idx) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    screens.forEach((s, i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+  }
+
+  if (cinemaOuter && totalSlides > 0) {
+    setSlide(0);
+    window.addEventListener('scroll', function() {
+      const rect     = cinemaOuter.getBoundingClientRect();
+      const progress = Math.max(0, -rect.top / (rect.height - window.innerHeight));
+      const idx      = Math.min(Math.floor(progress * totalSlides), totalSlides - 1);
+      setSlide(idx);
+    }, { passive: true });
+
+    // Clickable dots
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        const target = parseInt(dot.getAttribute('data-dot'));
+        const sectionHeight = cinemaOuter.offsetHeight - window.innerHeight;
+        const scrollTarget  = cinemaOuter.offsetTop + (target / totalSlides) * sectionHeight;
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+      });
+    });
+  }
+
+  /* ── IntersectionObserver entrance animations ── */
+  var revealEls = document.querySelectorAll('.fp-reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  /* ── Counter animation ──────────────────── */
+  function animateCounter(el) {
+    var target  = parseInt(el.getAttribute('data-count'));
+    var suffix  = el.getAttribute('data-suffix') || '';
+    var start   = 0;
+    var duration= 1400;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased    = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counters = document.querySelectorAll('.fp-stat-num');
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          cio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c) { cio.observe(c); });
+  }
+
+  /* ── Pricing toggle ─────────────────────── */
+  var toggle   = document.getElementById('priceToggle');
+  var saveBadge= document.querySelector('.fp-save-badge');
+  var amounts  = document.querySelectorAll('.fp-pcard-amount[data-monthly]');
+  var yearlyHints  = document.querySelectorAll('.fp-yearly-hint');
+  var monthlyHints = document.querySelectorAll('.fp-monthly-hint');
+  var isYearly = false;
+
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      isYearly = !isYearly;
+      toggle.classList.toggle('yearly', isYearly);
+      saveBadge.classList.toggle('visible', isYearly);
+      amounts.forEach(function(el) {
+        el.textContent = isYearly ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
+      });
+      yearlyHints.forEach(function(el)  { el.style.display = isYearly ? 'block' : 'none'; });
+      monthlyHints.forEach(function(el) { el.style.display = isYearly ? 'none' : 'block'; });
+    });
+  }
+
+  /* ── Page-specific i18n ─────────────────── */
+  var fpT = {
+    en: {
+      fp_hero_eyebrow: '✦ FamlyBudget 2026',
+      fp_hero_h1: 'Your budget.<br>Your family.<br><span class="fp-gradient-text">Finally together.</span>',
+      fp_hero_sub: 'One app to track every euro, plan every month and never be caught off guard again.',
+      fp_hero_download: '▶  Download Free',
+      fp_hero_explore: 'Explore features ↓',
+      fp_ph_greeting: 'Hello, Fabrizio 👋',
+      fp_ph_date: 'May 2026',
+      fp_ph_balance_label: 'Total balance',
+      fp_ph_income: 'Income', fp_ph_expenses: 'Expenses',
+      fp_sw_title: 'Balance Projection — 90 days',
+      fp_sw_safe: 'Safe to spend today',
+      fp_sw_today: 'Today',
+      fp_tx1: 'Grocery', fp_tx1_cat: 'Food',
+      fp_tx2: 'Salary', fp_tx2_cat: 'Income',
+      fp_tx3: 'Rent', fp_tx3_cat: 'Home',
+      fp_tx3_cat: 'Home',
+      fp_float_goal: 'Vacation goal', fp_float_used: 'used',
+      fp_float_budget: 'Budget on track',
+      fp_pillar1_h: 'Your data, your rules',
+      fp_pillar1_p: 'Choose to keep everything on-device or sync to the cloud. You decide — anytime, no migration needed.',
+      fp_pillar2_h: 'Built for families and solo users',
+      fp_pillar2_p: 'Invite up to 10 family members and manage finances together, each from their own phone, all in real time.',
+      fp_pillar3_h: 'Insights that actually make sense',
+      fp_pillar3_p: 'Know exactly where your money goes, how much you can safely spend today, and what your balance will look like in 90 days.',
+      fp_s0_badge: 'Dashboard',
+      fp_s0_h: 'Everything at a glance.<br>Nothing left unseen.',
+      fp_s0_p: 'A fully customisable dashboard with 13 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.',
+      fp_s0_l1: '13 configurable widgets', fp_s0_l2: 'Spending flow breakdown by category', fp_s0_l3: 'Monthly income vs expenses chart',
+      fp_s1_badge: 'Transactions',
+      fp_s1_h: 'Every euro.<br>Tracked, categorised, understood.',
+      fp_s1_p: 'Add expenses and income in seconds. Powerful filters, CSV import from your bank, automatic transfer tracking — and a reconciliation tool to match your statement line by line.',
+      fp_s1_l1: 'Import CSV from 10+ bank profiles', fp_s1_l2: '3-level category hierarchy', fp_s1_l3: 'Statement reconciliation with lock badge',
+      fp_s2_badge: 'Budgets',
+      fp_s2_h: 'Set a limit.<br>Respect it. Every month.',
+      fp_s2_p: 'Assign monthly budgets to any category. The app alerts you at 80% and 100% so you act before going over. Compare spent vs planned month by month.',
+      fp_s2_l1: 'Category budgets with smart alerts', fp_s2_l2: 'Visual spent-vs-planned bars', fp_s2_l3: 'Month-by-month history',
+      fp_s3_badge: 'Recurring',
+      fp_s3_h: 'Rent, salary, subscriptions.<br>All on autopilot.',
+      fp_s3_p: 'Recurring transactions generate themselves at the right date. Installment plans split any purchase into monthly payments automatically tracked in your calendar.',
+      fp_s3_l1: 'Auto-generation at due date', fp_s3_l2: 'Instalment purchase tracking', fp_s3_l3: 'Calendar view of upcoming payments',
+      fp_s4_badge: 'Savings Goals',
+      fp_s4_h: 'Dream it.<br>Plan it. Reach it.',
+      fp_s4_p: 'Create goals for holidays, emergency funds or big purchases. Track contributions over time and watch the progress bar fill up — without touching your real account balances.',
+      fp_s4_l1: 'Unlimited goals (Premium)', fp_s4_l2: 'Contribution history', fp_s4_l3: 'Target date and pause/complete',
+      fp_s5_badge: 'Survival Line',
+      fp_s5_h: 'See your future balance.<br>Act before it\'s too late.',
+      fp_s5_p: 'The 90-day projection combines your recurring transactions, scheduled payments and credit card billing dates to show exactly where your balance is headed.',
+      fp_s5_l1: '90-day forward computation', fp_s5_l2: 'Safe-to-spend daily figure', fp_s5_l3: 'Credit card billing date awareness',
+      fp_stat1_label: 'transactions / month (Premium)',
+      fp_stat2_label: 'dashboard widgets',
+      fp_stat3_label: 'balance projection ahead',
+      fp_stat4_label: 'supported languages',
+      fp_cs0_trend: '6-month trend', fp_cs0_spending: 'Top spending',
+      fp_cs0_food: '🛒 Food', fp_cs0_car: '🚗 Car',
+      fp_c_all: 'All', fp_c_out: 'Expenses', fp_c_in: 'Income',
+      fp_c_today: 'TODAY', fp_c_yesterday: 'YESTERDAY',
+      fp_c_fuel: 'Fuel', fp_c_car: 'Car', fp_c_work: 'Work',
+      fp_c_sub: 'Subscription', fp_c_leisure: 'Leisure',
+      fp_bud_almost: 'Almost there',
+      fp_rec_monthly: 'Monthly · 1st', fp_rec_27: 'Monthly · 27th',
+      fp_rec_yearly: 'Yearly · Jan', fp_rec_installments: 'INSTALLMENTS',
+      fp_rec_phone: 'New phone',
+      fp_goal_vacation: 'Vacation 2026', fp_goal_emergency: 'Emergency Fund',
+      fp_goal_car: 'New car',
+      fp_goal_eta_aug: 'Aug 2026', fp_goal_eta_oct: 'Oct 2026', fp_goal_eta_2028: '2028',
+      fp_cs2_total: 'Total budget',
+      fp_surv_min: 'Min (30d)', fp_surv_90: 'In 90 days',
+      fp_pr_badge: '✦ Pricing',
+      fp_pr_h2: 'Start free. Upgrade when you need more.',
+      fp_pr_sub: 'No automatic charges. Cancel anytime. Your data is always yours.',
+      fp_pr_monthly: 'Monthly', fp_pr_yearly: 'Yearly',
+      fp_pr_save: 'Save up to 39%', fp_p_month: '/month',
+      fp_p0_name: 'Free', fp_p0_sub: 'Free forever',
+      fp_p0_f1: 'Local or cloud storage', fp_p0_f2: 'Up to 80 transactions/month',
+      fp_p0_f3: '3 active accounts', fp_p0_f4: '4 active recurring',
+      fp_p0_f5: 'Basic charts & reports', fp_p0_f6: 'Backup & Restore',
+      fp_p0_f7: 'Unlimited accounts', fp_p0_f8: 'CSV export', fp_p0_btn: 'Start Free',
+      fp_p1_name: 'Premium Local',
+      fp_p1_yearly: '€15/year — save 38%', fp_p1_monthly: 'or €15/year — save 38%',
+      fp_p1_badge: 'Data stays on device',
+      fp_p1_f1: 'Unlimited transactions', fp_p1_f2: 'Up to 20 active accounts',
+      fp_p1_f3: 'Unlimited recurring', fp_p1_f4: '150 categories',
+      fp_p1_f5: 'Backup & Restore', fp_p1_f6: 'CSV/PDF export',
+      fp_p1_f7: 'Multi-device sync', fp_p1_f8: 'Family sharing', fp_p1_btn: 'Choose Local',
+      fp_p2_popular: '⭐ Most complete', fp_p2_name: 'Premium Cloud',
+      fp_p2_yearly: '€21.99/year — save 39%', fp_p2_monthly: 'or €21.99/year — save 39%',
+      fp_p2_badge: 'Real-time sync',
+      fp_p2_f1: 'Everything in Premium Local', fp_p2_f2: 'Real-time multi-device sync',
+      fp_p2_f3: 'Family sharing (up to 10)', fp_p2_f4: 'Automatic cloud backup',
+      fp_p2_f5: 'Restore from any device', fp_p2_btn: 'Choose Cloud',
+      fp_trust_h2: 'Built on trust. Designed for privacy.',
+      fp_trust1_h: 'Zero financial data to third parties',
+      fp_trust1_p: 'Your transactions, accounts and balances are never shared with advertisers, data brokers or analytics platforms.',
+      fp_trust2_h: 'Local mode: cloud-free option',
+      fp_trust2_p: 'Choose to keep all your data exclusively on your device. No internet required — the app works fully offline.',
+      fp_trust3_h: 'Zero ads. Zero tracking.',
+      fp_trust3_p: 'FamlyBudget has no advertising, no in-app tracking, no profiling. The only revenue is the Premium subscription.',
+      fp_trust4_h: 'Biometric app lock',
+      fp_trust4_p: 'Lock the app with fingerprint or Face ID. Even if someone picks up your phone, your finances stay private.',
+      fp_cta_eyebrow: 'Free to start · No credit card required',
+      fp_cta_h2: 'Take control of your finances today.',
+      fp_cta_sub: 'Download FamlyBudget and start tracking in seconds. Free, forever.',
+      fp_cta_download: 'Download on Google Play',
+      fp_cta_home: 'Back to Home',
+      fp_cta_trust: 'Available on Android · 5 languages · Works offline',
+    },
+    it: {
+      fp_hero_eyebrow: '✦ FamlyBudget 2026',
+      fp_hero_h1: 'Il tuo budget.<br>La tua famiglia.<br><span class="fp-gradient-text">Finalmente insieme.</span>',
+      fp_hero_sub: "Un'unica app per tracciare ogni euro, pianificare ogni mese e non farti mai cogliere impreparato.",
+      fp_hero_download: '▶  Scarica Gratis',
+      fp_hero_explore: 'Scopri le funzionalità ↓',
+      fp_ph_greeting: 'Ciao, Fabrizio 👋',
+      fp_ph_date: 'Maggio 2026',
+      fp_ph_balance_label: 'Saldo totale',
+      fp_ph_income: 'Entrate', fp_ph_expenses: 'Uscite',
+      fp_sw_title: 'Proiezione Saldo — 90 giorni',
+      fp_sw_safe: 'Puoi spendere oggi',
+      fp_sw_today: 'Oggi',
+      fp_tx1: 'Supermercato', fp_tx1_cat: 'Spesa',
+      fp_tx2: 'Stipendio', fp_tx2_cat: 'Entrata',
+      fp_tx3: 'Affitto', fp_tx3_cat: 'Casa',
+      fp_float_goal: 'Obiettivo vacanze', fp_float_used: 'usato',
+      fp_float_budget: 'Budget in ordine',
+      fp_pillar1_h: 'I tuoi dati, le tue regole',
+      fp_pillar1_p: 'Scegli di tenere tutto sul dispositivo o sincronizzare sul cloud. Decidi tu — in qualsiasi momento, senza migrazioni.',
+      fp_pillar2_h: 'Pensata per famiglie e per chi vive solo',
+      fp_pillar2_p: 'Invita fino a 10 familiari e gestite le finanze insieme, ognuno dal proprio telefono, tutto in tempo reale.',
+      fp_pillar3_h: 'Analisi che hanno senso davvero',
+      fp_pillar3_p: 'Sai esattamente dove vanno i tuoi soldi, quanto puoi spendere oggi in sicurezza, e come sarà il saldo tra 90 giorni.',
+      fp_s0_badge: 'Dashboard',
+      fp_s0_h: 'Tutto a colpo d\'occhio.<br>Niente sfugge.',
+      fp_s0_p: 'Una dashboard completamente personalizzabile con 13 widget — saldo, flusso spese, budget, obiettivi e proiezione 90 giorni. Configurala una volta, non perdi più il filo.',
+      fp_s0_l1: '13 widget configurabili', fp_s0_l2: 'Spending flow per categoria', fp_s0_l3: 'Grafico mensile entrate vs uscite',
+      fp_s1_badge: 'Transazioni',
+      fp_s1_h: 'Ogni euro.<br>Tracciato, categorizzato, capito.',
+      fp_s1_p: 'Aggiungi spese ed entrate in secondi. Filtri potenti, import CSV dalla banca, tracking automatico dei giroconti — e la riconciliazione per abbinare ogni riga all\'estratto conto.',
+      fp_s1_l1: 'Import CSV da 10+ profili bancari', fp_s1_l2: 'Categorie gerarchiche a 3 livelli', fp_s1_l3: 'Riconciliazione con badge di blocco',
+      fp_s2_badge: 'Budget',
+      fp_s2_h: 'Imposta un limite.<br>Rispettalo. Ogni mese.',
+      fp_s2_p: "Assegna budget mensili a ogni categoria. L'app ti avvisa all'80% e al 100% così agisci prima di sforare. Confronta speso vs pianificato mese per mese.",
+      fp_s2_l1: 'Budget per categoria con alert smart', fp_s2_l2: 'Barre speso vs pianificato', fp_s2_l3: 'Storico mese per mese',
+      fp_s3_badge: 'Ricorrenti',
+      fp_s3_h: 'Affitto, stipendio, abbonamenti.<br>Tutto in automatico.',
+      fp_s3_p: 'Le transazioni ricorrenti si generano da sole alla data giusta. I piani di rateizzazione suddividono ogni acquisto in rate mensili, tracciate automaticamente nel calendario.',
+      fp_s3_l1: 'Generazione automatica alla scadenza', fp_s3_l2: 'Tracking acquisti rateali', fp_s3_l3: 'Vista calendario dei pagamenti futuri',
+      fp_s4_badge: 'Obiettivi di Risparmio',
+      fp_s4_h: 'Sognalo.<br>Pianificalo. Raggiungi.',
+      fp_s4_p: 'Crea obiettivi per vacanze, fondi emergenza o grandi acquisti. Traccia i contributi nel tempo e guarda la barra progresso riempirsi — senza toccare i saldi reali dei conti.',
+      fp_s4_l1: 'Obiettivi illimitati (Premium)', fp_s4_l2: 'Storico contribuzioni', fp_s4_l3: 'Data obiettivo, pausa e completamento',
+      fp_s5_badge: 'Survival Line',
+      fp_s5_h: 'Vedi il futuro del tuo saldo.<br>Agisci prima che sia tardi.',
+      fp_s5_p: 'La proiezione a 90 giorni combina ricorrenti, pagamenti programmati e date di addebito carte di credito per mostrarti esattamente dove andrà il saldo.',
+      fp_s5_l1: 'Calcolo forward 90 giorni', fp_s5_l2: 'Quanto puoi spendere oggi', fp_s5_l3: 'Consapevole delle date di addebito CC',
+      fp_stat1_label: 'transazioni / mese (Premium)',
+      fp_stat2_label: 'widget dashboard',
+      fp_stat3_label: 'giorni di proiezione saldo',
+      fp_stat4_label: 'lingue supportate',
+      fp_cs0_trend: 'Andamento 6 mesi', fp_cs0_spending: 'Top spese',
+      fp_cs0_food: '🛒 Spesa', fp_cs0_car: '🚗 Auto',
+      fp_c_all: 'Tutte', fp_c_out: 'Uscite', fp_c_in: 'Entrate',
+      fp_c_today: 'OGGI', fp_c_yesterday: 'IERI',
+      fp_c_fuel: 'Benzina', fp_c_car: 'Auto', fp_c_work: 'Lavoro',
+      fp_c_sub: 'Abbonamento', fp_c_leisure: 'Svago',
+      fp_bud_almost: 'Quasi al limite',
+      fp_rec_monthly: 'Mensile · 1°', fp_rec_27: 'Mensile · 27°',
+      fp_rec_yearly: 'Annuale · Gen', fp_rec_installments: 'RATE',
+      fp_rec_phone: 'Nuovo telefono',
+      fp_goal_vacation: 'Vacanze 2026', fp_goal_emergency: 'Fondo Emergenza',
+      fp_goal_car: 'Auto nuova',
+      fp_goal_eta_aug: 'Ago 2026', fp_goal_eta_oct: 'Ott 2026', fp_goal_eta_2028: '2028',
+      fp_cs2_total: 'Budget totale',
+      fp_surv_min: 'Min (30gg)', fp_surv_90: 'Tra 90 giorni',
+      fp_pr_badge: '✦ Prezzi',
+      fp_pr_h2: 'Inizia gratis. Aggiorna quando ne hai bisogno.',
+      fp_pr_sub: 'Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre tuoi.',
+      fp_pr_monthly: 'Mensile', fp_pr_yearly: 'Annuale',
+      fp_pr_save: 'Risparmia fino al 39%', fp_p_month: '/mese',
+      fp_p0_name: 'Gratuito', fp_p0_sub: 'Sempre gratuito',
+      fp_p0_f1: 'Archiviazione locale o cloud', fp_p0_f2: 'Fino a 80 transazioni/mese',
+      fp_p0_f3: '3 conti attivi', fp_p0_f4: '4 ricorrenti attive',
+      fp_p0_f5: 'Grafici e report base', fp_p0_f6: 'Backup e Ripristino',
+      fp_p0_f7: 'Conti illimitati', fp_p0_f8: 'Esportazione CSV', fp_p0_btn: 'Inizia Gratis',
+      fp_p1_name: 'Premium Local',
+      fp_p1_yearly: '€15/anno — risparmia 38%', fp_p1_monthly: 'o €15/anno — risparmia 38%',
+      fp_p1_badge: 'Dati solo sul dispositivo',
+      fp_p1_f1: 'Transazioni illimitate', fp_p1_f2: 'Fino a 20 conti attivi',
+      fp_p1_f3: 'Ricorrenti illimitate', fp_p1_f4: '150 categorie',
+      fp_p1_f5: 'Backup e Ripristino', fp_p1_f6: 'Esportazione CSV/PDF',
+      fp_p1_f7: 'Sync multi-dispositivo', fp_p1_f8: 'Condivisione famiglia', fp_p1_btn: 'Scegli Local',
+      fp_p2_popular: '⭐ Più completo', fp_p2_name: 'Premium Cloud',
+      fp_p2_yearly: '€21,99/anno — risparmia 39%', fp_p2_monthly: 'o €21,99/anno — risparmia 39%',
+      fp_p2_badge: 'Sync in tempo reale',
+      fp_p2_f1: 'Tutto di Premium Local', fp_p2_f2: 'Sync multi-dispositivo in tempo reale',
+      fp_p2_f3: 'Famiglia (fino a 10)', fp_p2_f4: 'Backup cloud automatico',
+      fp_p2_f5: 'Ripristino da qualsiasi dispositivo', fp_p2_btn: 'Scegli Cloud',
+      fp_trust_h2: 'Fondato sulla fiducia. Progettato per la privacy.',
+      fp_trust1_h: 'Zero dati finanziari a terze parti',
+      fp_trust1_p: 'Le tue transazioni, conti e saldi non vengono mai condivisi con inserzionisti, broker di dati o piattaforme analytics.',
+      fp_trust2_h: 'Modalità locale: opzione senza cloud',
+      fp_trust2_p: 'Scegli di tenere tutti i dati esclusivamente sul dispositivo. Nessuna connessione richiesta — l\'app funziona completamente offline.',
+      fp_trust3_h: 'Zero pubblicità. Zero tracciamento.',
+      fp_trust3_p: 'FamlyBudget non ha pubblicità, nessun tracking in-app, nessuna profilazione. L\'unica fonte di reddito è l\'abbonamento Premium.',
+      fp_trust4_h: 'Blocco biometrico',
+      fp_trust4_p: 'Blocca l\'app con impronta digitale o Face ID. Anche se qualcuno prende il tuo telefono, le tue finanze restano private.',
+      fp_cta_eyebrow: 'Gratuito per iniziare · Nessuna carta di credito richiesta',
+      fp_cta_h2: 'Prendi il controllo delle tue finanze oggi.',
+      fp_cta_sub: 'Scarica FamlyBudget e inizia a tracciare in pochi secondi. Gratis, per sempre.',
+      fp_cta_download: 'Scarica su Google Play',
+      fp_cta_home: 'Torna alla Home',
+      fp_cta_trust: 'Disponibile su Android · 5 lingue · Funziona offline',
+    }
+  };
+
+  function applyFpLang(lang) {
+    var t = fpT[lang] || fpT['en'];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+      var k = el.getAttribute('data-i18n-html');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+  }
+
+  var currentLang = localStorage.getItem('fb_lang') || 'en';
+  applyFpLang(currentLang);
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      applyFpLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+})();
+</script>

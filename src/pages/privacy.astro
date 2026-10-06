@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ VERSIONE ITALIANA ══════════ -->
       <div class="legal-section" id="it" data-lang-section="it">
         <h1>Privacy Policy</h1>
-        <p class="legal-meta">Ultima revisione: 6 aprile 2026 &nbsp;·&nbsp; Versione 1.0</p>
+        <p class="legal-meta">Ultima revisione: 6 ottobre 2026 &nbsp;·&nbsp; Versione 1.1</p>
 
         <div class="legal-notice">
           <p>Questa Privacy Policy descrive come FamlyBudget raccoglie, utilizza e protegge i dati personali degli utenti dell'applicazione mobile FamlyBudget (Android).</p>
@@ -43,18 +43,25 @@ import Layout from '../layouts/Layout.astro';
         </table>
         <p>I dati finanziari includono: transazioni, conti, categorie, budget, obiettivi di risparmio, ricorrenze e saldi. Questi dati sono di proprietà esclusiva dell'utente.</p>
 
-        <h3>2.3 Dati Tecnici e di Diagnostica</h3>
-        <p>Raccogliamo automaticamente dati tecnici aggregati e anonimi per migliorare l'app:</p>
+        <h3>2.3 Dati facoltativi allegati alle transazioni</h3>
+        <p>Quando registri una spesa o un'entrata puoi scegliere di allegare:</p>
         <ul>
-          <li><strong>Firebase Analytics</strong> — eventi di utilizzo anonimi (es. schermate visualizzate, funzionalità usate). Non includiamo dati finanziari negli eventi analytics.</li>
-          <li><strong>Firebase Crashlytics</strong> — report di crash e anomalie tecniche, per identificare e risolvere bug. I report non contengono dati finanziari dell'utente.</li>
+          <li><strong>La posizione.</strong> Solo se tocchi il pulsante per aggiungere la posizione, l'app chiede il permesso di accedere alla posizione precisa del dispositivo e salva latitudine e longitudine con quella singola transazione. L'app non rileva la posizione in nessun altro momento e non la rileva in background. Puoi rimuoverla dalla transazione o revocare il permesso dalle impostazioni del dispositivo in qualsiasi momento.</li>
+          <li><strong>La foto di uno scontrino</strong>, scattata con la fotocamera o scelta dalla galleria. L'app non legge altre foto del dispositivo. Puoi rimuoverla dalla transazione in qualsiasi momento.</li>
         </ul>
+        <p>In modalità Local questi dati restano solo sul dispositivo. In modalità Cloud sono salvati su Firestore insieme alla transazione e, se condividi i dati con una famiglia, sono visibili agli altri membri.</p>
+
+        <h3>2.4 Dati Tecnici e di Diagnostica</h3>
+        <p>Raccogliamo automaticamente dati tecnici per individuare e risolvere errori dell'app:</p>
+        <ul>
+          <li><strong>Firebase Crashlytics</strong> — report di crash e anomalie tecniche. Ogni report contiene informazioni tecniche (versione dell'app, modello e sistema operativo del dispositivo, dettaglio dell'errore) ed è associato all'identificativo utente di Firebase (UID), un codice casuale che non contiene email né nome, e alla modalità di archiviazione in uso (Local o Cloud). I report non contengono i tuoi dati finanziari.</li>
+        </ul>
+        <p>L'app non utilizza strumenti di analisi del comportamento d'uso né di pubblicità.</p>
 
         <h2>3. Finalità del Trattamento</h2>
         <p>Utilizziamo i dati raccolti per le seguenti finalità:</p>
         <ul>
           <li><strong>Erogazione del servizio</strong> — autenticazione, salvataggio e sincronizzazione dei dati dell'utente</li>
-          <li><strong>Miglioramento dell'app</strong> — analisi aggregata anonima del comportamento d'uso</li>
           <li><strong>Diagnostica e stabilità</strong> — rilevamento e correzione di bug tramite Crashlytics</li>
           <li><strong>Comunicazioni di servizio</strong> — notifiche tecniche essenziali (es. modifiche alla Privacy Policy)</li>
         </ul>
@@ -72,19 +79,13 @@ import Layout from '../layouts/Layout.astro';
           <tr>
             <td>Firebase Firestore</td>
             <td>Google LLC</td>
-            <td>Dati finanziari (solo modalità Cloud)</td>
-            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
-          </tr>
-          <tr>
-            <td>Firebase Analytics</td>
-            <td>Google LLC</td>
-            <td>Eventi d'uso anonimi</td>
+            <td>Dati finanziari, posizione e foto degli scontrini (solo modalità Cloud)</td>
             <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
             <td>Firebase Crashlytics</td>
             <td>Google LLC</td>
-            <td>Stack trace, versione app, dispositivo</td>
+            <td>Dettaglio tecnico degli errori, versione app, dispositivo, UID</td>
             <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
@@ -93,7 +94,26 @@ import Layout from '../layouts/Layout.astro';
             <td>Email, nome profilo (se usato)</td>
             <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
           </tr>
+          <tr>
+            <td>OpenStreetMap</td>
+            <td>OpenStreetMap Foundation</td>
+            <td>Indirizzo IP e area di mappa richiesta, solo quando si allega una posizione</td>
+            <td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/wiki/Privacy_Policy</a></td>
+          </tr>
+          <tr>
+            <td>Frankfurter</td>
+            <td>Frankfurter (api.frankfurter.dev)</td>
+            <td>Indirizzo IP e codici delle valute, per aggiornare i tassi di cambio</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Google Fonts</td>
+            <td>Google LLC</td>
+            <td>Indirizzo IP, per scaricare i caratteri di testo dell'app</td>
+            <td><a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener">developers.google.com/fonts/faq/privacy</a></td>
+          </tr>
         </table>
+        <p>OpenStreetMap, Frankfurter e Google Fonts ricevono l'indirizzo IP del dispositivo, come avviene in qualsiasi connessione a internet. Non ricevono il tuo account, i tuoi dati finanziari né la posizione dei tuoi acquisti.</p>
         <p>RevenueCat (gestione acquisti in-app) sarà integrato in una versione futura e aggiorneremo questa policy di conseguenza.</p>
 
         <h2>5. Base Giuridica del Trattamento</h2>
@@ -101,7 +121,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Esecuzione del contratto (Art. 6.1.b GDPR)</strong> — per fornire il servizio richiesto dall'utente</li>
           <li><strong>Legittimo interesse (Art. 6.1.f GDPR)</strong> — per diagnostica tecnica e miglioramento dell'app</li>
-          <li><strong>Consenso (Art. 6.1.a GDPR)</strong> — dove richiesto dalla normativa applicabile</li>
+          <li><strong>Consenso (Art. 6.1.a GDPR)</strong> — ad esempio per l'accesso alla posizione del dispositivo, che puoi concedere o revocare in ogni momento</li>
         </ul>
 
         <h2>6. Conservazione dei Dati</h2>
@@ -109,9 +129,10 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Dati account (Firebase Auth)</strong> — conservati finché l'account è attivo</li>
           <li><strong>Dati finanziari (modalità Cloud)</strong> — conservati su Firestore finché l'utente non richiede la cancellazione</li>
           <li><strong>Dati finanziari (modalità Local)</strong> — conservati esclusivamente sul dispositivo; la disinstallazione dell'app elimina tutti i dati</li>
-          <li><strong>Dati analytics e crash</strong> — conservati per 60 giorni da Google secondo le loro politiche</li>
+          <li><strong>Report di crash</strong> — conservati per 90 giorni da Google secondo le sue politiche</li>
+          <li><strong>Posizione e foto degli scontrini</strong> — conservate insieme alla transazione a cui sono allegate e cancellate quando le rimuovi o elimini la transazione</li>
         </ul>
-        <p>L'utente può eliminare il proprio account e tutti i dati associati direttamente dall'app: <strong>Impostazioni → Elimina account</strong>.</p>
+        <p>Puoi eliminare il tuo account e tutti i dati associati direttamente dall'app: <strong>Impostazioni → Elimina account</strong>. Le istruzioni complete, comprese quelle per chi non riesce più ad accedere all'app, sono qui: <a href="/delete-account">famlybudget.com/delete-account</a></p>
 
         <h2>7. Diritti dell'Utente (GDPR)</h2>
         <p>In conformità al Regolamento UE 2016/679 (GDPR), l'utente ha diritto a:</p>
@@ -137,6 +158,7 @@ import Layout from '../layouts/Layout.astro';
           <li>L'accesso a Firestore è regolato da regole di sicurezza che permettono a ciascun utente di accedere solo ai propri dati</li>
           <li>L'app supporta il blocco biometrico (impronta digitale / Face ID) per proteggere l'accesso locale</li>
           <li>I dati in modalità Local non lasciano mai il dispositivo</li>
+          <li>In modalità Local il database sul dispositivo è cifrato</li>
         </ul>
 
         <h2>10. Trasferimento Internazionale dei Dati</h2>
@@ -159,7 +181,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ ENGLISH VERSION ══════════ -->
       <div class="legal-section" id="en" data-lang-section="en">
         <h1>Privacy Policy</h1>
-        <p class="legal-meta">Last updated: April 6, 2026 &nbsp;·&nbsp; Version 1.0</p>
+        <p class="legal-meta">Last updated: October 6, 2026 &nbsp;·&nbsp; Version 1.1</p>
 
         <div class="legal-notice">
           <p>This Privacy Policy describes how FamlyBudget collects, uses, and protects the personal data of users of the FamlyBudget mobile application (Android).</p>
@@ -190,18 +212,25 @@ import Layout from '../layouts/Layout.astro';
         </table>
         <p>Financial data includes: transactions, accounts, categories, budgets, savings goals, recurring entries, and balances. This data is exclusively owned by the user.</p>
 
-        <h3>2.3 Technical and Diagnostic Data</h3>
-        <p>We automatically collect aggregated, anonymous technical data to improve the app:</p>
+        <h3>2.3 Optional data attached to transactions</h3>
+        <p>When you record an expense or income you can choose to attach:</p>
         <ul>
-          <li><strong>Firebase Analytics</strong> — anonymous usage events (e.g., screens viewed, features used). We do not include financial data in analytics events.</li>
-          <li><strong>Firebase Crashlytics</strong> — crash reports and technical anomalies, to identify and fix bugs. Reports do not contain the user's financial data.</li>
+          <li><strong>Your location.</strong> Only if you tap the button to add a location, the app asks for permission to access the device's precise location and saves latitude and longitude with that single transaction. The app does not detect your location at any other time, nor in the background. You can remove it from the transaction or revoke the permission in the device settings at any time.</li>
+          <li><strong>A photo of a receipt</strong>, taken with the camera or chosen from the gallery. The app does not read other photos on your device. You can remove it from the transaction at any time.</li>
         </ul>
+        <p>In Local mode this data stays on your device only. In Cloud mode it is saved on Firestore together with the transaction and, if you share your data with a family, it is visible to the other members.</p>
+
+        <h3>2.4 Technical and Diagnostic Data</h3>
+        <p>We automatically collect technical data to find and fix errors in the app:</p>
+        <ul>
+          <li><strong>Firebase Crashlytics</strong> — crash reports and technical anomalies. Each report contains technical information (app version, device model and operating system, error details) and is associated with the Firebase user identifier (UID), a random code that does not contain your email or name, and with the storage mode in use (Local or Cloud). Reports do not contain your financial data.</li>
+        </ul>
+        <p>The app does not use usage-behavior analytics or advertising tools.</p>
 
         <h2>3. Purposes of Processing</h2>
         <p>We use the collected data for the following purposes:</p>
         <ul>
           <li><strong>Service delivery</strong> — authentication, saving and syncing user data</li>
-          <li><strong>App improvement</strong> — anonymous aggregate analysis of usage behavior</li>
           <li><strong>Diagnostics and stability</strong> — bug detection and resolution via Crashlytics</li>
           <li><strong>Service communications</strong> — essential technical notifications (e.g., Privacy Policy changes)</li>
         </ul>
@@ -219,19 +248,13 @@ import Layout from '../layouts/Layout.astro';
           <tr>
             <td>Firebase Firestore</td>
             <td>Google LLC</td>
-            <td>Financial data (Cloud mode only)</td>
-            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
-          </tr>
-          <tr>
-            <td>Firebase Analytics</td>
-            <td>Google LLC</td>
-            <td>Anonymous usage events</td>
+            <td>Financial data, location and receipt photos (Cloud mode only)</td>
             <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
             <td>Firebase Crashlytics</td>
             <td>Google LLC</td>
-            <td>Stack trace, app version, device info</td>
+            <td>Technical error details, app version, device, UID</td>
             <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
           </tr>
           <tr>
@@ -240,7 +263,26 @@ import Layout from '../layouts/Layout.astro';
             <td>Email, profile name (if used)</td>
             <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
           </tr>
+          <tr>
+            <td>OpenStreetMap</td>
+            <td>OpenStreetMap Foundation</td>
+            <td>IP address and requested map area, only when a location is attached</td>
+            <td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/wiki/Privacy_Policy</a></td>
+          </tr>
+          <tr>
+            <td>Frankfurter</td>
+            <td>Frankfurter (api.frankfurter.dev)</td>
+            <td>IP address and currency codes, to update exchange rates</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Google Fonts</td>
+            <td>Google LLC</td>
+            <td>IP address, to download the app's text fonts</td>
+            <td><a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener">developers.google.com/fonts/faq/privacy</a></td>
+          </tr>
         </table>
+        <p>OpenStreetMap, Frankfurter and Google Fonts receive the device's IP address, as happens with any internet connection. They do not receive your account, your financial data or the location of your purchases.</p>
         <p>RevenueCat (in-app purchase management) will be integrated in a future version and we will update this policy accordingly.</p>
 
         <h2>5. Legal Basis for Processing</h2>
@@ -248,7 +290,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Performance of a contract (Art. 6.1.b GDPR)</strong> — to provide the service requested by the user</li>
           <li><strong>Legitimate interest (Art. 6.1.f GDPR)</strong> — for technical diagnostics and app improvement</li>
-          <li><strong>Consent (Art. 6.1.a GDPR)</strong> — where required by applicable law</li>
+          <li><strong>Consent (Art. 6.1.a GDPR)</strong> — for example for access to the device's location, which you can grant or revoke at any time</li>
         </ul>
 
         <h2>6. Data Retention</h2>
@@ -256,9 +298,10 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Account data (Firebase Auth)</strong> — retained while the account is active</li>
           <li><strong>Financial data (Cloud mode)</strong> — retained on Firestore until the user requests deletion</li>
           <li><strong>Financial data (Local mode)</strong> — stored exclusively on the device; uninstalling the app deletes all data</li>
-          <li><strong>Analytics and crash data</strong> — retained for 60 days by Google per their policies</li>
+          <li><strong>Crash reports</strong> — retained for 90 days by Google per its policies</li>
+          <li><strong>Location and receipt photos</strong> — kept together with the transaction they are attached to and deleted when you remove them or delete the transaction</li>
         </ul>
-        <p>Users can delete their account and all associated data directly from the app: <strong>Settings → Delete account</strong>.</p>
+        <p>You can delete your account and all associated data directly from the app: <strong>Settings → Delete account</strong>. Full instructions, including for those who can no longer access the app, are here: <a href="/delete-account">famlybudget.com/delete-account</a></p>
 
         <h2>7. Your Rights (GDPR)</h2>
         <p>In accordance with EU Regulation 2016/679 (GDPR), you have the right to:</p>
@@ -284,6 +327,7 @@ import Layout from '../layouts/Layout.astro';
           <li>Access to Firestore is governed by security rules that allow each user to access only their own data</li>
           <li>The app supports biometric lock (fingerprint / Face ID) to protect local access</li>
           <li>Data in Local mode never leaves the device</li>
+          <li>In Local mode the database on the device is encrypted</li>
         </ul>
 
         <h2>10. International Data Transfer</h2>

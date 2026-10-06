@@ -42,79 +42,17 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-visual">
         <div class="phone-float-card phone-float-1">
           <div class="fc-label" data-i18n="phone_float1_label">Monthly savings</div>
-          <div class="fc-val">+ €340</div>
+          <div class="fc-val">+ €300</div>
         </div>
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-header">
-              <div class="phone-header-top">
-                <span>FamlyBudget</span>
-                <span data-i18n="phone_month">April 2026</span>
-              </div>
-              <div class="phone-greeting" data-i18n="phone_greeting">Hello, Fabrizio 👋</div>
-              <div class="phone-balance-label" data-i18n="phone_balance_label">Total account balance</div>
-              <div class="phone-balance">€ 8,420.50</div>
-            </div>
-            <div class="phone-cards-row">
-              <div class="phone-card">
-                <div class="phone-card-label" data-i18n="phone_income">Income</div>
-                <div class="phone-card-value income">+€3,200</div>
-              </div>
-              <div class="phone-card">
-                <div class="phone-card-label" data-i18n="phone_expenses">Expenses</div>
-                <div class="phone-card-value expense">−€1,847</div>
-              </div>
-            </div>
-            <div class="phone-section-title" data-i18n="phone_latest_tx">Latest transactions</div>
-            <div class="phone-tx">
-              <div class="phone-tx-left">
-                <div class="phone-tx-icon" style="background:#FEF3C7;">🛒</div>
-                <div>
-                  <div class="phone-tx-name" data-i18n="phone_tx1_name">Grocery</div>
-                  <div class="phone-tx-cat" data-i18n="phone_tx1_cat">Food</div>
-                </div>
-              </div>
-              <div class="phone-tx-amount neg">−€94.30</div>
-            </div>
-            <div class="phone-tx">
-              <div class="phone-tx-left">
-                <div class="phone-tx-icon" style="background:#DCFCE7;">💼</div>
-                <div>
-                  <div class="phone-tx-name" data-i18n="phone_tx2_name">Salary</div>
-                  <div class="phone-tx-cat" data-i18n="phone_tx2_cat">Income</div>
-                </div>
-              </div>
-              <div class="phone-tx-amount pos">+€2,400</div>
-            </div>
-            <div class="phone-tx">
-              <div class="phone-tx-left">
-                <div class="phone-tx-icon" style="background:#EDE9FE;">🏠</div>
-                <div>
-                  <div class="phone-tx-name" data-i18n="phone_tx3_name">Rent</div>
-                  <div class="phone-tx-cat" data-i18n="phone_tx3_cat">Home</div>
-                </div>
-              </div>
-              <div class="phone-tx-amount neg">−€750</div>
-            </div>
-            <div class="phone-chart">
-              <div class="phone-chart-label" data-i18n="phone_chart_label">6-month trend</div>
-              <div class="phone-bars">
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:28px;"></div><div class="phone-bar bar-expense" style="height:22px;"></div></div>
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:32px;"></div><div class="phone-bar bar-expense" style="height:18px;"></div></div>
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:24px;"></div><div class="phone-bar bar-expense" style="height:30px;"></div></div>
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:36px;"></div><div class="phone-bar bar-expense" style="height:20px;"></div></div>
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:30px;"></div><div class="phone-bar bar-expense" style="height:16px;"></div></div>
-                <div class="phone-bar-group"><div class="phone-bar bar-income" style="height:40px;"></div><div class="phone-bar bar-expense" style="height:24px;"></div></div>
-              </div>
-            </div>
-          </div>
+        <div class="phone-real">
+          <img src="/screens/01-dashboard.webp" width="640" height="1387" fetchpriority="high"
+               alt="FamlyBudget dashboard" data-i18n-alt="hero_img_alt" />
         </div>
         <div class="phone-float-card phone-float-2">
           <div class="phone-float-2-icon">🎯</div>
           <div class="phone-float-2-text">
             <div class="fc-label" data-i18n="phone_float2_label">Vacation goal</div>
-            <div class="fc-val">€ 1,200 / €3,000</div>
+            <div class="fc-val">€ 1,150 / €3,000</div>
           </div>
         </div>
       </div>
@@ -247,89 +185,48 @@ import Layout from '../layouts/Layout.astro';
         <h2 data-i18n="ss_h2">An interface designed for simplicity</h2>
         <p data-i18n="ss_p">Clean, fast, intuitive. All the important information always at your fingertips.</p>
       </div>
-      <div class="screenshots-row">
-
-        <div class="screenshot-item">
-          <div class="phone-sm">
-            <div class="phone-sm-notch"></div>
-            <div class="phone-sm-body">
-              <div class="ss-header">
-                <h4>Dashboard</h4>
-                <div class="ss-balance">€ 8,420.50</div>
-              </div>
-              <div class="ss-row">
-                <div class="ss-pill"><div class="p-label" data-i18n="ss1_income">Income</div><div class="p-val" style="color:#16a34a">+3,200€</div></div>
-                <div class="ss-pill"><div class="p-label" data-i18n="ss1_expenses">Expenses</div><div class="p-val" style="color:#dc2626">−1,847€</div></div>
-              </div>
-              <div class="ss-mini-bar-wrap">
-                <div class="ss-mini-bar-title" data-i18n="ss1_last4">Last 4 months</div>
-                <div class="ss-mini-bars">
-                  <div class="ss-mb i" style="height:20px;"></div><div class="ss-mb e" style="height:14px;"></div>
-                  <div class="ss-mb i" style="height:24px;"></div><div class="ss-mb e" style="height:18px;"></div>
-                  <div class="ss-mb i" style="height:18px;"></div><div class="ss-mb e" style="height:22px;"></div>
-                  <div class="ss-mb i" style="height:30px;"></div><div class="ss-mb e" style="height:16px;"></div>
-                </div>
-              </div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#FEF3C7">🛒</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx1_name">Grocery</span></div><span class="ss-tx-amt" style="color:#dc2626">−€94</span></div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#DCFCE7">💼</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx2_name">Salary</span></div><span class="ss-tx-amt" style="color:#16a34a">+€2400</span></div>
-              <div class="ss-tx-item"><div style="display:flex;align-items:center"><div class="ss-tx-icon2" style="background:#EDE9FE">🏠</div><span class="ss-tx-name2" style="margin-left:6px" data-i18n="phone_tx3_name">Rent</span></div><span class="ss-tx-amt" style="color:#dc2626">−€750</span></div>
-            </div>
-          </div>
-          <div class="caption" data-i18n="ss1_caption">Main dashboard</div>
-        </div>
-
-        <div class="screenshot-item">
-          <div class="phone-sm featured">
-            <div class="phone-sm-notch"></div>
-            <div class="phone-sm-body">
-              <div class="ss2-header"><h4 data-i18n="ss2_header">Transactions</h4></div>
-              <div class="ss2-filter">
-                <div class="ss2-chip active" data-i18n="ss2_all">All</div>
-                <div class="ss2-chip" data-i18n="ss2_out">Expenses</div>
-                <div class="ss2-chip" data-i18n="ss2_in">Income</div>
-              </div>
-              <div class="ss2-group-label" data-i18n="ss2_today">TODAY</div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF3C7">🛒</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="phone_tx1_name">Grocery</div><div class="ss2-tx-meta" data-i18n="ss2_tx1_cat">Food</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€94.30</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEE2E2">⛽</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="ss2_tx2">Gas</div><div class="ss2-tx-meta" data-i18n="ss2_tx2_cat">Car</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€58.00</div></div>
-              <div style="margin-top:6px;" class="ss2-group-label" data-i18n="ss2_yesterday">YESTERDAY</div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#DCFCE7">💼</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="phone_tx2_name">Salary</div><div class="ss2-tx-meta" data-i18n="ss2_tx3_cat">Work</div></div><div class="ss2-tx-amt" style="color:#16a34a">+€2,400</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#EDE9FE">🎬</div><div class="ss2-tx-info"><div class="ss2-tx-name">Netflix</div><div class="ss2-tx-meta" data-i18n="ss2_tx4_cat">Subscription</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€15.99</div></div>
-              <div class="ss2-tx"><div class="ss2-tx-icon" style="background:#FEF9C3">🍕</div><div class="ss2-tx-info"><div class="ss2-tx-name" data-i18n="ss2_tx5">Restaurant</div><div class="ss2-tx-meta" data-i18n="ss2_tx5_cat">Leisure</div></div><div class="ss2-tx-amt" style="color:#dc2626">−€42.00</div></div>
-            </div>
-          </div>
-          <div class="caption" style="color:var(--blue-dark);font-weight:700;" data-i18n="ss2_caption">Transaction list</div>
-        </div>
-
-        <div class="screenshot-item">
-          <div class="phone-sm">
-            <div class="phone-sm-notch"></div>
-            <div class="phone-sm-body">
-              <div class="ss3-header"><h4 data-i18n="ss3_header">Reports</h4></div>
-              <div class="ss3-period">
-                <div class="ss3-chip active" data-i18n="ss3_3m">3 months</div>
-                <div class="ss3-chip" data-i18n="ss3_6m">6 months</div>
-                <div class="ss3-chip" data-i18n="ss3_year">Year</div>
-              </div>
-              <div class="ss3-summary">
-                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_income">Tot. Income</span><span class="ss3-sum-val" style="color:#16a34a">+€9,600</span></div>
-                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_expenses">Tot. Expenses</span><span class="ss3-sum-val" style="color:#dc2626">−€5,541</span></div>
-                <div class="ss3-sum-row"><span class="ss3-sum-label" data-i18n="ss3_savings">Net savings</span><span class="ss3-sum-val" style="color:#1E3A8A">+€4,059</span></div>
-              </div>
-              <div class="ss3-bar-chart">
-                <div class="ss3-bar-title" data-i18n="ss3_chart_title">Income vs Expenses</div>
-                <div class="ss3-bars">
-                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:32px;"></div><div class="ss3-b e" style="height:20px;"></div></div><div class="ss3-month">FEB</div></div>
-                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:28px;"></div><div class="ss3-b e" style="height:24px;"></div></div><div class="ss3-month">MAR</div></div>
-                  <div class="ss3-bar-grp"><div class="bars"><div class="ss3-b i" style="height:36px;"></div><div class="ss3-b e" style="height:18px;"></div></div><div class="ss3-month">APR</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="caption" data-i18n="ss3_caption">Charts &amp; reports</div>
-        </div>
-
-      </div>
     </div>
+    <div class="shots-scroller" tabindex="0" role="region" aria-label="FamlyBudget screenshots" data-i18n-aria="ss_region">
+      <ul class="shots-track">
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/01-dashboard.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt1" /></div>
+          <div class="caption" data-i18n="ss_cap1"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/02-add.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt2" /></div>
+          <div class="caption" data-i18n="ss_cap2"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/03-transactions.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt3" /></div>
+          <div class="caption" data-i18n="ss_cap3"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/04-budget.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt4" /></div>
+          <div class="caption" data-i18n="ss_cap4"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/05-survival.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt5" /></div>
+          <div class="caption" data-i18n="ss_cap5"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/06-accounts.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt6" /></div>
+          <div class="caption" data-i18n="ss_cap6"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/07-goals.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt7" /></div>
+          <div class="caption" data-i18n="ss_cap7"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/08-reports.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt8" /></div>
+          <div class="caption" data-i18n="ss_cap8"></div>
+        </li>
+        <li class="shot">
+          <div class="shot-frame"><img src="/screens/09-calendar.webp" width="640" height="1387" loading="lazy" alt="" data-i18n-alt="ss_alt9" /></div>
+          <div class="caption" data-i18n="ss_cap9"></div>
+        </li>
+      </ul>
+    </div>
+    <p class="shots-note" data-i18n="ss_note">Screenshots show the Italian interface with sample data.</p>
   </section>
 
   <!-- ══════════ PRICING ══════════ -->
@@ -431,6 +328,32 @@ import Layout from '../layouts/Layout.astro';
 
 </Layout>
 
+<style>
+  /* Hero: schermata reale in cornice */
+  .phone-real { width: 290px; border: 10px solid #1E3A8A; border-radius: 46px; overflow: hidden; background: #fff;
+    box-shadow: 0 32px 80px rgba(30,58,138,0.25), 0 4px 16px rgba(0,0,0,0.1); position: relative; }
+  .phone-real img { width: 100%; height: auto; }
+
+  /* Galleria screenshot: scorrimento orizzontale con snap */
+  .shots-scroller { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding: 12px 0 28px; scrollbar-width: thin; scrollbar-color: #94A3B8 transparent; outline-offset: -4px; }
+  .shots-track { list-style: none; display: flex; gap: 28px; width: max-content; margin: 0 auto;
+    padding: 0 max(24px, calc((100vw - 1120px) / 2 + 24px)); }
+  .shot { scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; width: 250px; }
+  .shot-frame { width: 250px; border: 8px solid #1E3A8A; border-radius: 36px; overflow: hidden; background: #fff;
+    box-shadow: var(--shadow-lg); transition: transform 0.3s; }
+  .shot-frame:hover { transform: translateY(-8px); }
+  .shot-frame img { width: 100%; height: auto; }
+  .shot .caption { font-size: 14px; font-weight: 600; color: var(--text); text-align: center; max-width: 240px; line-height: 1.4; }
+  .shots-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 4px; padding: 0 24px; }
+  @media (max-width: 768px) {
+    .shots-track { gap: 18px; }
+    .shot, .shot-frame { width: 210px; }
+    .shot-frame { border-width: 6px; border-radius: 30px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .shot-frame { transition: none; } .shot-frame:hover { transform: none; } }
+</style>
+
 <script is:inline>
   // ── Homepage-specific i18n keys ──────────────────────────────────
   const homeTranslations = {
@@ -443,14 +366,6 @@ import Layout from '../layouts/Layout.astro';
       stat1_num: '100%', stat1_label: 'Free to start',
       stat2_num: '5 languages', stat2_label: 'IT · EN · ES · FR · HE',
       stat3_num: 'Offline', stat3_label: 'Works without internet',
-      phone_month: 'April 2026', phone_greeting: 'Hello, Fabrizio 👋',
-      phone_balance_label: 'Total account balance',
-      phone_income: 'Income', phone_expenses: 'Expenses',
-      phone_latest_tx: 'Latest transactions',
-      phone_tx1_name: 'Grocery', phone_tx1_cat: 'Food',
-      phone_tx2_name: 'Salary', phone_tx2_cat: 'Income',
-      phone_tx3_name: 'Rent', phone_tx3_cat: 'Home',
-      phone_chart_label: '6-month trend',
       phone_float1_label: 'Monthly savings', phone_float2_label: 'Vacation goal',
       feat_badge: '✦ Features',
       feat_h2: 'Everything you need to manage the family budget',
@@ -497,15 +412,18 @@ import Layout from '../layouts/Layout.astro';
       feat8_b3: 'No financial data shared with third parties',
       ss_badge: '✦ Interface', ss_h2: 'An interface designed for simplicity',
       ss_p: 'Clean, fast, intuitive. All the important information always at your fingertips.',
-      ss1_income: 'Income', ss1_expenses: 'Expenses', ss1_last4: 'Last 4 months',
-      ss1_caption: 'Main dashboard',
-      ss2_header: 'Transactions', ss2_all: 'All', ss2_out: 'Expenses', ss2_in: 'Income',
-      ss2_today: 'TODAY', ss2_tx1_cat: 'Food', ss2_tx2: 'Gas', ss2_tx2_cat: 'Car',
-      ss2_yesterday: 'YESTERDAY', ss2_tx3_cat: 'Work', ss2_tx4_cat: 'Subscription',
-      ss2_tx5: 'Restaurant', ss2_tx5_cat: 'Leisure', ss2_caption: 'Transaction list',
-      ss3_header: 'Reports', ss3_3m: '3 months', ss3_6m: '6 months', ss3_year: 'Year',
-      ss3_income: 'Tot. Income', ss3_expenses: 'Tot. Expenses', ss3_savings: 'Net savings',
-      ss3_chart_title: 'Income vs Expenses', ss3_caption: 'Charts & reports',
+      hero_img_alt: 'FamlyBudget dashboard with balance, income, expenses and tasks',
+      ss_region: 'FamlyBudget screenshots',
+      ss_note: 'Screenshots show the Italian interface with sample data.',
+      ss_cap1: 'Your whole family at a glance', ss_alt1: 'Dashboard with liquid balance, monthly income and expenses, and tasks',
+      ss_cap2: 'Log an expense in seconds', ss_alt2: 'New transaction form with description, amount, account and category',
+      ss_cap3: 'Every movement under control', ss_alt3: 'Transaction list with totals and filters',
+      ss_cap4: 'Monthly budgets that don\'t slip away', ss_alt4: 'Monthly budgets with progress bars and overspending alerts',
+      ss_cap5: 'Know how the month will end', ss_alt5: 'Balance projection chart with history, forecast and alert threshold',
+      ss_cap6: 'Accounts, cards and cash together', ss_alt6: 'Accounts list with a credit card limit and usage',
+      ss_cap7: 'Save for what matters', ss_alt7: 'Savings goals with progress and remaining amount',
+      ss_cap8: 'See where your money goes', ss_alt8: 'Monthly report with income, expenses and a spending-by-category chart',
+      ss_cap9: 'Due dates and spending, day by day', ss_alt9: 'Calendar showing transactions, recurring items and tasks for each day',
       pr_badge: '✦ Pricing', pr_h2: 'Choose the right plan for you',
       pr_p: 'Start for free. Choose Premium based on how you want to store your data.',
       pr_free_name: 'Free', pr_free_price_suffix: '/month', pr_free_yearly: 'Free forever',
@@ -560,14 +478,6 @@ import Layout from '../layouts/Layout.astro';
       stat1_num: '100%', stat1_label: 'Gratuito per iniziare',
       stat2_num: '5 lingue', stat2_label: 'IT · EN · ES · FR · HE',
       stat3_num: 'Offline', stat3_label: 'Funziona senza rete',
-      phone_month: 'Aprile 2026', phone_greeting: 'Ciao, Fabrizio 👋',
-      phone_balance_label: 'Saldo totale conti',
-      phone_income: 'Entrate', phone_expenses: 'Uscite',
-      phone_latest_tx: 'Ultime transazioni',
-      phone_tx1_name: 'Supermercato', phone_tx1_cat: 'Spesa',
-      phone_tx2_name: 'Stipendio', phone_tx2_cat: 'Entrata',
-      phone_tx3_name: 'Affitto', phone_tx3_cat: 'Casa',
-      phone_chart_label: 'Andamento 6 mesi',
       phone_float1_label: 'Risparmio mensile', phone_float2_label: 'Obiettivo vacanze',
       feat_badge: '✦ Funzionalità',
       feat_h2: 'Tutto quello che serve per gestire il budget di famiglia',
@@ -614,15 +524,18 @@ import Layout from '../layouts/Layout.astro';
       feat8_b3: 'Nessun dato finanziario condiviso con terze parti',
       ss_badge: '✦ Interfaccia', ss_h2: 'Un\'interfaccia pensata per la semplicità',
       ss_p: 'Pulita, veloce, intuitiva. Tutte le informazioni importanti sempre a portata di mano.',
-      ss1_income: 'Entrate', ss1_expenses: 'Uscite', ss1_last4: 'Ultimi 4 mesi',
-      ss1_caption: 'Dashboard principale',
-      ss2_header: 'Transazioni', ss2_all: 'Tutte', ss2_out: 'Uscite', ss2_in: 'Entrate',
-      ss2_today: 'OGGI', ss2_tx1_cat: 'Spesa', ss2_tx2: 'Benzina', ss2_tx2_cat: 'Auto',
-      ss2_yesterday: 'IERI', ss2_tx3_cat: 'Lavoro', ss2_tx4_cat: 'Abbonamento',
-      ss2_tx5: 'Ristorante', ss2_tx5_cat: 'Svago', ss2_caption: 'Lista transazioni',
-      ss3_header: 'Report', ss3_3m: '3 mesi', ss3_6m: '6 mesi', ss3_year: 'Anno',
-      ss3_income: 'Tot. Entrate', ss3_expenses: 'Tot. Uscite', ss3_savings: 'Risparmio netto',
-      ss3_chart_title: 'Entrate vs Uscite', ss3_caption: 'Grafici e report',
+      hero_img_alt: 'Dashboard di FamlyBudget con saldo, entrate, uscite e task',
+      ss_region: 'Screenshot di FamlyBudget',
+      ss_note: 'Gli screenshot mostrano l\'interfaccia in italiano con dati di esempio.',
+      ss_cap1: 'Tutta la famiglia in un colpo d\'occhio', ss_alt1: 'Dashboard con saldo liquido, entrate e uscite del mese e task',
+      ss_cap2: 'Registra una spesa in pochi secondi', ss_alt2: 'Form nuova transazione con descrizione, importo, conto e categoria',
+      ss_cap3: 'Ogni movimento sotto controllo', ss_alt3: 'Elenco transazioni con totali e filtri',
+      ss_cap4: 'Budget mensili che non ti sfuggono', ss_alt4: 'Budget mensili con barre di avanzamento e avvisi di sforamento',
+      ss_cap5: 'Sai già come finirà il mese', ss_alt5: 'Grafico di proiezione del saldo con storico, previsione e soglia di allerta',
+      ss_cap6: 'Conti, carte e contanti insieme', ss_alt6: 'Elenco conti con plafond e utilizzo della carta di credito',
+      ss_cap7: 'Risparmia per ciò che conta', ss_alt7: 'Obiettivi di risparmio con progresso e importo mancante',
+      ss_cap8: 'Capisci dove vanno i tuoi soldi', ss_alt8: 'Report mensile con entrate, uscite e grafico delle spese per categoria',
+      ss_cap9: 'Scadenze e spese, giorno per giorno', ss_alt9: 'Calendario con transazioni, ricorrenze e task di ogni giorno',
       pr_badge: '✦ Prezzi', pr_h2: 'Scegli il piano giusto per te',
       pr_p: 'Inizia gratis. Scegli Premium in base a come vuoi archiviare i tuoi dati.',
       pr_free_name: 'Gratuito', pr_free_price_suffix: '/mese', pr_free_yearly: 'Sempre gratuito',
@@ -682,11 +595,20 @@ import Layout from '../layouts/Layout.astro';
       const key = el.getAttribute('data-i18n-html');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      if (t[key] !== undefined) el.setAttribute('alt', t[key]);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    });
   }
 
   // Apply current lang on page load (Layout already ran applyLang for shared keys)
-  const currentLang = localStorage.getItem('fb_lang') || 'en';
-  extendI18n(currentLang);
+  // (non "currentLang": collide con la variabile del Layout e bloccava tutto lo script)
+  const initialLang = localStorage.getItem('fb_lang') || 'en';
+  extendI18n(initialLang);
 
   // Re-apply on language button click
   document.querySelectorAll('.lang-btn').forEach(btn => {

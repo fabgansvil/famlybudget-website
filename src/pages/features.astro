@@ -140,9 +140,9 @@ import Layout from '../layouts/Layout.astro';
       <div class="fp-slide active" data-slide="0">
         <div class="fp-slide-badge" data-i18n="fp_s0_badge">Dashboard</div>
         <h2 data-i18n-html="fp_s0_h">Everything at a glance.<br>Nothing left unseen.</h2>
-        <p data-i18n="fp_s0_p">A fully customisable dashboard with 13 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.</p>
+        <p data-i18n="fp_s0_p">A fully customisable dashboard with 17 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.</p>
         <ul class="fp-slide-list">
-          <li data-i18n="fp_s0_l1">13 configurable widgets</li>
+          <li data-i18n="fp_s0_l1">17 configurable widgets</li>
           <li data-i18n="fp_s0_l2">Spending flow breakdown by category</li>
           <li data-i18n="fp_s0_l3">Monthly income vs expenses chart</li>
         </ul>
@@ -153,7 +153,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 data-i18n-html="fp_s1_h">Every euro.<br>Tracked, categorised, understood.</h2>
         <p data-i18n="fp_s1_p">Add expenses and income in seconds. Powerful filters, CSV import from your bank, automatic transfer tracking — and a reconciliation tool to match your statement line by line.</p>
         <ul class="fp-slide-list">
-          <li data-i18n="fp_s1_l1">Import CSV from 10+ bank profiles</li>
+          <li data-i18n="fp_s1_l1">Any bank: CSV/XLSX import + 10 ready-made profiles</li>
           <li data-i18n="fp_s1_l2">3-level category hierarchy</li>
           <li data-i18n="fp_s1_l3">Statement reconciliation with lock badge</li>
         </ul>
@@ -186,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 data-i18n-html="fp_s4_h">Dream it.<br>Plan it. Reach it.</h2>
         <p data-i18n="fp_s4_p">Create goals for holidays, emergency funds or big purchases. Track contributions over time and watch the progress bar fill up — without touching your real account balances.</p>
         <ul class="fp-slide-list">
-          <li data-i18n="fp_s4_l1">Unlimited goals (Premium)</li>
+          <li data-i18n="fp_s4_l1">Unlimited goals, free for everyone</li>
           <li data-i18n="fp_s4_l2">Contribution history</li>
           <li data-i18n="fp_s4_l3">Target date and pause/complete</li>
         </ul>
@@ -373,11 +373,11 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="fp-stats-grid">
       <div class="fp-stat-item fp-reveal">
-        <div class="fp-stat-num" data-count="1000" data-suffix="+">0</div>
-        <div class="fp-stat-label" data-i18n="fp_stat1_label">transactions / month (Premium)</div>
+        <div class="fp-stat-num" data-count="112" data-suffix="">0</div>
+        <div class="fp-stat-label" data-i18n="fp_stat1_label">ready-made categories</div>
       </div>
       <div class="fp-stat-item fp-reveal">
-        <div class="fp-stat-num" data-count="13" data-suffix="">0</div>
+        <div class="fp-stat-num" data-count="17" data-suffix="">0</div>
         <div class="fp-stat-label" data-i18n="fp_stat2_label">dashboard widgets</div>
       </div>
       <div class="fp-stat-item fp-reveal">
@@ -400,7 +400,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="fp-section-header fp-reveal">
       <div class="fp-badge" data-i18n="fp_pr_badge">✦ Pricing</div>
       <h2 data-i18n="fp_pr_h2">Start free. Upgrade when you need more.</h2>
-      <p data-i18n="fp_pr_sub">No automatic charges. Cancel anytime. Your data is always yours.</p>
+      <p data-i18n="fp_pr_sub">Cancel anytime from Google Play. Subscriptions renew automatically until cancelled.</p>
     </div>
     <!-- Toggle -->
     <div class="fp-toggle-wrap fp-reveal">
@@ -423,13 +423,18 @@ import Layout from '../layouts/Layout.astro';
         <div class="fp-pcard-sub" data-i18n="fp_p0_sub">Free forever</div>
         <ul class="fp-pcard-list">
           <li class="fp-check" data-i18n="fp_p0_f1">Local or cloud storage</li>
-          <li class="fp-check" data-i18n="fp_p0_f2">Up to 80 transactions/month</li>
-          <li class="fp-check" data-i18n="fp_p0_f3">3 active accounts</li>
-          <li class="fp-check" data-i18n="fp_p0_f4">4 active recurring</li>
-          <li class="fp-check" data-i18n="fp_p0_f5">Basic charts & reports</li>
-          <li class="fp-cross" data-i18n="fp_p0_f6">Backup & Restore</li>
-          <li class="fp-cross" data-i18n="fp_p0_f7">Unlimited accounts</li>
-          <li class="fp-cross" data-i18n="fp_p0_f8">CSV export</li>
+          <li class="fp-check" data-i18n="fp_p0_f2">Budgets, goals, recurring & installments</li>
+          <li class="fp-check" data-i18n="fp_p0_f3">Calendar, tasks & reminders</li>
+          <li class="fp-check" data-i18n="fp_p0_f4">90-day projection & safe-to-spend</li>
+          <li class="fp-check" data-i18n="fp_p0_f5">Reports, net worth & recap</li>
+          <li class="fp-check" data-i18n="fp_p0_f6">Bank import CSV/XLSX</li>
+          <li class="fp-check" data-i18n="fp_p0_f7">Reconciliation, multi-currency, tags</li>
+          <li class="fp-check" data-i18n="fp_p0_f8">17 widgets + Android home widgets</li>
+          <li class="fp-check" data-i18n="fp_p0_f9">112 categories + 15 of your own</li>
+          <li class="fp-check" data-i18n="fp_p0_f10">80 transactions/month · 3 accounts · 4 recurring</li>
+          <li class="fp-cross" data-i18n="fp_p0_f11">Data export</li>
+          <li class="fp-cross" data-i18n="fp_p0_f12">Backup & Restore</li>
+          <li class="fp-cross" data-i18n="fp_p0_f13">History > 12 months</li>
         </ul>
         <a href="#download" class="fp-pcard-btn fp-pcard-btn-outline" data-i18n="fp_p0_btn">Start Free</a>
       </div>
@@ -446,14 +451,16 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="fp-pcard-badge"><span>📱</span> <span data-i18n="fp_p1_badge">Data stays on device</span></div>
         <ul class="fp-pcard-list">
-          <li class="fp-check" data-i18n="fp_p1_f1">Unlimited transactions</li>
-          <li class="fp-check" data-i18n="fp_p1_f2">Up to 20 active accounts</li>
-          <li class="fp-check" data-i18n="fp_p1_f3">Unlimited recurring</li>
-          <li class="fp-check" data-i18n="fp_p1_f4">150 categories</li>
-          <li class="fp-check" data-i18n="fp_p1_f5">Backup & Restore</li>
-          <li class="fp-check" data-i18n="fp_p1_f6">CSV/PDF export</li>
-          <li class="fp-cross" data-i18n="fp_p1_f7">Multi-device sync</li>
-          <li class="fp-cross" data-i18n="fp_p1_f8">Family sharing</li>
+          <li class="fp-check" data-i18n="fp_p1_f1">Everything in Free</li>
+          <li class="fp-check" data-i18n="fp_p1_f2">Unlimited transactions</li>
+          <li class="fp-check" data-i18n="fp_p1_f3">Up to 20 active accounts</li>
+          <li class="fp-check" data-i18n="fp_p1_f4">Unlimited recurring</li>
+          <li class="fp-check" data-i18n="fp_p1_f5">+150 categories, +10 currencies</li>
+          <li class="fp-check" data-i18n="fp_p1_f6">CSV/XLSX & PDF export</li>
+          <li class="fp-check" data-i18n="fp_p1_f7">Chart history up to 24 months</li>
+          <li class="fp-check" data-i18n="fp_p1_f8">Backup & Restore</li>
+          <li class="fp-cross" data-i18n="fp_p1_f9">Multi-device sync</li>
+          <li class="fp-cross" data-i18n="fp_p1_f10">Family sharing</li>
         </ul>
         <a href="#download" class="fp-pcard-btn fp-pcard-btn-outline" data-i18n="fp_p1_btn">Choose Local</a>
       </div>
@@ -474,8 +481,8 @@ import Layout from '../layouts/Layout.astro';
           <li class="fp-check" data-i18n="fp_p2_f1">Everything in Premium Local</li>
           <li class="fp-check" data-i18n="fp_p2_f2">Real-time multi-device sync</li>
           <li class="fp-check" data-i18n="fp_p2_f3">Family sharing (up to 10)</li>
-          <li class="fp-check" data-i18n="fp_p2_f4">Automatic cloud backup</li>
-          <li class="fp-check" data-i18n="fp_p2_f5">Restore from any device</li>
+          <li class="fp-check" data-i18n="fp_p2_f4">Browser access (web dashboard)</li>
+          <li class="fp-check" data-i18n="fp_p2_f5">Data safe in the cloud, restore on any device</li>
         </ul>
         <a href="#download" class="fp-pcard-btn fp-pcard-btn-primary" data-i18n="fp_p2_btn">Choose Cloud</a>
       </div>
@@ -504,8 +511,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="fp-trust-item fp-reveal">
         <div class="fp-trust-icon">🚫</div>
-        <h3 data-i18n="fp_trust3_h">Zero ads. Zero tracking.</h3>
-        <p data-i18n="fp_trust3_p">FamlyBudget has no advertising, no in-app tracking, no profiling. The only revenue is the Premium subscription.</p>
+        <h3 data-i18n="fp_trust3_h">No ads. No analytics.</h3>
+        <p data-i18n="fp_trust3_p">FamlyBudget has no advertising, no usage analytics, no profiling. Only technical crash reports, with no financial data. The only revenue is the Premium subscription.</p>
       </div>
       <div class="fp-trust-item fp-reveal">
         <div class="fp-trust-icon">🛡️</div>
@@ -1504,12 +1511,12 @@ import Layout from '../layouts/Layout.astro';
       fp_pillar3_p: 'Know exactly where your money goes, how much you can safely spend today, and what your balance will look like in 90 days.',
       fp_s0_badge: 'Dashboard',
       fp_s0_h: 'Everything at a glance.<br>Nothing left unseen.',
-      fp_s0_p: 'A fully customisable dashboard with 13 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.',
-      fp_s0_l1: '13 configurable widgets', fp_s0_l2: 'Spending flow breakdown by category', fp_s0_l3: 'Monthly income vs expenses chart',
+      fp_s0_p: 'A fully customisable dashboard with 17 widgets — balance, spending flow, budget progress, savings goals and a 90-day projection of your account. Configure it once, never lose track again.',
+      fp_s0_l1: '17 configurable widgets', fp_s0_l2: 'Spending flow breakdown by category', fp_s0_l3: 'Monthly income vs expenses chart',
       fp_s1_badge: 'Transactions',
       fp_s1_h: 'Every euro.<br>Tracked, categorised, understood.',
       fp_s1_p: 'Add expenses and income in seconds. Powerful filters, CSV import from your bank, automatic transfer tracking — and a reconciliation tool to match your statement line by line.',
-      fp_s1_l1: 'Import CSV from 10+ bank profiles', fp_s1_l2: '3-level category hierarchy', fp_s1_l3: 'Statement reconciliation with lock badge',
+      fp_s1_l1: 'Any bank: CSV/XLSX import + 10 ready-made profiles', fp_s1_l2: '3-level category hierarchy', fp_s1_l3: 'Statement reconciliation with lock badge',
       fp_s2_badge: 'Budgets',
       fp_s2_h: 'Set a limit.<br>Respect it. Every month.',
       fp_s2_p: 'Assign monthly budgets to any category. The app alerts you at 80% and 100% so you act before going over. Compare spent vs planned month by month.',
@@ -1521,12 +1528,12 @@ import Layout from '../layouts/Layout.astro';
       fp_s4_badge: 'Savings Goals',
       fp_s4_h: 'Dream it.<br>Plan it. Reach it.',
       fp_s4_p: 'Create goals for holidays, emergency funds or big purchases. Track contributions over time and watch the progress bar fill up — without touching your real account balances.',
-      fp_s4_l1: 'Unlimited goals (Premium)', fp_s4_l2: 'Contribution history', fp_s4_l3: 'Target date and pause/complete',
+      fp_s4_l1: 'Unlimited goals, free for everyone', fp_s4_l2: 'Contribution history', fp_s4_l3: 'Target date and pause/complete',
       fp_s5_badge: 'Survival Line',
       fp_s5_h: 'See your future balance.<br>Act before it\'s too late.',
       fp_s5_p: 'The 90-day projection combines your recurring transactions, scheduled payments and credit card billing dates to show exactly where your balance is headed.',
       fp_s5_l1: '90-day forward computation', fp_s5_l2: 'Safe-to-spend daily figure', fp_s5_l3: 'Credit card billing date awareness',
-      fp_stat1_label: 'transactions / month (Premium)',
+      fp_stat1_label: 'ready-made categories',
       fp_stat2_label: 'dashboard widgets',
       fp_stat3_label: 'balance projection ahead',
       fp_stat4_label: 'supported languages',
@@ -1547,34 +1554,38 @@ import Layout from '../layouts/Layout.astro';
       fp_surv_min: 'Min (30d)', fp_surv_90: 'In 90 days',
       fp_pr_badge: '✦ Pricing',
       fp_pr_h2: 'Start free. Upgrade when you need more.',
-      fp_pr_sub: 'No automatic charges. Cancel anytime. Your data is always yours.',
+      fp_pr_sub: 'Cancel anytime from Google Play. Subscriptions renew automatically until cancelled.',
       fp_pr_monthly: 'Monthly', fp_pr_yearly: 'Yearly',
       fp_pr_save: 'Save up to 39%', fp_p_month: '/month',
       fp_p0_name: 'Free', fp_p0_sub: 'Free forever',
-      fp_p0_f1: 'Local or cloud storage', fp_p0_f2: 'Up to 80 transactions/month',
-      fp_p0_f3: '3 active accounts', fp_p0_f4: '4 active recurring',
-      fp_p0_f5: 'Basic charts & reports', fp_p0_f6: 'Backup & Restore',
-      fp_p0_f7: 'Unlimited accounts', fp_p0_f8: 'CSV export', fp_p0_btn: 'Start Free',
+      fp_p0_f1: 'Local or cloud storage', fp_p0_f2: 'Budgets, goals, recurring & installments',
+      fp_p0_f3: 'Calendar, tasks & reminders', fp_p0_f4: '90-day projection & safe-to-spend',
+      fp_p0_f5: 'Reports, net worth & recap', fp_p0_f6: 'Bank import CSV/XLSX',
+      fp_p0_f7: 'Reconciliation, multi-currency, tags', fp_p0_f8: '17 widgets + Android home widgets',
+      fp_p0_f9: '112 categories + 15 of your own', fp_p0_f10: '80 transactions/month · 3 accounts · 4 recurring',
+      fp_p0_f11: 'Data export', fp_p0_f12: 'Backup & Restore', fp_p0_f13: 'History > 12 months',
+      fp_p0_btn: 'Start Free',
       fp_p1_name: 'Premium Local',
       fp_p1_yearly: '€15/year — save 38%', fp_p1_monthly: 'or €15/year — save 38%',
       fp_p1_badge: 'Data stays on device',
-      fp_p1_f1: 'Unlimited transactions', fp_p1_f2: 'Up to 20 active accounts',
-      fp_p1_f3: 'Unlimited recurring', fp_p1_f4: '150 categories',
-      fp_p1_f5: 'Backup & Restore', fp_p1_f6: 'CSV/PDF export',
-      fp_p1_f7: 'Multi-device sync', fp_p1_f8: 'Family sharing', fp_p1_btn: 'Choose Local',
+      fp_p1_f1: 'Everything in Free', fp_p1_f2: 'Unlimited transactions',
+      fp_p1_f3: 'Up to 20 active accounts', fp_p1_f4: 'Unlimited recurring',
+      fp_p1_f5: '+150 categories, +10 currencies', fp_p1_f6: 'CSV/XLSX & PDF export',
+      fp_p1_f7: 'Chart history up to 24 months', fp_p1_f8: 'Backup & Restore',
+      fp_p1_f9: 'Multi-device sync', fp_p1_f10: 'Family sharing', fp_p1_btn: 'Choose Local',
       fp_p2_popular: '⭐ Most complete', fp_p2_name: 'Premium Cloud',
       fp_p2_yearly: '€21.99/year — save 39%', fp_p2_monthly: 'or €21.99/year — save 39%',
       fp_p2_badge: 'Real-time sync',
       fp_p2_f1: 'Everything in Premium Local', fp_p2_f2: 'Real-time multi-device sync',
-      fp_p2_f3: 'Family sharing (up to 10)', fp_p2_f4: 'Automatic cloud backup',
-      fp_p2_f5: 'Restore from any device', fp_p2_btn: 'Choose Cloud',
+      fp_p2_f3: 'Family sharing (up to 10)', fp_p2_f4: 'Browser access (web dashboard)',
+      fp_p2_f5: 'Data safe in the cloud, restore on any device', fp_p2_btn: 'Choose Cloud',
       fp_trust_h2: 'Built on trust. Designed for privacy.',
       fp_trust1_h: 'Zero financial data to third parties',
       fp_trust1_p: 'Your transactions, accounts and balances are never shared with advertisers, data brokers or analytics platforms.',
       fp_trust2_h: 'Local mode: cloud-free option',
       fp_trust2_p: 'Choose to keep all your data exclusively on your device. No internet required — the app works fully offline.',
-      fp_trust3_h: 'Zero ads. Zero tracking.',
-      fp_trust3_p: 'FamlyBudget has no advertising, no in-app tracking, no profiling. The only revenue is the Premium subscription.',
+      fp_trust3_h: 'No ads. No analytics.',
+      fp_trust3_p: 'FamlyBudget has no advertising, no usage analytics, no profiling. Only technical crash reports, with no financial data. The only revenue is the Premium subscription.',
       fp_trust4_h: 'Biometric app lock',
       fp_trust4_p: 'Lock the app with fingerprint or Face ID. Even if someone picks up your phone, your finances stay private.',
       fp_cta_eyebrow: 'Free to start · No credit card required',
@@ -1610,12 +1621,12 @@ import Layout from '../layouts/Layout.astro';
       fp_pillar3_p: 'Sai esattamente dove vanno i tuoi soldi, quanto puoi spendere oggi in sicurezza, e come sarà il saldo tra 90 giorni.',
       fp_s0_badge: 'Dashboard',
       fp_s0_h: 'Tutto a colpo d\'occhio.<br>Niente sfugge.',
-      fp_s0_p: 'Una dashboard completamente personalizzabile con 13 widget — saldo, flusso spese, budget, obiettivi e proiezione 90 giorni. Configurala una volta, non perdi più il filo.',
-      fp_s0_l1: '13 widget configurabili', fp_s0_l2: 'Spending flow per categoria', fp_s0_l3: 'Grafico mensile entrate vs uscite',
+      fp_s0_p: 'Una dashboard completamente personalizzabile con 17 widget — saldo, flusso spese, budget, obiettivi e proiezione 90 giorni. Configurala una volta, non perdi più il filo.',
+      fp_s0_l1: '17 widget configurabili', fp_s0_l2: 'Spending flow per categoria', fp_s0_l3: 'Grafico mensile entrate vs uscite',
       fp_s1_badge: 'Transazioni',
       fp_s1_h: 'Ogni euro.<br>Tracciato, categorizzato, capito.',
       fp_s1_p: 'Aggiungi spese ed entrate in secondi. Filtri potenti, import CSV dalla banca, tracking automatico dei giroconti — e la riconciliazione per abbinare ogni riga all\'estratto conto.',
-      fp_s1_l1: 'Import CSV da 10+ profili bancari', fp_s1_l2: 'Categorie gerarchiche a 3 livelli', fp_s1_l3: 'Riconciliazione con badge di blocco',
+      fp_s1_l1: 'Qualsiasi banca: import CSV/XLSX + 10 profili pronti', fp_s1_l2: 'Categorie gerarchiche a 3 livelli', fp_s1_l3: 'Riconciliazione con badge di blocco',
       fp_s2_badge: 'Budget',
       fp_s2_h: 'Imposta un limite.<br>Rispettalo. Ogni mese.',
       fp_s2_p: "Assegna budget mensili a ogni categoria. L'app ti avvisa all'80% e al 100% così agisci prima di sforare. Confronta speso vs pianificato mese per mese.",
@@ -1627,12 +1638,12 @@ import Layout from '../layouts/Layout.astro';
       fp_s4_badge: 'Obiettivi di Risparmio',
       fp_s4_h: 'Sognalo.<br>Pianificalo. Raggiungi.',
       fp_s4_p: 'Crea obiettivi per vacanze, fondi emergenza o grandi acquisti. Traccia i contributi nel tempo e guarda la barra progresso riempirsi — senza toccare i saldi reali dei conti.',
-      fp_s4_l1: 'Obiettivi illimitati (Premium)', fp_s4_l2: 'Storico contribuzioni', fp_s4_l3: 'Data obiettivo, pausa e completamento',
+      fp_s4_l1: 'Obiettivi illimitati, gratis per tutti', fp_s4_l2: 'Storico contribuzioni', fp_s4_l3: 'Data obiettivo, pausa e completamento',
       fp_s5_badge: 'Survival Line',
       fp_s5_h: 'Vedi il futuro del tuo saldo.<br>Agisci prima che sia tardi.',
       fp_s5_p: 'La proiezione a 90 giorni combina ricorrenti, pagamenti programmati e date di addebito carte di credito per mostrarti esattamente dove andrà il saldo.',
       fp_s5_l1: 'Calcolo forward 90 giorni', fp_s5_l2: 'Quanto puoi spendere oggi', fp_s5_l3: 'Consapevole delle date di addebito CC',
-      fp_stat1_label: 'transazioni / mese (Premium)',
+      fp_stat1_label: 'categorie pronte all\'uso',
       fp_stat2_label: 'widget dashboard',
       fp_stat3_label: 'giorni di proiezione saldo',
       fp_stat4_label: 'lingue supportate',
@@ -1653,34 +1664,38 @@ import Layout from '../layouts/Layout.astro';
       fp_surv_min: 'Min (30gg)', fp_surv_90: 'Tra 90 giorni',
       fp_pr_badge: '✦ Prezzi',
       fp_pr_h2: 'Inizia gratis. Aggiorna quando ne hai bisogno.',
-      fp_pr_sub: 'Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre tuoi.',
+      fp_pr_sub: 'Annulli quando vuoi da Google Play. L\'abbonamento si rinnova automaticamente finché non lo annulli.',
       fp_pr_monthly: 'Mensile', fp_pr_yearly: 'Annuale',
       fp_pr_save: 'Risparmia fino al 39%', fp_p_month: '/mese',
       fp_p0_name: 'Gratuito', fp_p0_sub: 'Sempre gratuito',
-      fp_p0_f1: 'Archiviazione locale o cloud', fp_p0_f2: 'Fino a 80 transazioni/mese',
-      fp_p0_f3: '3 conti attivi', fp_p0_f4: '4 ricorrenti attive',
-      fp_p0_f5: 'Grafici e report base', fp_p0_f6: 'Backup e Ripristino',
-      fp_p0_f7: 'Conti illimitati', fp_p0_f8: 'Esportazione CSV', fp_p0_btn: 'Inizia Gratis',
+      fp_p0_f1: 'Archiviazione locale o cloud', fp_p0_f2: 'Budget, obiettivi, ricorrenti e rate',
+      fp_p0_f3: 'Calendario, task e promemoria', fp_p0_f4: 'Proiezione a 90 giorni e quanto puoi spendere',
+      fp_p0_f5: 'Report, patrimonio e recap', fp_p0_f6: 'Import da banca CSV/XLSX',
+      fp_p0_f7: 'Riconciliazione, multi-valuta, tag', fp_p0_f8: '17 widget + widget home Android',
+      fp_p0_f9: '112 categorie + 15 tue', fp_p0_f10: '80 transazioni/mese · 3 conti · 4 ricorrenti',
+      fp_p0_f11: 'Esportazione dati', fp_p0_f12: 'Backup e Ripristino', fp_p0_f13: 'Storico > 12 mesi',
+      fp_p0_btn: 'Inizia Gratis',
       fp_p1_name: 'Premium Local',
       fp_p1_yearly: '€15/anno — risparmia 38%', fp_p1_monthly: 'o €15/anno — risparmia 38%',
       fp_p1_badge: 'Dati solo sul dispositivo',
-      fp_p1_f1: 'Transazioni illimitate', fp_p1_f2: 'Fino a 20 conti attivi',
-      fp_p1_f3: 'Ricorrenti illimitate', fp_p1_f4: '150 categorie',
-      fp_p1_f5: 'Backup e Ripristino', fp_p1_f6: 'Esportazione CSV/PDF',
-      fp_p1_f7: 'Sync multi-dispositivo', fp_p1_f8: 'Condivisione famiglia', fp_p1_btn: 'Scegli Local',
+      fp_p1_f1: 'Tutto del piano Gratuito', fp_p1_f2: 'Transazioni illimitate',
+      fp_p1_f3: 'Fino a 20 conti attivi', fp_p1_f4: 'Ricorrenti illimitate',
+      fp_p1_f5: '+150 categorie, +10 valute', fp_p1_f6: 'Esportazione CSV/XLSX e PDF',
+      fp_p1_f7: 'Storico grafici a 24 mesi', fp_p1_f8: 'Backup e Ripristino',
+      fp_p1_f9: 'Sync multi-dispositivo', fp_p1_f10: 'Condivisione famiglia', fp_p1_btn: 'Scegli Local',
       fp_p2_popular: '⭐ Più completo', fp_p2_name: 'Premium Cloud',
       fp_p2_yearly: '€21,99/anno — risparmia 39%', fp_p2_monthly: 'o €21,99/anno — risparmia 39%',
       fp_p2_badge: 'Sync in tempo reale',
       fp_p2_f1: 'Tutto di Premium Local', fp_p2_f2: 'Sync multi-dispositivo in tempo reale',
-      fp_p2_f3: 'Famiglia (fino a 10)', fp_p2_f4: 'Backup cloud automatico',
-      fp_p2_f5: 'Ripristino da qualsiasi dispositivo', fp_p2_btn: 'Scegli Cloud',
+      fp_p2_f3: 'Famiglia (fino a 10)', fp_p2_f4: 'Accesso da browser (dashboard web)',
+      fp_p2_f5: 'Dati al sicuro nel cloud, ripristino da qualsiasi dispositivo', fp_p2_btn: 'Scegli Cloud',
       fp_trust_h2: 'Fondato sulla fiducia. Progettato per la privacy.',
       fp_trust1_h: 'Zero dati finanziari a terze parti',
       fp_trust1_p: 'Le tue transazioni, conti e saldi non vengono mai condivisi con inserzionisti, broker di dati o piattaforme analytics.',
       fp_trust2_h: 'Modalità locale: opzione senza cloud',
       fp_trust2_p: 'Scegli di tenere tutti i dati esclusivamente sul dispositivo. Nessuna connessione richiesta — l\'app funziona completamente offline.',
-      fp_trust3_h: 'Zero pubblicità. Zero tracciamento.',
-      fp_trust3_p: 'FamlyBudget non ha pubblicità, nessun tracking in-app, nessuna profilazione. L\'unica fonte di reddito è l\'abbonamento Premium.',
+      fp_trust3_h: 'Zero pubblicità. Zero analytics.',
+      fp_trust3_p: 'FamlyBudget non ha pubblicità, nessuna analisi d\'uso, nessuna profilazione. Solo report tecnici sui crash, senza dati finanziari. L\'unica fonte di reddito è l\'abbonamento Premium.',
       fp_trust4_h: 'Blocco biometrico',
       fp_trust4_p: 'Blocca l\'app con impronta digitale o Face ID. Anche se qualcuno prende il tuo telefono, le tue finanze restano private.',
       fp_cta_eyebrow: 'Gratuito per iniziare · Nessuna carta di credito richiesta',

@@ -239,22 +239,32 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="pricing-grid">
 
-        <div class="pricing-card">
+        <div class="pricing-card wide">
           <div class="pricing-name" data-i18n="pr_free_name">Free</div>
           <div class="pricing-price">€0<span data-i18n="pr_free_price_suffix">/month</span></div>
           <div class="pricing-yearly" data-i18n="pr_free_yearly">Free forever</div>
           <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li data-i18n-html="pr_free_f1"><span class="check">✓</span> Local <strong>or</strong> cloud storage of your choice</li>
-            <li data-i18n-html="pr_free_f2"><span class="check">✓</span> Up to 80 transactions/month</li>
-            <li data-i18n-html="pr_free_f3"><span class="check">✓</span> 3 active accounts</li>
-            <li data-i18n-html="pr_free_f4"><span class="check">✓</span> 4 active recurring transactions</li>
-            <li data-i18n-html="pr_free_f5"><span class="check">✓</span> 15 additional categories</li>
-            <li data-i18n-html="pr_free_f6"><span class="check">✓</span> Basic charts &amp; reports</li>
-            <li class="muted" data-i18n-html="pr_free_f7"><span class="cross">✕</span> Backup &amp; Restore</li>
-            <li class="muted" data-i18n-html="pr_free_f8"><span class="cross">✕</span> Unlimited accounts</li>
-            <li class="muted" data-i18n-html="pr_free_f9"><span class="cross">✕</span> Data export</li>
-            <li class="muted" data-i18n-html="pr_free_f10"><span class="cross">✕</span> Multi-device sync</li>
+          <ul class="pricing-features cols">
+            <li data-i18n-html="pr_free_f1"><span class="ico">📍</span><span>Local or cloud storage</span></li>
+            <li data-i18n-html="pr_free_f2"><span class="ico">🎯</span><span>Budgets with alerts</span></li>
+            <li data-i18n-html="pr_free_f3"><span class="ico">🐷</span><span>Savings goals</span></li>
+            <li data-i18n-html="pr_free_f4"><span class="ico">💳</span><span>Cards &amp; installments</span></li>
+            <li data-i18n-html="pr_free_f5"><span class="ico">🔁</span><span>Recurring transactions</span></li>
+            <li data-i18n-html="pr_free_f6"><span class="ico">📅</span><span>Calendar &amp; tasks</span></li>
+            <li data-i18n-html="pr_free_f7"><span class="ico">🔮</span><span>90-day projection</span></li>
+            <li data-i18n-html="pr_free_f8"><span class="ico">📊</span><span>Reports &amp; net worth</span></li>
+            <li data-i18n-html="pr_free_f9"><span class="ico">📥</span><span>Bank import CSV/XLSX</span></li>
+            <li data-i18n-html="pr_free_f10"><span class="ico">✅</span><span>Statement reconciliation</span></li>
+            <li data-i18n-html="pr_free_f11"><span class="ico">💱</span><span>Multi-currency &amp; tags</span></li>
+            <li data-i18n-html="pr_free_f12"><span class="ico">🧾</span><span>Receipt photos</span></li>
+            <li data-i18n-html="pr_free_f13"><span class="ico">🧩</span><span>17 dashboard widgets + Android home</span></li>
+            <li data-i18n-html="pr_free_f14"><span class="ico">🔒</span><span>Biometric lock &amp; 2FA</span></li>
+          </ul>
+          <div class="pricing-note" data-i18n-html="pr_free_note"><b>Also included:</b> 112 ready-made categories · 5 languages · dark theme<br><b>Limits:</b> 80 transactions/month · 3 accounts · 4 recurring · +15 categories · +1 currency · 1 invited member</div>
+          <ul class="pricing-features cols" style="flex:0;margin-bottom:24px">
+            <li class="muted" data-i18n-html="pr_free_x1"><span class="cross">✕</span><span>Data export</span></li>
+            <li class="muted" data-i18n-html="pr_free_x2"><span class="cross">✕</span><span>Backup &amp; Restore</span></li>
+            <li class="muted" data-i18n-html="pr_free_x3"><span class="cross">✕</span><span>History &gt; 12 months</span></li>
           </ul>
           <a href="#download" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:auto;" data-i18n="pr_free_btn">Start Free</a>
         </div>
@@ -272,13 +282,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <ul class="pricing-features">
+            <li class="lead" data-i18n="pr_local_lead">Everything in Free, plus:</li>
             <li data-i18n-html="pr_local_f1"><span class="check">✓</span> Unlimited transactions</li>
             <li data-i18n-html="pr_local_f2"><span class="check">✓</span> Up to 20 active accounts</li>
             <li data-i18n-html="pr_local_f3"><span class="check">✓</span> Unlimited recurring transactions</li>
-            <li data-i18n-html="pr_local_f4"><span class="check">✓</span> 150 additional categories</li>
-            <li data-i18n-html="pr_local_f5"><span class="check">✓</span> Advanced charts &amp; reports</li>
-            <li data-i18n-html="pr_local_f6"><span class="check">✓</span> Local Backup &amp; Restore</li>
-            <li data-i18n-html="pr_local_f7"><span class="check">✓</span> CSV/PDF data export</li>
+            <li data-i18n-html="pr_local_f4"><span class="check">✓</span> +150 categories, +10 currencies</li>
+            <li data-i18n-html="pr_local_f5"><span class="check">✓</span> CSV/XLSX &amp; PDF export</li>
+            <li data-i18n-html="pr_local_f6"><span class="check">✓</span> Chart history up to 24 months &amp; “All”</li>
+            <li data-i18n-html="pr_local_f7"><span class="check">✓</span> Backup &amp; Restore</li>
             <li class="muted" data-i18n-html="pr_local_f8"><span class="cross">✕</span> Multi-device sync</li>
             <li class="muted" data-i18n-html="pr_local_f9"><span class="cross">✕</span> Family sharing</li>
           </ul>
@@ -299,19 +310,18 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <ul class="pricing-features">
-            <li data-i18n-html="pr_cloud_f1"><span class="check">✓</span> Everything in Premium Local</li>
+            <li class="lead" data-i18n="pr_cloud_lead">Everything in Premium Local, plus:</li>
             <li data-i18n-html="pr_cloud_f2"><span class="check">✓</span> Real-time multi-device sync</li>
             <li data-i18n-html="pr_cloud_f3"><span class="check">✓</span> Family sharing (up to 10)</li>
             <li data-i18n-html="pr_cloud_f4"><span class="check">✓</span> Browser access (web dashboard)</li>
-            <li data-i18n-html="pr_cloud_f5"><span class="check">✓</span> Automatic cloud backup</li>
-            <li data-i18n-html="pr_cloud_f6"><span class="check">✓</span> Restore from any device</li>
+            <li data-i18n-html="pr_cloud_f5"><span class="check">✓</span> Data safe in the cloud, restore on any device</li>
           </ul>
           <a href="#download" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;" data-i18n="pr_cloud_btn">Choose Cloud</a>
         </div>
 
       </div>
       <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--text-muted);" data-i18n="pr_disclaimer">
-        No automatic charges. Cancel anytime. Your data is always safe.
+        Cancel anytime from Google Play. Subscriptions renew automatically until cancelled.
       </p>
     </div>
   </section>
@@ -427,28 +437,37 @@ import Layout from '../layouts/Layout.astro';
       pr_badge: '✦ Pricing', pr_h2: 'Choose the right plan for you',
       pr_p: 'Start for free. Choose Premium based on how you want to store your data.',
       pr_free_name: 'Free', pr_free_price_suffix: '/month', pr_free_yearly: 'Free forever',
-      pr_free_f1: '<span class="check">✓</span> Local <strong>or</strong> cloud storage of your choice',
-      pr_free_f2: '<span class="check">✓</span> Up to 80 transactions/month',
-      pr_free_f3: '<span class="check">✓</span> 3 active accounts',
-      pr_free_f4: '<span class="check">✓</span> 4 active recurring transactions',
-      pr_free_f5: '<span class="check">✓</span> 15 additional categories',
-      pr_free_f6: '<span class="check">✓</span> Basic charts & reports',
-      pr_free_f7: '<span class="cross">✕</span> Backup & Restore',
-      pr_free_f8: '<span class="cross">✕</span> Unlimited accounts',
-      pr_free_f9: '<span class="cross">✕</span> Data export',
-      pr_free_f10: '<span class="cross">✕</span> Multi-device sync',
+      pr_free_f1: '<span class="ico">📍</span><span>Local or cloud storage</span>',
+      pr_free_f2: '<span class="ico">🎯</span><span>Budgets with alerts</span>',
+      pr_free_f3: '<span class="ico">🐷</span><span>Savings goals</span>',
+      pr_free_f4: '<span class="ico">💳</span><span>Cards & installments</span>',
+      pr_free_f5: '<span class="ico">🔁</span><span>Recurring transactions</span>',
+      pr_free_f6: '<span class="ico">📅</span><span>Calendar & tasks</span>',
+      pr_free_f7: '<span class="ico">🔮</span><span>90-day projection</span>',
+      pr_free_f8: '<span class="ico">📊</span><span>Reports & net worth</span>',
+      pr_free_f9: '<span class="ico">📥</span><span>Bank import CSV/XLSX</span>',
+      pr_free_f10: '<span class="ico">✅</span><span>Statement reconciliation</span>',
+      pr_free_f11: '<span class="ico">💱</span><span>Multi-currency & tags</span>',
+      pr_free_f12: '<span class="ico">🧾</span><span>Receipt photos</span>',
+      pr_free_f13: '<span class="ico">🧩</span><span>17 dashboard widgets + Android home</span>',
+      pr_free_f14: '<span class="ico">🔒</span><span>Biometric lock & 2FA</span>',
+      pr_free_note: '<b>Also included:</b> 112 ready-made categories · 5 languages · dark theme<br><b>Limits:</b> 80 transactions/month · 3 accounts · 4 recurring · +15 categories · +1 currency · 1 invited member',
+      pr_free_x1: '<span class="cross">✕</span><span>Data export</span>',
+      pr_free_x2: '<span class="cross">✕</span><span>Backup & Restore</span>',
+      pr_free_x3: '<span class="cross">✕</span><span>History > 12 months</span>',
       pr_free_btn: 'Start Free',
       pr_local_name: 'Premium Local', pr_local_price_suffix: '/month',
       pr_local_yearly: 'or <strong>€15/year — save 38%</strong>',
       pr_local_badge_title: 'Data on device',
       pr_local_badge_sub: 'Your data stays only on the device — no financial data in the cloud',
+      pr_local_lead: 'Everything in Free, plus:',
       pr_local_f1: '<span class="check">✓</span> Unlimited transactions',
       pr_local_f2: '<span class="check">✓</span> Up to 20 active accounts',
       pr_local_f3: '<span class="check">✓</span> Unlimited recurring transactions',
-      pr_local_f4: '<span class="check">✓</span> 150 additional categories',
-      pr_local_f5: '<span class="check">✓</span> Advanced charts & reports',
-      pr_local_f6: '<span class="check">✓</span> Local Backup & Restore',
-      pr_local_f7: '<span class="check">✓</span> CSV/PDF data export',
+      pr_local_f4: '<span class="check">✓</span> +150 categories, +10 currencies',
+      pr_local_f5: '<span class="check">✓</span> CSV/XLSX & PDF export',
+      pr_local_f6: '<span class="check">✓</span> Chart history up to 24 months & “All”',
+      pr_local_f7: '<span class="check">✓</span> Backup & Restore',
       pr_local_f8: '<span class="cross">✕</span> Multi-device sync',
       pr_local_f9: '<span class="cross">✕</span> Family sharing',
       pr_local_btn: 'Choose Local',
@@ -457,14 +476,13 @@ import Layout from '../layouts/Layout.astro';
       pr_cloud_yearly: 'or <strong>€21.99/year — save 39%</strong>',
       pr_cloud_badge_title: 'Real-time sync across all devices',
       pr_cloud_badge_sub: 'Cloud synchronization',
-      pr_cloud_f1: '<span class="check">✓</span> Everything in Premium Local',
+      pr_cloud_lead: 'Everything in Premium Local, plus:',
       pr_cloud_f2: '<span class="check">✓</span> Real-time multi-device sync',
       pr_cloud_f3: '<span class="check">✓</span> Family sharing (up to 10)',
       pr_cloud_f4: '<span class="check">✓</span> Browser access (web dashboard)',
-      pr_cloud_f5: '<span class="check">✓</span> Automatic cloud backup',
-      pr_cloud_f6: '<span class="check">✓</span> Restore from any device',
+      pr_cloud_f5: '<span class="check">✓</span> Data safe in the cloud, restore on any device',
       pr_cloud_btn: 'Choose Cloud',
-      pr_disclaimer: 'No automatic charges. Cancel anytime. Your data is always safe.',
+      pr_disclaimer: 'Cancel anytime from Google Play. Subscriptions renew automatically until cancelled.',
       cta_h2: 'Start keeping your finances in order today',
       cta_p: 'Download FamlyBudget for free and start tracking family expenses in seconds.',
       cta_btn1: '▶ \u00a0Download on Google Play', cta_btn2: 'Explore features',
@@ -539,28 +557,37 @@ import Layout from '../layouts/Layout.astro';
       pr_badge: '✦ Prezzi', pr_h2: 'Scegli il piano giusto per te',
       pr_p: 'Inizia gratis. Scegli Premium in base a come vuoi archiviare i tuoi dati.',
       pr_free_name: 'Gratuito', pr_free_price_suffix: '/mese', pr_free_yearly: 'Sempre gratuito',
-      pr_free_f1: '<span class="check">✓</span> Archiviazione locale <strong>o</strong> cloud a tua scelta',
-      pr_free_f2: '<span class="check">✓</span> Fino a 80 transazioni/mese',
-      pr_free_f3: '<span class="check">✓</span> 3 conti attivi',
-      pr_free_f4: '<span class="check">✓</span> 4 transazioni ricorrenti attive',
-      pr_free_f5: '<span class="check">✓</span> 15 categorie aggiuntive',
-      pr_free_f6: '<span class="check">✓</span> Grafici e report base',
-      pr_free_f7: '<span class="cross">✕</span> Backup e Ripristino',
-      pr_free_f8: '<span class="cross">✕</span> Conti illimitati',
-      pr_free_f9: '<span class="cross">✕</span> Esportazione dati',
-      pr_free_f10: '<span class="cross">✕</span> Sync multi-dispositivo',
+      pr_free_f1: '<span class="ico">📍</span><span>Archiviazione locale o cloud</span>',
+      pr_free_f2: '<span class="ico">🎯</span><span>Budget con avvisi</span>',
+      pr_free_f3: '<span class="ico">🐷</span><span>Obiettivi di risparmio</span>',
+      pr_free_f4: '<span class="ico">💳</span><span>Carte e rate</span>',
+      pr_free_f5: '<span class="ico">🔁</span><span>Transazioni ricorrenti</span>',
+      pr_free_f6: '<span class="ico">📅</span><span>Calendario e task</span>',
+      pr_free_f7: '<span class="ico">🔮</span><span>Proiezione a 90 giorni</span>',
+      pr_free_f8: '<span class="ico">📊</span><span>Report e patrimonio</span>',
+      pr_free_f9: '<span class="ico">📥</span><span>Import da banca CSV/XLSX</span>',
+      pr_free_f10: '<span class="ico">✅</span><span>Riconciliazione estratto conto</span>',
+      pr_free_f11: '<span class="ico">💱</span><span>Multi-valuta e tag</span>',
+      pr_free_f12: '<span class="ico">🧾</span><span>Foto degli scontrini</span>',
+      pr_free_f13: '<span class="ico">🧩</span><span>17 widget dashboard + home Android</span>',
+      pr_free_f14: '<span class="ico">🔒</span><span>Blocco biometrico e 2FA</span>',
+      pr_free_note: '<b>Inclusi anche:</b> 112 categorie pronte · 5 lingue · tema scuro<br><b>Limiti:</b> 80 transazioni/mese · 3 conti · 4 ricorrenti · +15 categorie · +1 valuta · 1 membro invitato',
+      pr_free_x1: '<span class="cross">✕</span><span>Esportazione dati</span>',
+      pr_free_x2: '<span class="cross">✕</span><span>Backup e Ripristino</span>',
+      pr_free_x3: '<span class="cross">✕</span><span>Storico > 12 mesi</span>',
       pr_free_btn: 'Inizia Gratis',
       pr_local_name: 'Premium Local', pr_local_price_suffix: '/mese',
       pr_local_yearly: 'o <strong>€15/anno — risparmia 38%</strong>',
       pr_local_badge_title: 'Dati sul dispositivo',
       pr_local_badge_sub: 'I tuoi dati restano solo sul dispositivo — nessun dato finanziario sul cloud',
+      pr_local_lead: 'Tutto del piano Gratuito, più:',
       pr_local_f1: '<span class="check">✓</span> Transazioni illimitate',
       pr_local_f2: '<span class="check">✓</span> Fino a 20 conti attivi',
       pr_local_f3: '<span class="check">✓</span> Ricorrenti illimitate',
-      pr_local_f4: '<span class="check">✓</span> 150 categorie aggiuntive',
-      pr_local_f5: '<span class="check">✓</span> Grafici e report avanzati',
-      pr_local_f6: '<span class="check">✓</span> Backup e Ripristino locale',
-      pr_local_f7: '<span class="check">✓</span> Esportazione CSV/PDF',
+      pr_local_f4: '<span class="check">✓</span> +150 categorie, +10 valute',
+      pr_local_f5: '<span class="check">✓</span> Esportazione CSV/XLSX e PDF',
+      pr_local_f6: '<span class="check">✓</span> Storico grafici a 24 mesi e “Tutto”',
+      pr_local_f7: '<span class="check">✓</span> Backup e Ripristino',
       pr_local_f8: '<span class="cross">✕</span> Sync multi-dispositivo',
       pr_local_f9: '<span class="cross">✕</span> Condivisione famiglia',
       pr_local_btn: 'Scegli Local',
@@ -569,14 +596,13 @@ import Layout from '../layouts/Layout.astro';
       pr_cloud_yearly: 'o <strong>€21,99/anno — risparmia 39%</strong>',
       pr_cloud_badge_title: 'Sync in tempo reale su tutti i dispositivi',
       pr_cloud_badge_sub: 'Sincronizzazione cloud',
-      pr_cloud_f1: '<span class="check">✓</span> Tutto di Premium Local',
+      pr_cloud_lead: 'Tutto di Premium Local, più:',
       pr_cloud_f2: '<span class="check">✓</span> Sync multi-dispositivo in tempo reale',
       pr_cloud_f3: '<span class="check">✓</span> Condivisione famiglia (fino a 10)',
       pr_cloud_f4: '<span class="check">✓</span> Accesso da browser (dashboard web)',
-      pr_cloud_f5: '<span class="check">✓</span> Backup cloud automatico',
-      pr_cloud_f6: '<span class="check">✓</span> Ripristino da qualsiasi dispositivo',
+      pr_cloud_f5: '<span class="check">✓</span> Dati al sicuro nel cloud, ripristino da qualsiasi dispositivo',
       pr_cloud_btn: 'Scegli Cloud',
-      pr_disclaimer: 'Nessun addebito automatico. Cancella quando vuoi. I tuoi dati sono sempre al sicuro.',
+      pr_disclaimer: 'Annulli quando vuoi da Google Play. L\'abbonamento si rinnova automaticamente finché non lo annulli.',
       cta_h2: 'Inizia a tenere le finanze in ordine oggi',
       cta_p: 'Scarica FamlyBudget gratis e inizia a tracciare le spese di famiglia in pochi secondi.',
       cta_btn1: '▶ \u00a0Scarica su Google Play', cta_btn2: 'Scopri le funzionalità',

@@ -229,6 +229,71 @@ import Layout from '../layouts/Layout.astro';
     <p class="shots-note" data-i18n="ss_note">Screenshots show the app with sample data.</p>
   </section>
 
+  <!-- ══════════ WEB APP ══════════ -->
+  <section class="section" id="webapp">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge" data-i18n="wa_badge">✦ Web app</div>
+        <h2 data-i18n="wa_h2">Also on your computer</h2>
+        <p data-i18n="wa_p">Sign in from any browser with your FamlyBudget account and find the same data, in a layout designed for large screens. Available when your data is stored in the cloud.</p>
+      </div>
+    </div>
+    <div class="shots-scroller" tabindex="0" role="region" aria-label="FamlyBudget web app screenshots" data-i18n-aria="wa_region">
+      <ul class="shots-track">
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/01-dashboard.webp" width="1600" height="1011" loading="lazy" alt="" data-i18n-alt="wa_alt1" />
+          </div>
+          <div class="caption" data-i18n="wa_cap1"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/02-transactions.webp" width="1600" height="1000" loading="lazy" alt="" data-i18n-alt="wa_alt2" />
+          </div>
+          <div class="caption" data-i18n="wa_cap2"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/03-budgets.webp" width="1600" height="1011" loading="lazy" alt="" data-i18n-alt="wa_alt3" />
+          </div>
+          <div class="caption" data-i18n="wa_cap3"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/04-accounts.webp" width="1600" height="1011" loading="lazy" alt="" data-i18n-alt="wa_alt4" />
+          </div>
+          <div class="caption" data-i18n="wa_cap4"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/05-reports.webp" width="1600" height="1011" loading="lazy" alt="" data-i18n-alt="wa_alt5" />
+          </div>
+          <div class="caption" data-i18n="wa_cap5"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/06-calendar.webp" width="1600" height="1000" loading="lazy" alt="" data-i18n-alt="wa_alt6" />
+          </div>
+          <div class="caption" data-i18n="wa_cap6"></div>
+        </li>
+        <li class="wshot">
+          <div class="web-frame">
+            <div class="web-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="/screens/web/07-projection.webp" width="1600" height="1011" loading="lazy" alt="" data-i18n-alt="wa_alt7" />
+          </div>
+          <div class="caption" data-i18n="wa_cap7"></div>
+        </li>
+      </ul>
+    </div>
+    <p class="shots-note" data-i18n="wa_note">Screenshots show the web app with sample data.</p>
+  </section>
+
   <!-- ══════════ PRICING ══════════ -->
   <section class="section" id="pricing">
     <div class="container">
@@ -362,6 +427,19 @@ import Layout from '../layouts/Layout.astro';
     .shot-frame { border-width: 6px; border-radius: 30px; }
   }
   @media (prefers-reduced-motion: reduce) { .shot-frame { transition: none; } .shot-frame:hover { transform: none; } }
+  /* Web app: schermate in una finestra di browser */
+  .wshot { scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; width: 560px; }
+  .web-frame { width: 560px; border: 1px solid #CBD5E1; border-radius: 12px; overflow: hidden; background: #fff;
+    box-shadow: var(--shadow-lg); transition: transform 0.3s; }
+  .web-frame:hover { transform: translateY(-6px); }
+  .web-bar { display: flex; gap: 6px; padding: 9px 12px; background: #F1F5F9; border-bottom: 1px solid #E2E8F0; }
+  .web-bar span { width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; }
+  .web-frame img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+  .wshot .caption { font-size: 14px; font-weight: 600; color: var(--text); text-align: center; max-width: 480px; line-height: 1.4; }
+  @media (max-width: 768px) {
+    .wshot, .web-frame { width: 320px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .web-frame { transition: none; } .web-frame:hover { transform: none; } }
 </style>
 
 <script is:inline>
@@ -434,6 +512,25 @@ import Layout from '../layouts/Layout.astro';
       ss_cap7: 'Save for what matters', ss_alt7: 'Savings goals with progress and remaining amount',
       ss_cap8: 'See where your money goes', ss_alt8: 'Monthly report with income, expenses and a spending-by-category chart',
       ss_cap9: 'Due dates and spending, day by day', ss_alt9: 'Calendar showing transactions, recurring items and tasks for each day',
+      wa_badge: '✦ Web app',
+      wa_h2: 'Also on your computer',
+      wa_p: 'Sign in from any browser with your FamlyBudget account and find the same data, in a layout designed for large screens. Available when your data is stored in the cloud.',
+      wa_region: 'FamlyBudget web app screenshots',
+      wa_note: 'Screenshots show the web app with sample data.',
+      wa_cap1: 'The whole picture on one screen',
+      wa_alt1: 'Web dashboard with key figures, tasks, accounts and recent transactions',
+      wa_cap2: 'Every transaction, with its details beside it',
+      wa_alt2: 'Transactions table with a side panel showing the selected transaction',
+      wa_cap3: 'Budgets side by side',
+      wa_alt3: 'Monthly budgets in two columns with progress bars',
+      wa_cap4: 'Accounts and credit cards at a glance',
+      wa_alt4: 'Accounts in columns with the credit card limit and usage',
+      wa_cap5: 'Reports and charts, side by side',
+      wa_alt5: 'Monthly report with a spending-by-category chart and the income and expense trend',
+      wa_cap6: 'Pick a day, see everything',
+      wa_alt6: 'Calendar with a side panel showing the transactions of the selected day',
+      wa_cap7: 'See how the month will end',
+      wa_alt7: 'Balance projection chart with history, forecast and alert threshold',
       pr_badge: '✦ Pricing', pr_h2: 'Choose the right plan for you',
       pr_p: 'Start for free. Choose Premium based on how you want to store your data.',
       pr_free_name: 'Free', pr_free_price_suffix: '/month', pr_free_yearly: 'Free forever',
@@ -554,6 +651,25 @@ import Layout from '../layouts/Layout.astro';
       ss_cap7: 'Risparmia per ciò che conta', ss_alt7: 'Obiettivi di risparmio con progresso e importo mancante',
       ss_cap8: 'Capisci dove vanno i tuoi soldi', ss_alt8: 'Report mensile con entrate, uscite e grafico delle spese per categoria',
       ss_cap9: 'Scadenze e spese, giorno per giorno', ss_alt9: 'Calendario con transazioni, ricorrenze e task di ogni giorno',
+      wa_badge: '✦ App web',
+      wa_h2: 'Anche sul tuo computer',
+      wa_p: 'Accedi da qualsiasi browser con il tuo account FamlyBudget e ritrovi gli stessi dati, con un layout pensato per gli schermi grandi. Disponibile quando i dati sono archiviati nel cloud.',
+      wa_region: 'Schermate dell\'app web FamlyBudget',
+      wa_note: 'Gli screenshot mostrano l\'app web in inglese con dati di esempio.',
+      wa_cap1: 'Il quadro completo in una schermata',
+      wa_alt1: 'Dashboard web con i numeri chiave, i task, i conti e le ultime transazioni',
+      wa_cap2: 'Ogni transazione, con i dettagli accanto',
+      wa_alt2: 'Tabella delle transazioni con un pannello laterale che mostra quella selezionata',
+      wa_cap3: 'I budget affiancati',
+      wa_alt3: 'Budget mensili su due colonne con barre di avanzamento',
+      wa_cap4: 'Conti e carte di credito a colpo d\'occhio',
+      wa_alt4: 'Conti in colonne con plafond e utilizzo della carta di credito',
+      wa_cap5: 'Report e grafici, uno accanto all\'altro',
+      wa_alt5: 'Report mensile con il grafico delle spese per categoria e l\'andamento di entrate e uscite',
+      wa_cap6: 'Scegli un giorno, vedi tutto',
+      wa_alt6: 'Calendario con un pannello laterale con le transazioni del giorno selezionato',
+      wa_cap7: 'Scopri come finirà il mese',
+      wa_alt7: 'Grafico della proiezione del saldo con storico, previsione e soglia di allerta',
       pr_badge: '✦ Prezzi', pr_h2: 'Scegli il piano giusto per te',
       pr_p: 'Inizia gratis. Scegli Premium in base a come vuoi archiviare i tuoi dati.',
       pr_free_name: 'Gratuito', pr_free_price_suffix: '/mese', pr_free_yearly: 'Sempre gratuito',

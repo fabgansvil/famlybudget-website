@@ -12,10 +12,10 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ VERSIONE ITALIANA ══════════ -->
       <div class="legal-section" id="it" data-lang-section="it">
         <h1>Privacy Policy</h1>
-        <p class="legal-meta">Ultima revisione: 6 ottobre 2026 &nbsp;·&nbsp; Versione 1.1</p>
+        <p class="legal-meta">Ultima revisione: 14 ottobre 2026 &nbsp;·&nbsp; Versione 1.2</p>
 
         <div class="legal-notice">
-          <p>Questa Privacy Policy descrive come FamlyBudget raccoglie, utilizza e protegge i dati personali degli utenti dell'applicazione mobile FamlyBudget (Android).</p>
+          <p>Questa Privacy Policy descrive come FamlyBudget raccoglie, utilizza e protegge i dati personali degli utenti dell'applicazione mobile FamlyBudget (Android e iOS).</p>
         </div>
 
         <h2>1. Titolare del Trattamento</h2>
@@ -29,8 +29,8 @@ import Layout from '../layouts/Layout.astro';
         <h3>2.1 Dati di Account</h3>
         <p>Per utilizzare FamlyBudget è necessario autenticarsi. Raccogliamo:</p>
         <ul>
-          <li><strong>Indirizzo email</strong> — fornito al momento della registrazione o tramite Google Sign-In</li>
-          <li><strong>Nome visualizzato</strong> — opzionale, fornito dall'utente o dal profilo Google</li>
+          <li><strong>Indirizzo email</strong> — fornito al momento della registrazione, tramite Google Sign-In o tramite Accedi con Apple (in questo caso può essere l'indirizzo di inoltro privato generato da Apple)</li>
+          <li><strong>Nome visualizzato</strong> — opzionale, fornito dall'utente o dal profilo Google o Apple</li>
           <li><strong>Identificatore utente (UID)</strong> — generato da Firebase Auth</li>
         </ul>
 
@@ -51,7 +51,17 @@ import Layout from '../layouts/Layout.astro';
         </ul>
         <p>In modalità Local questi dati restano solo sul dispositivo. In modalità Cloud sono salvati su Firestore insieme alla transazione e, se condividi i dati con una famiglia, sono visibili agli altri membri.</p>
 
-        <h3>2.4 Dati Tecnici e di Diagnostica</h3>
+        <h3>2.4 Inserimento vocale (facoltativo)</h3>
+        <p>Puoi dettare una spesa o un'entrata a voce (ad esempio «ho speso 12 euro al bar»). La funzione si attiva solo se tocchi il pulsante del microfono e solo se concedi i permessi del microfono e del riconoscimento vocale, che puoi revocare in qualsiasi momento dalle impostazioni del dispositivo.</p>
+        <ul>
+          <li><strong>Microfono.</strong> L'app ascolta soltanto mentre la schermata di ascolto è aperta, per un massimo di 30 secondi per ogni frase. Non ascolta in background.</li>
+          <li><strong>Riconoscimento vocale.</strong> La trasformazione della voce in testo è fatta dal servizio di riconoscimento vocale del sistema operativo del dispositivo (Google su Android, Apple su iOS), non da FamlyBudget. A seconda del dispositivo, della lingua e delle impostazioni, l'audio può essere elaborato sul dispositivo oppure inviato ai server del fornitore, che lo tratta secondo la propria informativa. FamlyBudget non può garantire che l'audio resti sul dispositivo.</li>
+          <li><strong>Audio.</strong> L'app non registra, non salva e non invia l'audio ai nostri server: riceve dal sistema soltanto il testo riconosciuto.</li>
+          <li><strong>Testo della frase.</strong> Il testo riconosciuto serve a ricavare importo, tipo, conto, categoria e data. Se non confermi subito la transazione, la frase resta salvata nella bozza vocale finché non la confermi o la elimini; a quel punto la bozza viene cancellata. In modalità Local la bozza resta solo sul dispositivo. In modalità Cloud è salvata su Firestore insieme ai tuoi altri dati e, se condividi i dati con una famiglia, è visibile agli altri membri. La transazione confermata conserva solo un'indicazione che è stata inserita a voce, non la frase.</li>
+          <li><strong>Abitudini apprese.</strong> Per capire meglio le tue frasi, l'app ricorda localmente alcune tue scelte (ad esempio quale conto indichi con una certa parola). Queste regole restano <strong>solo sul dispositivo</strong>, non sono sincronizzate né incluse nel backup, e puoi vederle, eliminarle o esportarle in un file CSV dalla schermata «Abitudini apprese». Il file esportato contiene le parole che hai usato ed è custodito da te: l'app non lo invia da nessuna parte.</li>
+        </ul>
+
+        <h3>2.5 Dati Tecnici e di Diagnostica</h3>
         <p>Raccogliamo automaticamente dati tecnici per individuare e risolvere errori dell'app:</p>
         <ul>
           <li><strong>Firebase Crashlytics</strong> — report di crash e anomalie tecniche. Ogni report contiene informazioni tecniche (versione dell'app, modello e sistema operativo del dispositivo, dettaglio dell'errore) ed è associato all'identificativo utente di Firebase (UID), un codice casuale che non contiene email né nome, e alla modalità di archiviazione in uso (Local o Cloud). I report non contengono i tuoi dati finanziari.</li>
@@ -63,6 +73,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Erogazione del servizio</strong> — autenticazione, salvataggio e sincronizzazione dei dati dell'utente</li>
           <li><strong>Diagnostica e stabilità</strong> — rilevamento e correzione di bug tramite Crashlytics</li>
+          <li><strong>Inserimento vocale</strong> — trasformare la frase dettata in una bozza di transazione, su tua richiesta</li>
           <li><strong>Comunicazioni di servizio</strong> — notifiche tecniche essenziali (es. modifiche alla Privacy Policy)</li>
         </ul>
         <p>Non utilizziamo i dati per pubblicità di terze parti, profilazione commerciale o vendita a soggetti terzi.</p>
@@ -95,6 +106,18 @@ import Layout from '../layouts/Layout.astro';
             <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
           </tr>
           <tr>
+            <td>Accedi con Apple</td>
+            <td>Apple Inc.</td>
+            <td>Email (anche l'indirizzo di inoltro privato), nome, se usato</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Riconoscimento vocale del sistema</td>
+            <td>Google LLC (Android) · Apple Inc. (iOS)</td>
+            <td>Audio della frase dettata, solo quando usi l'inserimento vocale (la trasmissione dipende dal dispositivo e dalle impostazioni)</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
             <td>OpenStreetMap</td>
             <td>OpenStreetMap Foundation</td>
             <td>Indirizzo IP e area di mappa richiesta, solo quando si allega una posizione</td>
@@ -114,6 +137,7 @@ import Layout from '../layouts/Layout.astro';
           </tr>
         </table>
         <p>OpenStreetMap, Frankfurter e Google Fonts ricevono l'indirizzo IP del dispositivo, come avviene in qualsiasi connessione a internet. Non ricevono il tuo account, i tuoi dati finanziari né la posizione dei tuoi acquisti.</p>
+        <p>Il riconoscimento vocale è un servizio del sistema operativo: FamlyBudget non lo controlla e non riceve l'audio, solo il testo riconosciuto. Il fornitore non riceve il tuo account né i tuoi dati finanziari da FamlyBudget.</p>
         <p>RevenueCat (gestione acquisti in-app) sarà integrato in una versione futura e aggiorneremo questa policy di conseguenza.</p>
 
         <h2>5. Base Giuridica del Trattamento</h2>
@@ -121,7 +145,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Esecuzione del contratto (Art. 6.1.b GDPR)</strong> — per fornire il servizio richiesto dall'utente</li>
           <li><strong>Legittimo interesse (Art. 6.1.f GDPR)</strong> — per diagnostica tecnica e miglioramento dell'app</li>
-          <li><strong>Consenso (Art. 6.1.a GDPR)</strong> — ad esempio per l'accesso alla posizione del dispositivo, che puoi concedere o revocare in ogni momento</li>
+          <li><strong>Consenso (Art. 6.1.a GDPR)</strong> — ad esempio per l'accesso alla posizione del dispositivo e per l'uso del microfono e del riconoscimento vocale, che puoi concedere o revocare in ogni momento</li>
         </ul>
 
         <h2>6. Conservazione dei Dati</h2>
@@ -131,6 +155,7 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Dati finanziari (modalità Local)</strong> — conservati esclusivamente sul dispositivo; la disinstallazione dell'app elimina tutti i dati</li>
           <li><strong>Report di crash</strong> — conservati per 90 giorni da Google secondo le sue politiche</li>
           <li><strong>Posizione e foto degli scontrini</strong> — conservate insieme alla transazione a cui sono allegate e cancellate quando le rimuovi o elimini la transazione</li>
+          <li><strong>Bozze vocali e abitudini apprese</strong> — la frase dettata resta nella bozza finché non la confermi o la elimini; le abitudini apprese restano sul dispositivo finché non le elimini, cancelli i tuoi dati dall'app o disinstalli l'app. L'audio non viene conservato da FamlyBudget</li>
         </ul>
         <p>Puoi eliminare il tuo account e tutti i dati associati direttamente dall'app: <strong>Impostazioni → Elimina account</strong>. Le istruzioni complete, comprese quelle per chi non riesce più ad accedere all'app, sono qui: <a href="/delete-account">famlybudget.com/delete-account</a></p>
 
@@ -148,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
         <p>Per esercitare questi diritti: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a></p>
 
         <h2>8. Cookie e Tecnologie di Tracciamento</h2>
-        <p>L'applicazione mobile FamlyBudget non utilizza cookie. Utilizza <strong>SharedPreferences</strong> (Android) per memorizzare preferenze locali dell'utente (lingua selezionata, stato del blocco app, modalità storage) — questi dati non vengono mai trasmessi a server esterni.</p>
+        <p>L'applicazione mobile FamlyBudget non utilizza cookie. Utilizza <strong>SharedPreferences</strong> (Android) e <strong>UserDefaults</strong> (iOS) per memorizzare preferenze locali dell'utente (lingua selezionata, stato del blocco app, modalità storage, abitudini apprese dell'inserimento vocale) — questi dati non vengono mai trasmessi a server esterni.</p>
         <p>Il sito web <strong>famlybudget.com</strong> utilizza esclusivamente cookie tecnici essenziali per il funzionamento del sito. Nessun cookie di profilazione o di terze parti viene impostato.</p>
 
         <h2>9. Sicurezza dei Dati</h2>
@@ -163,6 +188,7 @@ import Layout from '../layouts/Layout.astro';
 
         <h2>10. Trasferimento Internazionale dei Dati</h2>
         <p>I servizi Firebase di Google LLC comportano il trasferimento di dati negli Stati Uniti. Google garantisce tale trasferimento mediante le Clausole Contrattuali Standard (Standard Contractual Clauses) approvate dalla Commissione Europea. Maggiori dettagli: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+        <p>Se il riconoscimento vocale del tuo dispositivo invia l'audio al fornitore del sistema (Google o Apple), tale trattamento avviene secondo la sua informativa, anche al di fuori dello Spazio Economico Europeo.</p>
 
         <h2>11. Minori</h2>
         <p>FamlyBudget non è destinato a minori di 13 anni. Non raccogliamo consapevolmente dati personali di minori. Se sei a conoscenza che un minore ha fornito dati personali, contattaci a <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a>.</p>
@@ -181,10 +207,10 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ ENGLISH VERSION ══════════ -->
       <div class="legal-section" id="en" data-lang-section="en">
         <h1>Privacy Policy</h1>
-        <p class="legal-meta">Last updated: October 6, 2026 &nbsp;·&nbsp; Version 1.1</p>
+        <p class="legal-meta">Last updated: October 14, 2026 &nbsp;·&nbsp; Version 1.2</p>
 
         <div class="legal-notice">
-          <p>This Privacy Policy describes how FamlyBudget collects, uses, and protects the personal data of users of the FamlyBudget mobile application (Android).</p>
+          <p>This Privacy Policy describes how FamlyBudget collects, uses, and protects the personal data of users of the FamlyBudget mobile application (Android and iOS).</p>
         </div>
 
         <h2>1. Data Controller</h2>
@@ -198,8 +224,8 @@ import Layout from '../layouts/Layout.astro';
         <h3>2.1 Account Data</h3>
         <p>To use FamlyBudget you need to authenticate. We collect:</p>
         <ul>
-          <li><strong>Email address</strong> — provided at registration or via Google Sign-In</li>
-          <li><strong>Display name</strong> — optional, provided by the user or Google profile</li>
+          <li><strong>Email address</strong> — provided at registration, via Google Sign-In or via Sign in with Apple (in which case it may be the private relay address generated by Apple)</li>
+          <li><strong>Display name</strong> — optional, provided by the user or by the Google or Apple profile</li>
           <li><strong>User identifier (UID)</strong> — generated by Firebase Auth</li>
         </ul>
 
@@ -220,7 +246,17 @@ import Layout from '../layouts/Layout.astro';
         </ul>
         <p>In Local mode this data stays on your device only. In Cloud mode it is saved on Firestore together with the transaction and, if you share your data with a family, it is visible to the other members.</p>
 
-        <h3>2.4 Technical and Diagnostic Data</h3>
+        <h3>2.4 Voice entry (optional)</h3>
+        <p>You can dictate an expense or income by voice (for example "I spent 12 euros at the bar"). The feature only starts if you tap the microphone button and only if you grant the microphone and speech recognition permissions, which you can revoke at any time in the device settings.</p>
+        <ul>
+          <li><strong>Microphone.</strong> The app listens only while the listening screen is open, for a maximum of 30 seconds per phrase. It does not listen in the background.</li>
+          <li><strong>Speech recognition.</strong> Turning your voice into text is done by the speech recognition service of the device's operating system (Google on Android, Apple on iOS), not by FamlyBudget. Depending on the device, the language and the settings, the audio may be processed on the device or sent to the provider's servers, which handles it under its own privacy policy. FamlyBudget cannot guarantee that the audio stays on the device.</li>
+          <li><strong>Audio.</strong> The app does not record, save or send the audio to our servers: it only receives the recognized text from the system.</li>
+          <li><strong>Text of the phrase.</strong> The recognized text is used to work out amount, type, account, category and date. If you do not confirm the transaction right away, the phrase stays saved in the voice draft until you confirm or delete it; at that point the draft is deleted. In Local mode the draft stays on your device only. In Cloud mode it is saved on Firestore with your other data and, if you share your data with a family, it is visible to the other members. The confirmed transaction keeps only a marker that it was entered by voice, not the phrase.</li>
+          <li><strong>Learned habits.</strong> To understand your phrases better, the app remembers some of your choices locally (for example which account you mean with a certain word). These rules stay <strong>on the device only</strong>, are not synced or included in backups, and you can view, delete or export them as a CSV file from the "Learned habits" screen. The exported file contains the words you used and is kept by you: the app does not send it anywhere.</li>
+        </ul>
+
+        <h3>2.5 Technical and Diagnostic Data</h3>
         <p>We automatically collect technical data to find and fix errors in the app:</p>
         <ul>
           <li><strong>Firebase Crashlytics</strong> — crash reports and technical anomalies. Each report contains technical information (app version, device model and operating system, error details) and is associated with the Firebase user identifier (UID), a random code that does not contain your email or name, and with the storage mode in use (Local or Cloud). Reports do not contain your financial data.</li>
@@ -232,6 +268,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Service delivery</strong> — authentication, saving and syncing user data</li>
           <li><strong>Diagnostics and stability</strong> — bug detection and resolution via Crashlytics</li>
+          <li><strong>Voice entry</strong> — turning the dictated phrase into a draft transaction, at your request</li>
           <li><strong>Service communications</strong> — essential technical notifications (e.g., Privacy Policy changes)</li>
         </ul>
         <p>We do not use data for third-party advertising, commercial profiling, or sale to third parties.</p>
@@ -264,6 +301,18 @@ import Layout from '../layouts/Layout.astro';
             <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
           </tr>
           <tr>
+            <td>Sign in with Apple</td>
+            <td>Apple Inc.</td>
+            <td>Email (including the private relay address), name, if used</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td>System speech recognition</td>
+            <td>Google LLC (Android) · Apple Inc. (iOS)</td>
+            <td>Audio of the dictated phrase, only when you use voice entry (transmission depends on the device and settings)</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a> · <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
             <td>OpenStreetMap</td>
             <td>OpenStreetMap Foundation</td>
             <td>IP address and requested map area, only when a location is attached</td>
@@ -283,6 +332,7 @@ import Layout from '../layouts/Layout.astro';
           </tr>
         </table>
         <p>OpenStreetMap, Frankfurter and Google Fonts receive the device's IP address, as happens with any internet connection. They do not receive your account, your financial data or the location of your purchases.</p>
+        <p>Speech recognition is an operating-system service: FamlyBudget does not control it and does not receive the audio, only the recognized text. The provider does not receive your account or your financial data from FamlyBudget.</p>
         <p>RevenueCat (in-app purchase management) will be integrated in a future version and we will update this policy accordingly.</p>
 
         <h2>5. Legal Basis for Processing</h2>
@@ -290,7 +340,7 @@ import Layout from '../layouts/Layout.astro';
         <ul>
           <li><strong>Performance of a contract (Art. 6.1.b GDPR)</strong> — to provide the service requested by the user</li>
           <li><strong>Legitimate interest (Art. 6.1.f GDPR)</strong> — for technical diagnostics and app improvement</li>
-          <li><strong>Consent (Art. 6.1.a GDPR)</strong> — for example for access to the device's location, which you can grant or revoke at any time</li>
+          <li><strong>Consent (Art. 6.1.a GDPR)</strong> — for example for access to the device's location and for the use of the microphone and speech recognition, which you can grant or revoke at any time</li>
         </ul>
 
         <h2>6. Data Retention</h2>
@@ -300,6 +350,7 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Financial data (Local mode)</strong> — stored exclusively on the device; uninstalling the app deletes all data</li>
           <li><strong>Crash reports</strong> — retained for 90 days by Google per its policies</li>
           <li><strong>Location and receipt photos</strong> — kept together with the transaction they are attached to and deleted when you remove them or delete the transaction</li>
+          <li><strong>Voice drafts and learned habits</strong> — the dictated phrase stays in the draft until you confirm or delete it; learned habits stay on the device until you delete them, erase your data from the app, or uninstall the app. FamlyBudget does not retain the audio</li>
         </ul>
         <p>You can delete your account and all associated data directly from the app: <strong>Settings → Delete account</strong>. Full instructions, including for those who can no longer access the app, are here: <a href="/delete-account">famlybudget.com/delete-account</a></p>
 
@@ -317,7 +368,7 @@ import Layout from '../layouts/Layout.astro';
         <p>To exercise these rights: <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a></p>
 
         <h2>8. Cookies and Tracking Technologies</h2>
-        <p>The FamlyBudget mobile app does not use cookies. It uses <strong>SharedPreferences</strong> (Android) to store local user preferences (selected language, app lock state, storage mode) — this data is never transmitted to external servers.</p>
+        <p>The FamlyBudget mobile app does not use cookies. It uses <strong>SharedPreferences</strong> (Android) and <strong>UserDefaults</strong> (iOS) to store local user preferences (selected language, app lock state, storage mode, learned voice-entry habits) — this data is never transmitted to external servers.</p>
         <p>The website <strong>famlybudget.com</strong> uses only essential technical cookies required for site operation. No profiling or third-party cookies are set.</p>
 
         <h2>9. Data Security</h2>
@@ -332,6 +383,7 @@ import Layout from '../layouts/Layout.astro';
 
         <h2>10. International Data Transfer</h2>
         <p>Google LLC's Firebase services involve the transfer of data to the United States. Google ensures this transfer via Standard Contractual Clauses approved by the European Commission. More details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+        <p>If your device's speech recognition sends the audio to the system provider (Google or Apple), that processing is governed by the provider's privacy policy and may take place outside the European Economic Area.</p>
 
         <h2>11. Children</h2>
         <p>FamlyBudget is not intended for children under 13. We do not knowingly collect personal data from minors. If you are aware that a minor has provided personal data, please contact us at <a href="mailto:privacy@famlybudget.com">privacy@famlybudget.com</a>.</p>

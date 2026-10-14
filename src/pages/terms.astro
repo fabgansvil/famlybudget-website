@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ VERSIONE ITALIANA ══════════ -->
       <div class="legal-section" id="it" data-lang-section="it">
         <h1>Termini di Servizio</h1>
-        <p class="legal-meta">Ultima revisione: 6 aprile 2026 &nbsp;·&nbsp; Versione 1.0</p>
+        <p class="legal-meta">Ultima revisione: 14 ottobre 2026 &nbsp;·&nbsp; Versione 1.1</p>
 
         <div class="legal-notice">
           <p>Utilizzando l'applicazione FamlyBudget accetti i seguenti Termini di Servizio. Ti invitiamo a leggerli attentamente prima di utilizzare l'app.</p>
@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 
         <h2>1. Definizioni</h2>
         <ul>
-          <li><strong>Servizio</strong> — l'applicazione mobile FamlyBudget (Android) e il sito web famlybudget.com</li>
+          <li><strong>Servizio</strong> — le applicazioni mobili FamlyBudget (Android e iOS), la versione web dell'app e il sito web famlybudget.com</li>
           <li><strong>Utente</strong> — qualsiasi persona fisica che acceda e utilizzi il Servizio</li>
           <li><strong>Piano Free</strong> — il piano gratuito con funzionalità limitate descritte nella Sezione 4</li>
           <li><strong>Piano Premium</strong> — piani a pagamento (Premium Local o Premium Cloud) che rimuovono i limiti del piano Free</li>
@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
         <h2>2. Accettazione dei Termini</h2>
         <p>Accedendo o utilizzando FamlyBudget, dichiari di:</p>
         <ul>
-          <li>Avere almeno 13 anni di età</li>
+          <li>Avere almeno 14 anni di età; se sei minorenne, utilizzare il Servizio ed effettuare acquisti solo con il consenso di chi esercita la responsabilità genitoriale</li>
           <li>Avere letto e accettato questi Termini di Servizio e la <a href="/privacy">Privacy Policy</a></li>
           <li>Essere responsabile di tutte le attività svolte con il tuo account</li>
         </ul>
@@ -53,17 +53,18 @@ import Layout from '../layouts/Layout.astro';
         <p>Il Piano Free include le seguenti limitazioni:</p>
         <table>
           <tr><th>Funzionalità</th><th>Limite Free</th><th>Premium</th></tr>
-          <tr><td>Transazioni per mese</td><td>80</td><td>Illimitate</td></tr>
-          <tr><td>Conti attivi</td><td>3</td><td>Fino a 20</td></tr>
+          <tr><td>Transazioni per mese (con data nel mese corrente, giroconti esclusi)</td><td>80</td><td>Illimitate (Premium Local) · fino a 1.000 (Premium Cloud)</td></tr>
+          <tr><td>Conti attivi (le carte di debito contano come conti)</td><td>3</td><td>Fino a 20</td></tr>
           <tr><td>Transazioni ricorrenti attive</td><td>4</td><td>Illimitate</td></tr>
           <tr><td>Categorie aggiuntive</td><td>15</td><td>150</td></tr>
           <tr><td>Valute aggiuntive</td><td>1</td><td>Fino a 10</td></tr>
           <tr><td>Backup e Ripristino</td><td>Non disponibile</td><td>Disponibile</td></tr>
           <tr><td>Esportazione dati</td><td>Non disponibile</td><td>CSV/XLSX e PDF</td></tr>
           <tr><td>Sync multi-dispositivo</td><td>Non disponibile</td><td>Solo Premium Cloud</td></tr>
-          <tr><td>Condivisione famiglia</td><td>1 membro</td><td>Fino a 10 (solo Cloud)</td></tr>
+          <tr><td>Condivisione famiglia</td><td>1 membro invitato</td><td>Fino a 10 membri invitati (solo Cloud)</td></tr>
         </table>
-        <p><strong>Uso ragionevole.</strong> I limiti indicati come "Illimitati" nei piani Premium sono soggetti a un uso ragionevole. Per Premium Cloud, che si appoggia a un'infrastruttura cloud, il Titolare si riserva il diritto di applicare un limite ragionevole al numero di transazioni mensili in caso di utilizzo palesemente anomalo o automatizzato.</p>
+        <p><strong>Quando raggiungi un limite.</strong> Non perdi nessun dato: non potrai creare nuovi elementi oltre il limite finché non passi a Premium o non liberi spazio.</p>
+        <p><strong>Uso ragionevole.</strong> I limiti indicati come "Illimitate" sono soggetti a un uso ragionevole: il Titolare si riserva il diritto di applicare limiti ragionevoli in caso di utilizzo palesemente anomalo o automatizzato. Per Premium Cloud, che si appoggia a un'infrastruttura cloud con costi proporzionali all'uso, è previsto un tetto di 1.000 transazioni al mese.</p>
 
         <h2>5. Piani Premium</h2>
         <p>I piani Premium sono disponibili in due varianti:</p>
@@ -71,25 +72,27 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Premium Local</strong> — rimozione di tutti i limiti del piano Free; dati archiviati solo sul dispositivo. Prezzo indicativo: €2/mese o €15/anno.</li>
           <li><strong>Premium Cloud</strong> — tutto di Premium Local + sincronizzazione cloud multi-dispositivo + condivisione famiglia. Prezzo indicativo: €2,99/mese o €21,99/anno.</li>
         </ul>
-        <p>I prezzi definitivi sono visibili nella sezione acquisti dell'app e su Google Play. I prezzi possono variare in base al paese.</p>
+        <p>I prezzi definitivi sono visibili nella sezione acquisti dell'app e nello store della tua piattaforma (Google Play o App Store). I prezzi possono variare in base al paese.</p>
 
         <h2>6. Acquisti e Pagamenti</h2>
         <ul>
-          <li>Gli acquisti in-app vengono processati tramite <strong>Google Play</strong> secondo le politiche di Google</li>
-          <li>I pagamenti sono gestiti da <strong>RevenueCat</strong> (quando disponibile)</li>
-          <li>Gli abbonamenti si rinnovano automaticamente alla scadenza salvo cancellazione preventiva</li>
-          <li>Per annullare un abbonamento: Impostazioni Google Play → Abbonamenti → FamlyBudget → Annulla</li>
-          <li>Non viene offerto rimborso per i periodi già pagati, salvo quanto previsto dalle politiche di Google Play e dalla legge applicabile</li>
+          <li>Gli acquisti in-app vengono processati dallo store della tua piattaforma, secondo le sue condizioni: <strong>Google Play</strong> (Android) o <strong>App Store</strong> di Apple (iOS)</li>
+          <li>La verifica dell'abbonamento e dei diritti Premium è gestita tramite <strong>RevenueCat</strong> (quando disponibile)</li>
+          <li>Gli abbonamenti si rinnovano automaticamente alla scadenza del periodo in corso, salvo disdetta preventiva. Su iOS la disdetta deve essere effettuata almeno 24 ore prima della scadenza</li>
+          <li>Per annullare un abbonamento su Android: Google Play → Pagamenti e abbonamenti → Abbonamenti → FamlyBudget → Annulla</li>
+          <li>Per annullare un abbonamento su iOS: Impostazioni → il tuo nome → Abbonamenti → FamlyBudget → Annulla abbonamento</li>
+          <li>L'annullamento impedisce i rinnovi successivi; il piano Premium resta attivo fino alla fine del periodo già pagato</li>
+          <li>I rimborsi sono gestiti dallo store (Google Play, oppure Apple tramite reportaproblem.apple.com). Il Titolare non offre rimborsi diretti per i periodi già pagati, salvo quanto previsto dalle condizioni dello store e dalla legge applicabile</li>
+          <li>Se sei un consumatore, il diritto di recesso e le sue eccezioni per i contenuti e i servizi digitali sono regolati dalla legge (Codice del Consumo, in particolare art. 59) e dalle condizioni dello store</li>
         </ul>
 
         <h2>7. Downgrade — Gestione dei Dati in Caso di Cancellazione</h2>
         <p>Se l'abbonamento Premium scade o viene annullato:</p>
         <ul>
-          <li><strong>I dati non vengono mai eliminati</strong> — tutti i dati rimangono accessibili in sola lettura</li>
-          <li><strong>Conti</strong> — i 3 conti con data di creazione più antica rimangono completamente attivi; gli altri diventano in sola lettura (nessuna nuova transazione)</li>
-          <li><strong>Categorie</strong> — le 15 categorie più vecchie rimangono attive; le altre in sola lettura</li>
-          <li><strong>Ricorrenti</strong> — solo le 4 più vecchie restano attive; le altre vengono sospese</li>
-          <li>Un badge visivo indica gli elementi "congelati" che richiedono Premium per essere riattivati</li>
+          <li><strong>I dati non vengono mai eliminati</strong> — conti, categorie, ricorrenti, transazioni e tutti gli altri dati restano tuoi e accessibili</li>
+          <li><strong>Limiti del piano Free</strong> — gli elementi già creati oltre i limiti del piano Free (Sezione 4) non vengono cancellati, ma non potrai crearne di nuovi oltre tali limiti finché non rinnovi Premium o non liberi spazio</li>
+          <li><strong>Elementi in eccesso</strong> — il Titolare può rendere gli elementi che eccedono i limiti Free consultabili in sola lettura (o sospenderli, nel caso delle ricorrenti) finché non riattivi Premium; l'app lo segnala con un'indicazione visiva</li>
+          <li><strong>Funzioni Premium</strong> — le funzioni disponibili solo con Premium (ad esempio l'esportazione) non sono più utilizzabili alla scadenza</li>
         </ul>
 
         <h2>8. Responsabilità dell'Utente</h2>
@@ -118,14 +121,14 @@ import Layout from '../layouts/Layout.astro';
           <li>Interruzioni del Servizio causate da terze parti (Google Firebase, Play Store, ecc.)</li>
         </ul>
 
-        <h3>9.3 Divieto di richieste di risarcimento</h3>
-        <p><strong>Nessuna richiesta di risarcimento danni, di qualsiasi natura e a qualsiasi titolo, potrà essere avanzata nei confronti del Titolare a seguito dell'utilizzo o dell'impossibilità di utilizzo dell'applicazione.</strong> L'Utente rinuncia espressamente a qualsiasi pretesa risarcitoria nei confronti del Titolare, fatti salvi i casi di dolo o colpa grave espressamente previsti dalla legge, che non possono essere esclusi ai sensi della normativa applicabile.</p>
+        <h3>9.3 Limiti alle richieste di risarcimento</h3>
+        <p><strong>Nei limiti consentiti dalla legge, il Titolare non risponde dei danni indicati al punto 9.2.</strong> Restano ferme le responsabilità che per legge non possono essere escluse o limitate, in particolare: dolo e colpa grave, danni alla persona e diritti inderogabili del consumatore (inclusi quelli relativi alla conformità dei contenuti e dei servizi digitali e alla protezione dei dati personali).</p>
 
         <h3>9.4 Assenza di consulenza finanziaria</h3>
         <p>FamlyBudget è uno strumento di <strong>supporto alla gestione finanziaria personale</strong>. Non costituisce in alcun modo un servizio finanziario regolamentato e non fornisce consulenza finanziaria, fiscale, legale o di investimento ai sensi della normativa vigente. Il Titolare non è responsabile delle conseguenze di qualsiasi decisione finanziaria adottata dall'Utente.</p>
 
         <h3>9.5 Massimale di responsabilità</h3>
-        <p>Qualora, nonostante quanto sopra, il Titolare fosse ritenuto responsabile per qualsiasi causa ai sensi della legge applicabile, il risarcimento massimo complessivo dovuto non potrà in alcun caso superare l'importo pagato dall'Utente per l'abbonamento Premium negli ultimi 12 mesi precedenti all'evento dannoso, ovvero <strong>€ 10,00</strong> nel caso di piano gratuito.</p>
+        <p>Qualora, nonostante quanto sopra, il Titolare fosse ritenuto responsabile per qualsiasi causa ai sensi della legge applicabile, il risarcimento massimo complessivo dovuto non potrà superare l'importo pagato dall'Utente per l'abbonamento Premium negli ultimi 6 mesi precedenti all'evento dannoso, ovvero <strong>€ 5,00</strong> nel caso di piano gratuito. Il massimale non si applica ai casi che per legge non possono essere limitati, indicati al punto 9.3.</p>
 
         <h2>10. Proprietà Intellettuale</h2>
         <p>Tutto il codice sorgente, il design, i loghi, i marchi e i contenuti del Servizio sono di proprietà del Titolare e protetti dalle leggi sul diritto d'autore. L'utente non acquista alcun diritto di proprietà intellettuale sull'app.</p>
@@ -136,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
         <p>L'uso continuato del Servizio dopo la notifica delle modifiche costituisce accettazione dei nuovi termini.</p>
 
         <h2>12. Legge Applicabile e Foro Competente</h2>
-        <p>I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia è competente il Foro del luogo di residenza dell'utente consumatore, ai sensi della normativa vigente in materia di tutela dei consumatori.</p>
+        <p>I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia è competente il Foro del luogo di residenza dell'utente consumatore, ai sensi della normativa vigente in materia di tutela dei consumatori. Prima di agire in giudizio, l'utente è invitato a contattare il Titolare ai recapiti indicati alla Sezione 13 per tentare una soluzione amichevole.</p>
 
         <h2>13. Contatti</h2>
         <p>Per qualsiasi domanda sui presenti Termini di Servizio:<br />
@@ -149,7 +152,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- ══════════ ENGLISH VERSION ══════════ -->
       <div class="legal-section" id="en" data-lang-section="en">
         <h1>Terms of Service</h1>
-        <p class="legal-meta">Last updated: April 6, 2026 &nbsp;·&nbsp; Version 1.0</p>
+        <p class="legal-meta">Last updated: October 14, 2026 &nbsp;·&nbsp; Version 1.1</p>
 
         <div class="legal-notice">
           <p>By using the FamlyBudget application you accept these Terms of Service. Please read them carefully before using the app.</p>
@@ -157,7 +160,7 @@ import Layout from '../layouts/Layout.astro';
 
         <h2>1. Definitions</h2>
         <ul>
-          <li><strong>Service</strong> — the FamlyBudget mobile application (Android) and the website famlybudget.com</li>
+          <li><strong>Service</strong> — the FamlyBudget mobile applications (Android and iOS), the web version of the app and the website famlybudget.com</li>
           <li><strong>User</strong> — any individual who accesses and uses the Service</li>
           <li><strong>Free Plan</strong> — the free plan with limited features described in Section 4</li>
           <li><strong>Premium Plan</strong> — paid plans (Premium Local or Premium Cloud) that remove Free plan limits</li>
@@ -167,7 +170,7 @@ import Layout from '../layouts/Layout.astro';
         <h2>2. Acceptance of Terms</h2>
         <p>By accessing or using FamlyBudget, you declare that you:</p>
         <ul>
-          <li>Are at least 13 years of age</li>
+          <li>Are at least 14 years of age; if you are a minor, use the Service and make purchases only with the consent of the person holding parental responsibility</li>
           <li>Have read and accepted these Terms of Service and the <a href="/privacy">Privacy Policy</a></li>
           <li>Are responsible for all activities conducted with your account</li>
         </ul>
@@ -190,17 +193,18 @@ import Layout from '../layouts/Layout.astro';
         <p>The Free Plan includes the following limitations:</p>
         <table>
           <tr><th>Feature</th><th>Free Limit</th><th>Premium</th></tr>
-          <tr><td>Transactions per month</td><td>80</td><td>Unlimited</td></tr>
-          <tr><td>Active accounts</td><td>3</td><td>Up to 20</td></tr>
+          <tr><td>Transactions per month (dated in the current month, transfers excluded)</td><td>80</td><td>Unlimited (Premium Local) · up to 1,000 (Premium Cloud)</td></tr>
+          <tr><td>Active accounts (debit cards count as accounts)</td><td>3</td><td>Up to 20</td></tr>
           <tr><td>Active recurring transactions</td><td>4</td><td>Unlimited</td></tr>
           <tr><td>Additional categories</td><td>15</td><td>150</td></tr>
           <tr><td>Additional currencies</td><td>1</td><td>Up to 10</td></tr>
           <tr><td>Backup and Restore</td><td>Not available</td><td>Available</td></tr>
           <tr><td>Data export</td><td>Not available</td><td>CSV/XLSX and PDF</td></tr>
           <tr><td>Multi-device sync</td><td>Not available</td><td>Premium Cloud only</td></tr>
-          <tr><td>Family sharing</td><td>1 member</td><td>Up to 10 (Cloud only)</td></tr>
+          <tr><td>Family sharing</td><td>1 invited member</td><td>Up to 10 invited members (Cloud only)</td></tr>
         </table>
-        <p><strong>Fair use.</strong> The "Unlimited" limits of Premium plans are subject to reasonable use. For Premium Cloud, which relies on cloud infrastructure, the Owner reserves the right to apply a reasonable limit on the number of transactions per month in case of use that is clearly abnormal or automated.</p>
+        <p><strong>When you reach a limit.</strong> You do not lose any data: you will not be able to create new items beyond the limit until you upgrade to Premium or free up space.</p>
+        <p><strong>Fair use.</strong> Limits shown as "Unlimited" are subject to reasonable use: the Owner reserves the right to apply reasonable limits in case of use that is clearly abnormal or automated. For Premium Cloud, which relies on cloud infrastructure with usage-based costs, a cap of 1,000 transactions per month applies.</p>
 
         <h2>5. Premium Plans</h2>
         <p>Premium plans are available in two variants:</p>
@@ -208,25 +212,27 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Premium Local</strong> — removal of all Free plan limits; data stored only on the device. Indicative price: €2/month or €15/year.</li>
           <li><strong>Premium Cloud</strong> — everything in Premium Local + cloud multi-device sync + family sharing. Indicative price: €2.99/month or €21.99/year.</li>
         </ul>
-        <p>Final prices are shown in the in-app purchase section and on Google Play. Prices may vary by country.</p>
+        <p>Final prices are shown in the in-app purchase section and in the store of your platform (Google Play or the App Store). Prices may vary by country.</p>
 
         <h2>6. Purchases and Payments</h2>
         <ul>
-          <li>In-app purchases are processed through <strong>Google Play</strong> according to Google's policies</li>
-          <li>Payments are managed by <strong>RevenueCat</strong> (when available)</li>
-          <li>Subscriptions automatically renew at expiry unless cancelled in advance</li>
-          <li>To cancel a subscription: Google Play Settings → Subscriptions → FamlyBudget → Cancel</li>
-          <li>No refund is offered for periods already paid, except as provided by Google Play policies and applicable law</li>
+          <li>In-app purchases are processed by the store of your platform, under its terms: <strong>Google Play</strong> (Android) or Apple's <strong>App Store</strong> (iOS)</li>
+          <li>Verification of the subscription and Premium entitlements is handled through <strong>RevenueCat</strong> (when available)</li>
+          <li>Subscriptions automatically renew at the end of the current period unless cancelled in advance. On iOS, cancellation must be made at least 24 hours before the end of the period</li>
+          <li>To cancel a subscription on Android: Google Play → Payments &amp; subscriptions → Subscriptions → FamlyBudget → Cancel</li>
+          <li>To cancel a subscription on iOS: Settings → your name → Subscriptions → FamlyBudget → Cancel Subscription</li>
+          <li>Cancelling stops future renewals; the Premium plan stays active until the end of the period already paid</li>
+          <li>Refunds are handled by the store (Google Play, or Apple via reportaproblem.apple.com). The Owner does not offer direct refunds for periods already paid, except as provided by the store's terms and applicable law</li>
+          <li>If you are a consumer, the right of withdrawal and its exceptions for digital content and services are governed by law (Italian Consumer Code, in particular art. 59) and by the store's terms</li>
         </ul>
 
         <h2>7. Downgrade — Data Management upon Cancellation</h2>
         <p>If a Premium subscription expires or is cancelled:</p>
         <ul>
-          <li><strong>Data is never deleted</strong> — all data remains accessible in read-only mode</li>
-          <li><strong>Accounts</strong> — the 3 accounts with the oldest creation date remain fully active; others become read-only (no new transactions)</li>
-          <li><strong>Categories</strong> — the 15 oldest categories remain active; others become read-only</li>
-          <li><strong>Recurring transactions</strong> — only the 4 oldest remain active; others are suspended</li>
-          <li>A visual badge indicates "frozen" items that require Premium to be reactivated</li>
+          <li><strong>Data is never deleted</strong> — accounts, categories, recurring transactions, transactions and all other data remain yours and accessible</li>
+          <li><strong>Free plan limits</strong> — items already created beyond the Free plan limits (Section 4) are not deleted, but you will not be able to create new ones beyond those limits until you renew Premium or free up space</li>
+          <li><strong>Items in excess</strong> — the Owner may make items exceeding the Free limits viewable in read-only mode (or suspended, in the case of recurring transactions) until you reactivate Premium; the app indicates this with a visual cue</li>
+          <li><strong>Premium features</strong> — features available only with Premium (for example, export) can no longer be used once the subscription ends</li>
         </ul>
 
         <h2>8. User Responsibilities</h2>
@@ -255,14 +261,14 @@ import Layout from '../layouts/Layout.astro';
           <li>Service interruptions caused by third parties (Google Firebase, Play Store, etc.)</li>
         </ul>
 
-        <h3>9.3 No right to damages</h3>
-        <p><strong>No claim for damages of any kind or on any grounds whatsoever may be brought against the Owner arising from the use or inability to use the application.</strong> The User expressly waives any claim for compensation against the Owner, except in cases of intentional misconduct (<em>dolo</em>) or gross negligence (<em>colpa grave</em>) as expressly provided by applicable law, which cannot be excluded under applicable regulations.</p>
+        <h3>9.3 Limits on claims for damages</h3>
+        <p><strong>To the extent permitted by law, the Owner is not liable for the damages listed in section 9.2.</strong> Liabilities that cannot be excluded or limited by law remain unaffected, in particular: intentional misconduct (<em>dolo</em>) and gross negligence (<em>colpa grave</em>), personal injury, and the mandatory rights of consumers (including those concerning the conformity of digital content and services and the protection of personal data).</p>
 
         <h3>9.4 No financial advice</h3>
         <p>FamlyBudget is a <strong>personal finance management support tool</strong>. It does not constitute a regulated financial service and does not provide financial, tax, legal, or investment advice under applicable law. The Owner is not responsible for the consequences of any financial decision made by the User.</p>
 
         <h3>9.5 Maximum liability cap</h3>
-        <p>Should the Owner nonetheless be found liable for any cause under applicable law, the maximum aggregate compensation due shall in no event exceed the amount paid by the User for a Premium subscription in the 12 months preceding the damaging event, or <strong>€ 10.00</strong> in the case of the free plan.</p>
+        <p>Should the Owner nonetheless be found liable for any cause under applicable law, the maximum aggregate compensation due shall not exceed the amount paid by the User for a Premium subscription in the 6 months preceding the damaging event, or <strong>€ 5.00</strong> in the case of the free plan. The cap does not apply to the cases that by law cannot be limited, listed in section 9.3.</p>
 
         <h2>10. Intellectual Property</h2>
         <p>All source code, design, logos, trademarks, and content of the Service are the property of the Owner and protected by copyright law. The user does not acquire any intellectual property rights to the app.</p>
@@ -273,7 +279,7 @@ import Layout from '../layouts/Layout.astro';
         <p>Continued use of the Service after notification of changes constitutes acceptance of the new terms.</p>
 
         <h2>12. Governing Law and Jurisdiction</h2>
-        <p>These Terms are governed by Italian law. For any dispute, the court of the user's place of residence as a consumer shall have jurisdiction, in accordance with applicable consumer protection law.</p>
+        <p>These Terms are governed by Italian law. For any dispute, the court of the user's place of residence as a consumer shall have jurisdiction, in accordance with applicable consumer protection law. Before taking legal action, the user is invited to contact the Owner at the addresses in Section 13 to try to reach an amicable solution.</p>
 
         <h2>13. Contact</h2>
         <p>For any questions about these Terms of Service:<br />

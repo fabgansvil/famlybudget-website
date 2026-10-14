@@ -660,7 +660,13 @@ const {
       }
     };
 
-    let currentLang = localStorage.getItem('fb_lang') || 'en';
+    // ?lang=it|en (link dall'app FamlyBudget a Termini e Privacy) ha la
+    // precedenza sulla lingua salvata. Lista bianca: qualunque altro valore
+    // viene ignorato e vale la lingua salvata o l'inglese.
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    let currentLang = ['it', 'en'].includes(urlLang)
+      ? urlLang
+      : (localStorage.getItem('fb_lang') || 'en');
 
     function applyLang(lang) {
       currentLang = lang;

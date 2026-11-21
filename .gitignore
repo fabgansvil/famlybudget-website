@@ -1,3 +1,5 @@
 dist/
 node_modules/
 .astro/
+# Configurazione locale delle sessioni di Claude Code (anteprima del sito)
+.claude/

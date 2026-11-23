@@ -33,10 +33,21 @@ const {
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="FamlyBudget" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Carattere Inter servito dal sito (nessuna richiesta a Google Fonts: audit parte B, PRV-13).
+       File da fonts.gstatic.com (Inter v20, SIL Open Font License), un solo file variabile
+       per sottoinsieme: latin e latin-ext bastano per italiano e inglese. -->
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style is:global>
+    @font-face {
+      font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap;
+      src: url(/fonts/inter-latin-ext.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap;
+      src: url(/fonts/inter-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
     /* ── Reset & Base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -434,6 +445,8 @@ const {
     .legal-section table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
     .legal-section th { background: var(--neutral); font-weight: 600; text-align: left; padding: 10px 14px; border: 1px solid var(--border); color: var(--text); }
     .legal-section td { padding: 10px 14px; border: 1px solid var(--border); color: #334155; }
+    /* Telefono: le tabelle larghe (servizi terzi, limiti dei piani) scorrono dentro se stesse invece di allargare la pagina. */
+    @media (max-width: 640px) { .legal-section table { display: block; overflow-x: auto; } }
     .legal-section .legal-divider { border: none; border-top: 2px solid var(--border); margin: 64px 0; }
     .legal-section a { color: var(--blue-dark); text-decoration: underline; }
     .legal-notice { background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; }

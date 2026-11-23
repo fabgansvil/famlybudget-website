@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="fp-pillar fp-reveal">
         <div class="fp-pillar-icon">🔒</div>
         <h3 data-i18n="fp_pillar1_h">Your data, your rules</h3>
-        <p data-i18n="fp_pillar1_p">Choose to keep everything on-device or sync to the cloud. You decide — anytime, no migration needed.</p>
+        <p data-i18n="fp_pillar1_p">Choose to keep your financial data on the device or sync it to the cloud. You can change later: the owner moves the data from Settings, with a preview of what will be transferred.</p>
       </div>
       <div class="fp-pillar fp-reveal">
         <div class="fp-pillar-icon">👨‍👩‍👧</div>
@@ -429,9 +429,9 @@ import Layout from '../layouts/Layout.astro';
           <li class="fp-check" data-i18n="fp_p0_f5">Reports, net worth & recap</li>
           <li class="fp-check" data-i18n="fp_p0_f6">Bank import CSV/XLSX</li>
           <li class="fp-check" data-i18n="fp_p0_f7">Reconciliation, multi-currency, tags</li>
-          <li class="fp-check" data-i18n="fp_p0_f8">17 widgets + Android home widgets</li>
+          <li class="fp-check" data-i18n="fp_p0_f8">17 widgets + Home screen widgets on Android and iOS</li>
           <li class="fp-check" data-i18n="fp_p0_f9">112 categories + 15 of your own</li>
-          <li class="fp-check" data-i18n="fp_p0_f10">80 transactions/month · 3 accounts · 4 recurring</li>
+          <li class="fp-check" data-i18n="fp_p0_f10">80 transactions/month · 3 accounts · 4 recurring · 1 invited member</li>
           <li class="fp-cross" data-i18n="fp_p0_f11">Data export</li>
           <li class="fp-cross" data-i18n="fp_p0_f12">Backup & Restore</li>
           <li class="fp-cross" data-i18n="fp_p0_f13">History > 12 months</li>
@@ -449,11 +449,11 @@ import Layout from '../layouts/Layout.astro';
           <span class="fp-yearly-hint" style="display:none" data-i18n="fp_p1_yearly">€15/year — save 38%</span>
           <span class="fp-monthly-hint" data-i18n="fp_p1_monthly">or €15/year — save 38%</span>
         </div>
-        <div class="fp-pcard-badge"><span>📱</span> <span data-i18n="fp_p1_badge">Data stays on device</span></div>
+        <div class="fp-pcard-badge"><span>📱</span> <span data-i18n="fp_p1_badge">Financial data on device only</span></div>
         <ul class="fp-pcard-list">
           <li class="fp-check" data-i18n="fp_p1_f1">Everything in Free</li>
           <li class="fp-check" data-i18n="fp_p1_f2">Unlimited transactions</li>
-          <li class="fp-check" data-i18n="fp_p1_f3">Up to 20 active accounts</li>
+          <li class="fp-check" data-i18n="fp_p1_f3">Up to 30 active accounts</li>
           <li class="fp-check" data-i18n="fp_p1_f4">Unlimited recurring</li>
           <li class="fp-check" data-i18n="fp_p1_f5">+150 categories, +10 currencies</li>
           <li class="fp-check" data-i18n="fp_p1_f6">CSV/XLSX & PDF export</li>
@@ -478,7 +478,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="fp-pcard-badge fp-pcard-badge-blue"><span>☁️</span> <span data-i18n="fp_p2_badge">Real-time sync</span></div>
         <ul class="fp-pcard-list">
-          <li class="fp-check" data-i18n="fp_p2_f1">Everything in Premium Local</li>
+          <li class="fp-check" data-i18n="fp_p2_f1">Everything in Premium Local, up to 1,000 transactions/month</li>
           <li class="fp-check" data-i18n="fp_p2_f2">Real-time multi-device sync</li>
           <li class="fp-check" data-i18n="fp_p2_f3">Family sharing (up to 10)</li>
           <li class="fp-check" data-i18n="fp_p2_f4">Browser access (web dashboard)</li>
@@ -506,8 +506,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="fp-trust-item fp-reveal">
         <div class="fp-trust-icon">📱</div>
-        <h3 data-i18n="fp_trust2_h">Local mode: cloud-free option</h3>
-        <p data-i18n="fp_trust2_p">Choose to keep all your data exclusively on your device. No internet required — the app works fully offline.</p>
+        <h3 data-i18n="fp_trust2_h">Local mode: financial data without the cloud</h3>
+        <p data-i18n="fp_trust2_p">You can keep transactions, accounts and budgets exclusively on your device, in encrypted storage. You only need the internet to sign in: after that the app also works offline.</p>
       </div>
       <div class="fp-trust-item fp-reveal">
         <div class="fp-trust-icon">🚫</div>
@@ -1504,7 +1504,7 @@ import Layout from '../layouts/Layout.astro';
       fp_float_goal: 'Vacation goal', fp_float_used: 'used',
       fp_float_budget: 'Budget on track',
       fp_pillar1_h: 'Your data, your rules',
-      fp_pillar1_p: 'Choose to keep everything on-device or sync to the cloud. You decide — anytime, no migration needed.',
+      fp_pillar1_p: 'Choose to keep your financial data on the device or sync it to the cloud. You can change later: the owner moves the data from Settings, with a preview of what will be transferred.',
       fp_pillar2_h: 'Built for families and solo users',
       fp_pillar2_p: 'Invite up to 10 family members and manage finances together, each from their own phone, all in real time.',
       fp_pillar3_h: 'Insights that actually make sense',
@@ -1561,29 +1561,29 @@ import Layout from '../layouts/Layout.astro';
       fp_p0_f1: 'Local or cloud storage', fp_p0_f2: 'Budgets, goals, recurring & installments',
       fp_p0_f3: 'Calendar, tasks & reminders', fp_p0_f4: '90-day projection & safe-to-spend',
       fp_p0_f5: 'Reports, net worth & recap', fp_p0_f6: 'Bank import CSV/XLSX',
-      fp_p0_f7: 'Reconciliation, multi-currency, tags', fp_p0_f8: '17 widgets + Android home widgets',
-      fp_p0_f9: '112 categories + 15 of your own', fp_p0_f10: '80 transactions/month · 3 accounts · 4 recurring',
+      fp_p0_f7: 'Reconciliation, multi-currency, tags', fp_p0_f8: '17 widgets + Home screen widgets on Android and iOS',
+      fp_p0_f9: '112 categories + 15 of your own', fp_p0_f10: '80 transactions/month · 3 accounts · 4 recurring · 1 invited member',
       fp_p0_f11: 'Data export', fp_p0_f12: 'Backup & Restore', fp_p0_f13: 'History > 12 months',
       fp_p0_btn: 'Start Free',
       fp_p1_name: 'Premium Local',
       fp_p1_yearly: '€15/year — save 38%', fp_p1_monthly: 'or €15/year — save 38%',
-      fp_p1_badge: 'Data stays on device',
+      fp_p1_badge: 'Financial data on device only',
       fp_p1_f1: 'Everything in Free', fp_p1_f2: 'Unlimited transactions',
-      fp_p1_f3: 'Up to 20 active accounts', fp_p1_f4: 'Unlimited recurring',
+      fp_p1_f3: 'Up to 30 active accounts', fp_p1_f4: 'Unlimited recurring',
       fp_p1_f5: '+150 categories, +10 currencies', fp_p1_f6: 'CSV/XLSX & PDF export',
       fp_p1_f7: 'Chart history up to 24 months', fp_p1_f8: 'Backup & Restore',
       fp_p1_f9: 'Multi-device sync', fp_p1_f10: 'Family sharing', fp_p1_btn: 'Choose Local',
       fp_p2_popular: '⭐ Most complete', fp_p2_name: 'Premium Cloud',
       fp_p2_yearly: '€21.99/year — save 39%', fp_p2_monthly: 'or €21.99/year — save 39%',
       fp_p2_badge: 'Real-time sync',
-      fp_p2_f1: 'Everything in Premium Local', fp_p2_f2: 'Real-time multi-device sync',
+      fp_p2_f1: 'Everything in Premium Local, up to 1,000 transactions/month', fp_p2_f2: 'Real-time multi-device sync',
       fp_p2_f3: 'Family sharing (up to 10)', fp_p2_f4: 'Browser access (web dashboard)',
       fp_p2_f5: 'Data safe in the cloud, restore on any device', fp_p2_btn: 'Choose Cloud',
       fp_trust_h2: 'Built on trust. Designed for privacy.',
       fp_trust1_h: 'Zero financial data to third parties',
       fp_trust1_p: 'Your transactions, accounts and balances are never shared with advertisers, data brokers or analytics platforms.',
-      fp_trust2_h: 'Local mode: cloud-free option',
-      fp_trust2_p: 'Choose to keep all your data exclusively on your device. No internet required — the app works fully offline.',
+      fp_trust2_h: 'Local mode: financial data without the cloud',
+      fp_trust2_p: 'You can keep transactions, accounts and budgets exclusively on your device, in encrypted storage. You only need the internet to sign in: after that the app also works offline.',
       fp_trust3_h: 'No ads. No analytics.',
       fp_trust3_p: 'FamlyBudget has no advertising, no usage analytics, no profiling. Only technical crash reports, with no financial data. The only revenue is the Premium subscription.',
       fp_trust4_h: 'Biometric app lock',
@@ -1614,7 +1614,7 @@ import Layout from '../layouts/Layout.astro';
       fp_float_goal: 'Obiettivo vacanze', fp_float_used: 'usato',
       fp_float_budget: 'Budget in ordine',
       fp_pillar1_h: 'I tuoi dati, le tue regole',
-      fp_pillar1_p: 'Scegli di tenere tutto sul dispositivo o sincronizzare sul cloud. Decidi tu — in qualsiasi momento, senza migrazioni.',
+      fp_pillar1_p: 'Scegli di tenere i dati finanziari sul dispositivo o di sincronizzarli nel cloud. Puoi cambiare in seguito: il proprietario sposta i dati dalle Impostazioni, con un\'anteprima di quello che viene trasferito.',
       fp_pillar2_h: 'Pensata per famiglie e per chi vive solo',
       fp_pillar2_p: 'Invita fino a 10 familiari e gestite le finanze insieme, ognuno dal proprio telefono, tutto in tempo reale.',
       fp_pillar3_h: 'Analisi che hanno senso davvero',
@@ -1671,29 +1671,29 @@ import Layout from '../layouts/Layout.astro';
       fp_p0_f1: 'Archiviazione locale o cloud', fp_p0_f2: 'Budget, obiettivi, ricorrenti e rate',
       fp_p0_f3: 'Calendario, task e promemoria', fp_p0_f4: 'Proiezione a 90 giorni e quanto puoi spendere',
       fp_p0_f5: 'Report, patrimonio e recap', fp_p0_f6: 'Import da banca CSV/XLSX',
-      fp_p0_f7: 'Riconciliazione, multi-valuta, tag', fp_p0_f8: '17 widget + widget home Android',
-      fp_p0_f9: '112 categorie + 15 tue', fp_p0_f10: '80 transazioni/mese · 3 conti · 4 ricorrenti',
+      fp_p0_f7: 'Riconciliazione, multi-valuta, tag', fp_p0_f8: '17 widget + widget della Home su Android e iOS',
+      fp_p0_f9: '112 categorie + 15 tue', fp_p0_f10: '80 transazioni/mese · 3 conti · 4 ricorrenti · 1 invitato',
       fp_p0_f11: 'Esportazione dati', fp_p0_f12: 'Backup e Ripristino', fp_p0_f13: 'Storico > 12 mesi',
       fp_p0_btn: 'Inizia Gratis',
       fp_p1_name: 'Premium Local',
       fp_p1_yearly: '€15/anno — risparmia 38%', fp_p1_monthly: 'o €15/anno — risparmia 38%',
-      fp_p1_badge: 'Dati solo sul dispositivo',
+      fp_p1_badge: 'Dati finanziari solo sul dispositivo',
       fp_p1_f1: 'Tutto del piano Gratuito', fp_p1_f2: 'Transazioni illimitate',
-      fp_p1_f3: 'Fino a 20 conti attivi', fp_p1_f4: 'Ricorrenti illimitate',
+      fp_p1_f3: 'Fino a 30 conti attivi', fp_p1_f4: 'Ricorrenti illimitate',
       fp_p1_f5: '+150 categorie, +10 valute', fp_p1_f6: 'Esportazione CSV/XLSX e PDF',
       fp_p1_f7: 'Storico grafici a 24 mesi', fp_p1_f8: 'Backup e Ripristino',
       fp_p1_f9: 'Sync multi-dispositivo', fp_p1_f10: 'Condivisione famiglia', fp_p1_btn: 'Scegli Local',
       fp_p2_popular: '⭐ Più completo', fp_p2_name: 'Premium Cloud',
       fp_p2_yearly: '€21,99/anno — risparmia 39%', fp_p2_monthly: 'o €21,99/anno — risparmia 39%',
       fp_p2_badge: 'Sync in tempo reale',
-      fp_p2_f1: 'Tutto di Premium Local', fp_p2_f2: 'Sync multi-dispositivo in tempo reale',
+      fp_p2_f1: 'Tutto di Premium Local, fino a 1.000 transazioni/mese', fp_p2_f2: 'Sync multi-dispositivo in tempo reale',
       fp_p2_f3: 'Famiglia (fino a 10)', fp_p2_f4: 'Accesso da browser (dashboard web)',
       fp_p2_f5: 'Dati al sicuro nel cloud, ripristino da qualsiasi dispositivo', fp_p2_btn: 'Scegli Cloud',
       fp_trust_h2: 'Fondato sulla fiducia. Progettato per la privacy.',
       fp_trust1_h: 'Zero dati finanziari a terze parti',
       fp_trust1_p: 'Le tue transazioni, conti e saldi non vengono mai condivisi con inserzionisti, broker di dati o piattaforme analytics.',
-      fp_trust2_h: 'Modalità locale: opzione senza cloud',
-      fp_trust2_p: 'Scegli di tenere tutti i dati esclusivamente sul dispositivo. Nessuna connessione richiesta — l\'app funziona completamente offline.',
+      fp_trust2_h: 'Modalità locale: dati finanziari senza cloud',
+      fp_trust2_p: 'Puoi tenere transazioni, conti e budget esclusivamente sul dispositivo, in un archivio cifrato. Internet serve solo per accedere: poi l\'app funziona anche offline.',
       fp_trust3_h: 'Zero pubblicità. Zero analytics.',
       fp_trust3_p: 'FamlyBudget non ha pubblicità, nessuna analisi d\'uso, nessuna profilazione. Solo report tecnici sui crash, senza dati finanziari. L\'unica fonte di reddito è l\'abbonamento Premium.',
       fp_trust4_h: 'Blocco biometrico',

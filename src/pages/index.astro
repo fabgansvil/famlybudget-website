@@ -89,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
             <p data-i18n="feat2_p">Data syncs instantly across all household devices. Always up to date, wherever you are.</p>
             <ul class="feature-bullets">
               <li data-i18n="feat2_b1">Real-time updates without reloading</li>
-              <li data-i18n="feat2_b2">Available in the Premium Cloud plan</li>
+              <li data-i18n="feat2_b2">Available in cloud mode, including the Free plan</li>
               <li data-i18n="feat2_b3">Offline mode: the app works without internet</li>
             </ul>
           </div>
@@ -167,7 +167,7 @@ import Layout from '../layouts/Layout.astro';
             <p data-i18n="feat8_p">Your financial data is protected. You can choose to never send it to the cloud if you prefer maximum privacy.</p>
             <ul class="feature-bullets">
               <li data-i18n="feat8_b1">App lock with fingerprint or Face ID</li>
-              <li data-i18n="feat8_b2">Local mode: data only on device</li>
+              <li data-i18n="feat8_b2">Local mode: financial data stays on the device only</li>
               <li data-i18n="feat8_b3">No financial data shared with third parties</li>
             </ul>
           </div>
@@ -322,7 +322,7 @@ import Layout from '../layouts/Layout.astro';
             <li data-i18n-html="pr_free_f10"><span class="ico">✅</span><span>Statement reconciliation</span></li>
             <li data-i18n-html="pr_free_f11"><span class="ico">💱</span><span>Multi-currency &amp; tags</span></li>
             <li data-i18n-html="pr_free_f12"><span class="ico">🧾</span><span>Receipt photos</span></li>
-            <li data-i18n-html="pr_free_f13"><span class="ico">🧩</span><span>17 dashboard widgets + Android home</span></li>
+            <li data-i18n-html="pr_free_f13"><span class="ico">🧩</span><span>17 dashboard widgets + Home screen widgets on Android and iOS</span></li>
             <li data-i18n-html="pr_free_f14"><span class="ico">🔒</span><span>Biometric lock &amp; 2FA</span></li>
           </ul>
           <div class="pricing-note" data-i18n-html="pr_free_note"><b>Also included:</b> 112 ready-made categories · 5 languages · dark theme<br><b>Limits:</b> 80 transactions/month · 3 accounts · 4 recurring · +15 categories · +1 currency · 1 invited member</div>
@@ -343,13 +343,13 @@ import Layout from '../layouts/Layout.astro';
             <span style="font-size:22px;">📱</span>
             <div>
               <div style="font-size:12px;font-weight:700;color:var(--text);" data-i18n="pr_local_badge_title">Data on device</div>
-              <div style="font-size:11px;color:var(--text-muted);" data-i18n="pr_local_badge_sub">Your data stays only on the device — no financial data in the cloud</div>
+              <div style="font-size:11px;color:var(--text-muted);" data-i18n="pr_local_badge_sub">Transactions, accounts and budgets stay on the device only</div>
             </div>
           </div>
           <ul class="pricing-features">
             <li class="lead" data-i18n="pr_local_lead">Everything in Free, plus:</li>
             <li data-i18n-html="pr_local_f1"><span class="check">✓</span> Unlimited transactions</li>
-            <li data-i18n-html="pr_local_f2"><span class="check">✓</span> Up to 20 active accounts</li>
+            <li data-i18n-html="pr_local_f2"><span class="check">✓</span> Up to 30 active accounts</li>
             <li data-i18n-html="pr_local_f3"><span class="check">✓</span> Unlimited recurring transactions</li>
             <li data-i18n-html="pr_local_f4"><span class="check">✓</span> +150 categories, +10 currencies</li>
             <li data-i18n-html="pr_local_f5"><span class="check">✓</span> CSV/XLSX &amp; PDF export</li>
@@ -375,7 +375,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <ul class="pricing-features">
-            <li class="lead" data-i18n="pr_cloud_lead">Everything in Premium Local, plus:</li>
+            <li class="lead" data-i18n="pr_cloud_lead">Everything in Premium Local (with up to 1,000 transactions a month), plus:</li>
             <li data-i18n-html="pr_cloud_f2"><span class="check">✓</span> Real-time multi-device sync</li>
             <li data-i18n-html="pr_cloud_f3"><span class="check">✓</span> Family sharing (up to 10)</li>
             <li data-i18n-html="pr_cloud_f4"><span class="check">✓</span> Browser access (web dashboard)</li>
@@ -466,7 +466,7 @@ import Layout from '../layouts/Layout.astro';
       feat2_h3: 'Real-time Cloud Sync',
       feat2_p: 'Data syncs instantly across all household devices. Always up to date, wherever you are.',
       feat2_b1: 'Real-time updates without reloading',
-      feat2_b2: 'Available in the Premium Cloud plan',
+      feat2_b2: 'Available in cloud mode, including the Free plan',
       feat2_b3: 'Offline mode: the app works without internet',
       feat3_h3: 'Family Multi-user',
       feat3_p: 'Invite family members and manage the budget together, each from their own smartphone.',
@@ -496,7 +496,7 @@ import Layout from '../layouts/Layout.astro';
       feat8_h3: 'Privacy & Security',
       feat8_p: 'Your financial data is protected. You can choose to never send it to the cloud if you prefer maximum privacy.',
       feat8_b1: 'App lock with fingerprint or Face ID',
-      feat8_b2: 'Local mode: data only on device',
+      feat8_b2: 'Local mode: financial data stays on the device only',
       feat8_b3: 'No financial data shared with third parties',
       ss_badge: '✦ Interface', ss_h2: 'An interface designed for simplicity',
       ss_p: 'Clean, fast, intuitive. All the important information always at your fingertips.',
@@ -546,7 +546,7 @@ import Layout from '../layouts/Layout.astro';
       pr_free_f10: '<span class="ico">✅</span><span>Statement reconciliation</span>',
       pr_free_f11: '<span class="ico">💱</span><span>Multi-currency & tags</span>',
       pr_free_f12: '<span class="ico">🧾</span><span>Receipt photos</span>',
-      pr_free_f13: '<span class="ico">🧩</span><span>17 dashboard widgets + Android home</span>',
+      pr_free_f13: '<span class="ico">🧩</span><span>17 dashboard widgets + Home screen widgets on Android and iOS</span>',
       pr_free_f14: '<span class="ico">🔒</span><span>Biometric lock & 2FA</span>',
       pr_free_note: '<b>Also included:</b> 112 ready-made categories · 5 languages · dark theme<br><b>Limits:</b> 80 transactions/month · 3 accounts · 4 recurring · +15 categories · +1 currency · 1 invited member',
       pr_free_x1: '<span class="cross">✕</span><span>Data export</span>',
@@ -556,10 +556,10 @@ import Layout from '../layouts/Layout.astro';
       pr_local_name: 'Premium Local', pr_local_price_suffix: '/month',
       pr_local_yearly: 'or <strong>€15/year — save 38%</strong>',
       pr_local_badge_title: 'Data on device',
-      pr_local_badge_sub: 'Your data stays only on the device — no financial data in the cloud',
+      pr_local_badge_sub: 'Transactions, accounts and budgets stay on the device only',
       pr_local_lead: 'Everything in Free, plus:',
       pr_local_f1: '<span class="check">✓</span> Unlimited transactions',
-      pr_local_f2: '<span class="check">✓</span> Up to 20 active accounts',
+      pr_local_f2: '<span class="check">✓</span> Up to 30 active accounts',
       pr_local_f3: '<span class="check">✓</span> Unlimited recurring transactions',
       pr_local_f4: '<span class="check">✓</span> +150 categories, +10 currencies',
       pr_local_f5: '<span class="check">✓</span> CSV/XLSX & PDF export',
@@ -573,7 +573,7 @@ import Layout from '../layouts/Layout.astro';
       pr_cloud_yearly: 'or <strong>€21.99/year — save 39%</strong>',
       pr_cloud_badge_title: 'Real-time sync across all devices',
       pr_cloud_badge_sub: 'Cloud synchronization',
-      pr_cloud_lead: 'Everything in Premium Local, plus:',
+      pr_cloud_lead: 'Everything in Premium Local (with up to 1,000 transactions a month), plus:',
       pr_cloud_f2: '<span class="check">✓</span> Real-time multi-device sync',
       pr_cloud_f3: '<span class="check">✓</span> Family sharing (up to 10)',
       pr_cloud_f4: '<span class="check">✓</span> Browser access (web dashboard)',
@@ -605,7 +605,7 @@ import Layout from '../layouts/Layout.astro';
       feat2_h3: 'Sync Cloud in Tempo Reale',
       feat2_p: 'I dati si sincronizzano istantaneamente su tutti i dispositivi del nucleo familiare. Sempre aggiornati, ovunque tu sia.',
       feat2_b1: 'Aggiornamenti in tempo reale senza ricaricare',
-      feat2_b2: 'Disponibile nel piano Premium Cloud',
+      feat2_b2: 'Disponibile in modalità cloud, anche nel piano Gratuito',
       feat2_b3: 'Modalità offline: l\'app funziona senza internet',
       feat3_h3: 'Multi-Utente Famiglia',
       feat3_p: 'Invita i membri della famiglia e gestite insieme il budget, ognuno dal proprio smartphone.',
@@ -635,7 +635,7 @@ import Layout from '../layouts/Layout.astro';
       feat8_h3: 'Privacy e Sicurezza',
       feat8_p: 'I tuoi dati finanziari sono protetti. Puoi scegliere di non inviarli mai sul cloud se preferisci la massima privacy.',
       feat8_b1: 'Blocco app con impronta digitale o Face ID',
-      feat8_b2: 'Modalità locale: i dati restano solo sul dispositivo',
+      feat8_b2: 'Modalità locale: i dati finanziari restano solo sul dispositivo',
       feat8_b3: 'Nessun dato finanziario condiviso con terze parti',
       ss_badge: '✦ Interfaccia', ss_h2: 'Un\'interfaccia pensata per la semplicità',
       ss_p: 'Pulita, veloce, intuitiva. Tutte le informazioni importanti sempre a portata di mano.',
@@ -685,7 +685,7 @@ import Layout from '../layouts/Layout.astro';
       pr_free_f10: '<span class="ico">✅</span><span>Riconciliazione estratto conto</span>',
       pr_free_f11: '<span class="ico">💱</span><span>Multi-valuta e tag</span>',
       pr_free_f12: '<span class="ico">🧾</span><span>Foto degli scontrini</span>',
-      pr_free_f13: '<span class="ico">🧩</span><span>17 widget dashboard + home Android</span>',
+      pr_free_f13: '<span class="ico">🧩</span><span>17 widget dashboard + widget della Home su Android e iOS</span>',
       pr_free_f14: '<span class="ico">🔒</span><span>Blocco biometrico e 2FA</span>',
       pr_free_note: '<b>Inclusi anche:</b> 112 categorie pronte · 5 lingue · tema scuro<br><b>Limiti:</b> 80 transazioni/mese · 3 conti · 4 ricorrenti · +15 categorie · +1 valuta · 1 membro invitato',
       pr_free_x1: '<span class="cross">✕</span><span>Esportazione dati</span>',
@@ -695,10 +695,10 @@ import Layout from '../layouts/Layout.astro';
       pr_local_name: 'Premium Local', pr_local_price_suffix: '/mese',
       pr_local_yearly: 'o <strong>€15/anno — risparmia 38%</strong>',
       pr_local_badge_title: 'Dati sul dispositivo',
-      pr_local_badge_sub: 'I tuoi dati restano solo sul dispositivo — nessun dato finanziario sul cloud',
+      pr_local_badge_sub: 'Transazioni, conti e budget restano solo sul dispositivo',
       pr_local_lead: 'Tutto del piano Gratuito, più:',
       pr_local_f1: '<span class="check">✓</span> Transazioni illimitate',
-      pr_local_f2: '<span class="check">✓</span> Fino a 20 conti attivi',
+      pr_local_f2: '<span class="check">✓</span> Fino a 30 conti attivi',
       pr_local_f3: '<span class="check">✓</span> Ricorrenti illimitate',
       pr_local_f4: '<span class="check">✓</span> +150 categorie, +10 valute',
       pr_local_f5: '<span class="check">✓</span> Esportazione CSV/XLSX e PDF',
@@ -712,7 +712,7 @@ import Layout from '../layouts/Layout.astro';
       pr_cloud_yearly: 'o <strong>€21,99/anno — risparmia 39%</strong>',
       pr_cloud_badge_title: 'Sync in tempo reale su tutti i dispositivi',
       pr_cloud_badge_sub: 'Sincronizzazione cloud',
-      pr_cloud_lead: 'Tutto di Premium Local, più:',
+      pr_cloud_lead: 'Tutto di Premium Local (con fino a 1.000 transazioni al mese), più:',
       pr_cloud_f2: '<span class="check">✓</span> Sync multi-dispositivo in tempo reale',
       pr_cloud_f3: '<span class="check">✓</span> Condivisione famiglia (fino a 10)',
       pr_cloud_f4: '<span class="check">✓</span> Accesso da browser (dashboard web)',
